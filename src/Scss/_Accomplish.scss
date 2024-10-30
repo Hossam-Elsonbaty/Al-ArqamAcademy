@@ -1,0 +1,53 @@
+//data-aos="fade-up"data-aos-delay="30" data-aos-duration="300"
+.accomplish{
+  p{
+    text-align: start;
+  }
+  header{
+    width: 100%;
+    h1{
+      color: var(--Deep-teal);
+      position: relative;
+      padding-bottom:24px ;
+      &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 3.7px;
+        background-color: var(--Golden-sand);
+      }
+    }
+  }
+  .img-container{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 50%;
+      background-color: #00529b59;
+      right:-50px;
+      top: -50px;
+      z-index: -1;
+    }
+  }
+  .checks{
+    ul {
+      li{
+        position: relative;
+        ::before{
+          position: absolute;
+          content: "\e92d";
+          left: -50px;
+          top: 50%;
+          color: var(--Deep-teal);
+          transform: translate(0,-50%);
+          font-size: 22px;
+          font-family: 'Material Icons';
+        }
+      }
+    }
+  }
+}

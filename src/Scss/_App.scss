@@ -1,0 +1,44 @@
+@import'Media';
+@import'Navbar';
+@import'Objectives';
+@import'Accomplish';
+@import'Programs';
+@import'OurTeam';
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+* {
+  margin: 0;
+  font-family: "Poppins", serif;  box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth; 
+}
+html,body{
+  overflow-x: hidden;
+}
+:root {
+  --Deep-teal:#256882;
+  --Soft-mist:#e3e3e3;
+  --Aqua-breeze:#A1D6E2;
+  --Midnight-blue:#1B3A4B;
+  --Golden-sand:#D8B773;
+  --text-100:#000000;
+  --text-200:#2c2c2c;
+  --bg-White:#fff;
+  --bg-100:#F7EEDD;
+  --bg-200:#ede4d3;
+  --bg-300:#c4bcab;
+}
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: var(--Deep-teal); /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-100); /* color of the scrollbar */
+  border-radius: 0px; /* roundness of the scrollbar */
+}
+
+

@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+.objectives .header {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+}
+.objectives .header h1 {
+  color: var(--Deep-teal);
+  position: relative;
+  padding-bottom: 24px;
+}
+.objectives .header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 3.7px;
+  background-color: var(--Golden-sand);
+}
+.objectives .header span {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+.objectives .objective {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.objectives .objective .icon-cont {
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+  background-color: rgba(79, 176, 220, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  border: 1px solid rgba(79, 176, 220, 0.2);
+  box-shadow: inset 0 0 0 3px #fff;
+}
+.objectives .objective .icon-cont svg {
+  font-size: 30px;
+  color: #4fb0dc;
+}
+.objectives .objective h1 {
+  font-weight: 500;
+  font-size: 18px;
+  text-align: start;
+}
+.objectives .objective .description {
+  font-size: 16px;
+  text-align: start;
+}
+
+.offset::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.accomplish p {
+  text-align: start;
+}
+.accomplish header {
+  width: 100%;
+}
+.accomplish header h1 {
+  color: var(--Deep-teal);
+  position: relative;
+  padding-bottom: 24px;
+}
+.accomplish header h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3.7px;
+  background-color: var(--Golden-sand);
+}
+.accomplish .img-container {
+  position: relative;
+}
+.accomplish .img-container::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 50%;
+  background-color: rgba(0, 82, 155, 0.3490196078);
+  right: -50px;
+  top: -50px;
+  z-index: -1;
+}
+.accomplish .checks ul li {
+  position: relative;
+}
+.accomplish .checks ul li ::before {
+  position: absolute;
+  content: "\e92d";
+  left: -50px;
+  top: 50%;
+  color: var(--Deep-teal);
+  transform: translate(0, -50%);
+  font-size: 22px;
+  font-family: "Material Icons";
+}
+
+.objectives .Program {
+  border-radius: 23px;
+  padding: 40px;
+  border: 1px solid #e2e2e2;
+}
+.objectives .Program h1 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.objectives .Program .description {
+  font-size: 16px;
+}
+.objectives .Program .pricing .price {
+  font-size: 30px;
+  color: #333;
+}
+.objectives .Program .pricing .type {
+  color: rgba(0, 0, 0, 0.7137254902);
+}
+.objectives .Program .start {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  border: 2px solid;
+  border-color: var(--Deep-teal);
+  color: var(--Deep-teal);
+  transition: ease-in-out 0.2s;
+}
+.objectives .Program .start:hover {
+  color: #fff;
+  background-color: var(--Deep-teal);
+}
+
+.ourTeam .teammateImage {
+  width: 200px;
+  border-radius: 50%;
+}
+.ourTeam .social-media {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.ourTeam .social-media svg {
+  font-size: 28px;
+}
+
+* {
+  margin: 0;
+  font-family: "Poppins", serif;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+:root {
+  --Deep-teal:#256882;
+  --Soft-mist:#e3e3e3;
+  --Aqua-breeze:#A1D6E2;
+  --Midnight-blue:#1B3A4B;
+  --Golden-sand:#D8B773;
+  --text-100:#000000;
+  --text-200:#2c2c2c;
+  --bg-White:#fff;
+  --bg-100:#F7EEDD;
+  --bg-200:#ede4d3;
+  --bg-300:#c4bcab;
+}
+
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--Deep-teal); /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-100); /* color of the scrollbar */
+  border-radius: 0px; /* roundness of the scrollbar */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;/*# sourceMappingURL=App.css.map */

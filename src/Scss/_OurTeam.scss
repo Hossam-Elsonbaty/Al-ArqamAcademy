@@ -1,0 +1,14 @@
+.ourTeam{
+  .teammateImage{
+    width: 200px;
+    border-radius: 50%;
+  }
+  .social-media{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    svg{
+      font-size: 28px;
+    }
+  }
+}
