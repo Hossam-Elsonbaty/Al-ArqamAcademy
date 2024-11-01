@@ -25,16 +25,16 @@
         position: relative;
         span{
           position: absolute;
-          width: 123.41px;
+          width: 127.41px;
           height: 2px;
-          right: 0;
+          right: .3rem;
           top: 42px;
           background-color: #286982;
           transform: rotate(-2.04deg);
           &:last-child{
             width: 60px;
             top: 50px;
-            right: 4rem;
+            right: 4.4rem;
           }
         }
       }

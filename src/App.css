@@ -203,13 +203,13 @@
   position: absolute;
   width: 123.41px;
   height: 2px;
-  right: 0;
+  right: 0.5rem;
   top: 42px;
   background-color: #286982;
   transform: rotate(-2.04deg);
 }
 .about-section .content-wrapper .text-section h2 span:last-child {
-  width: 60px;
+  width: 68px;
   top: 50px;
   right: 4rem;
 }
@@ -305,9 +305,9 @@
 }
 .programs-section .content-wrapper .text-section h2 span {
   position: absolute;
-  width: 123.41px;
+  width: 127.41px;
   height: 2px;
-  right: 0;
+  right: 0.3rem;
   top: 42px;
   background-color: #286982;
   transform: rotate(-2.04deg);
@@ -315,7 +315,7 @@
 .programs-section .content-wrapper .text-section h2 span:last-child {
   width: 60px;
   top: 50px;
-  right: 4rem;
+  right: 4.4rem;
 }
 .programs-section .content-wrapper .text-section .list {
   margin-bottom: 20px;
