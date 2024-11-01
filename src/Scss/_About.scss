@@ -1,0 +1,106 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f8ff;
+  padding: 9rem;
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    width: 100%;
+    .text-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      flex: 1;
+      padding-right: 50px;
+      h2 {
+        font-size: 26px;
+        font-weight: bold;
+        color: #1C2D49;
+        margin-bottom: 10px;
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          width: 123.41px;
+          height: 2px;
+          right: 224px;
+          top: 42px;
+          background-color: #286982;
+          transform: rotate(-2.04deg);
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          width: 61.41px;
+          height: 2px;
+          right: 286px;
+          top: 53px;
+          background-color: #286982;
+          transform: rotate(-2.04deg);
+        }
+      }
+      p {
+        color: #6a6a6a;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .list {
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .list-item {
+          display: flex;
+          align-items: center;
+          color: #2a2a2a;
+          font-weight: 500;
+          svg {
+            color: #286982;
+            margin-right: 10px;
+          }
+        }
+      }
+      .learn-more-btn {
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #286982;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: max-content;
+      }
+    }
+    .image-section{
+      position: relative;
+      width: 470px;
+      height: 610px;
+      z-index: 2;
+      .before{
+        border-top-left-radius: 256.02px;
+        border-top-right-radius: 256.02px;
+        border-top: 2px solid #286982;
+        border-left:2px solid #286982;
+        width: 100%;
+        height: 103.5%;
+        position: absolute;
+        top: -21px;
+        left: -23px;
+        z-index: -1;
+      }
+      img{
+        border-top-left-radius: 256.02px;
+        border-top-right-radius: 256.02px;
+        width: 100%;
+        height: 100%;
+      }
+    } 
+  }
+}

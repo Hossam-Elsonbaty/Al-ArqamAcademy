@@ -18,6 +18,7 @@ module.exports = {
       '3xl': '1.953rem',
       '4xl': '2.441rem',
       '5xl': '3.052rem',
+      '6xl': '4.7rem',
     },
     lineHeight:{
       'xxl':'3rem'
@@ -32,14 +33,17 @@ module.exports = {
       'lg': '0.5rem',
       'full': '9999px',
       'large': '12px',
+      '2xl': '16px',
     },
     extend: {
       colors: {
         'navbar-blue' : 'rgb(40 105 130)',
         'golden-sand' : '#d8b773',
         'deep-teal' : '#256882',
+        'blueBlack' : '#1C2D49',
         'deep-teal-hover' : '#22566a',
         'golden-sand-hover' : 'rgb(178 150 92)',
+        'gray' : '#f5f5f5',
       }
     },
   },

@@ -1,8 +1,7 @@
-import React from 'react';
-import Logo from '../Images/PNG Blue.png';
+import React,{ useState } from 'react';
+import Logo from '../Images/PNG Blue Horizontal.png';
 import { Link } from 'react-scroll';
-
-import { useState } from 'react'
+import { BsGift } from "react-icons/bs";
 import {
   Dialog,
   DialogPanel,
@@ -15,7 +14,7 @@ import {
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
-    <header className="z-10 bg-white sticky top-0 w-full">
+    <header className="z-10 bg-white fixed shadow-md top-0 w-full">
       <nav aria-label="Global" className="mx-auto px-2 flex max-w-7xl items-center justify-between p-1 lg:px-8">
         <div className="flex lg:flex-1">
           <a href='/' className="-m-1.5 p-1.5">
@@ -35,24 +34,25 @@ const Navbar = () => {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <a href='/' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            HOME
+            Home
           </a>
           <Link  spy={true} smooth={true} offset={50} duration={500} to="heroSection" className=" cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            ABOUT
+            About Us
           </Link>
           <Link spy={true} smooth={true} offset={50} duration={500} to='programsSection' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            PROGRAMS
+            Our Programs
           </Link>
           <Link spy={true} smooth={true} offset={-250} duration={500} to='ourTeam' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            Our Team
+            Register Now
           </Link>
           <Link spy={true} smooth={true} offset={50} duration={500} to='footerSection' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            CONTACT US
+            Contact Us
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login" className="py-1 px-2 text-sm font-semibold leading-6 font-poppins border border-navbar-blue text-navbar-blue rounded">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a href="/login" className="py-3 px-6 flex gap-2 items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+            <BsGift className='text-base'/> 
+            <p className='text-base'>Gift</p>
           </a>
         </div>
       </nav>
@@ -85,7 +85,7 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
-                  HOME
+                  Home
                 </a>
                 <Link
                   smooth={true}
@@ -96,7 +96,7 @@ const Navbar = () => {
                   to='heroSection'
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
-                  ABOUT
+                  About Us
                 </Link>
                 <Link
                   to='programsSection'
@@ -107,7 +107,7 @@ const Navbar = () => {
                   duration={500}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
-                  PROGRAMS
+                  Our Programs
                 </Link>
                 <Link
                   to='ourTeam'
@@ -118,7 +118,7 @@ const Navbar = () => {
                   duration={500}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
-                  Our Team
+                  Register Now
                 </Link>
                 <Link
                   to='footerSection'

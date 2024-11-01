@@ -7,6 +7,9 @@ import { Programs } from '../Components/Programs';
 import  Poster  from '../Components/Poster';
 import { OurTeam } from '../Components/OurTeam';
 import { Footer } from '../Components/Footer';
+import About from '../Components/About';
+import OurPrograms from '../Components/OurPrograms';
+import { GiftComponent } from '../Components/GiftComponent';
 const Home = () => {
   const location = useLocation();
   useEffect(() => {
@@ -20,11 +23,14 @@ const Home = () => {
   return (
     <>
       <Hero></Hero> 
-      <Objectives></Objectives>
-      <Accomplishes></Accomplishes>
+      {/* <Objectives></Objectives> */}
+      <About></About>
+      <OurPrograms></OurPrograms>
+      <GiftComponent></GiftComponent>
+      {/* <Accomplishes></Accomplishes>
       <Poster></Poster>
       <Programs></Programs>
-      <OurTeam></OurTeam>
+      <OurTeam></OurTeam> */}
       <Footer></Footer>
     </>
   )
