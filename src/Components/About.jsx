@@ -7,7 +7,11 @@ export default function About() {
     <section class="about-section">
       <div class="content-wrapper">
         <div class="text-section">
-          <h2>About Al-Arqam Academy</h2>
+          <h2>
+            About Al-Arqam Academy
+            <span></span>
+            <span></span>
+          </h2>
           <p>
             Al-Arqam Academy aims to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah. The program emphasizes a modern, practical approach while staying true to the understanding of the righteous predecessors.
           </p>

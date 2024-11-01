@@ -11,7 +11,11 @@ export default function OurPrograms() {
           <img src={image}/>
         </div>
         <div class="text-section">
-          <h2>Our Programs</h2>
+          <h2>
+            Our Programs
+            <span></span>
+            <span></span>
+          </h2>
           <div class="list">
             <div class="list-item">
               <TbSquareNumber1 />

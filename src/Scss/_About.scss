@@ -17,30 +17,25 @@
       flex: 1;
       padding-right: 50px;
       h2 {
+        width: fit-content;
         font-size: 26px;
         font-weight: bold;
         color: #1C2D49;
         margin-bottom: 10px;
         position: relative;
-        &::after{
-          content: '';
+        span{
           position: absolute;
           width: 123.41px;
           height: 2px;
-          right: 224px;
+          right: 0;
           top: 42px;
           background-color: #286982;
           transform: rotate(-2.04deg);
-        }
-        &::before{
-          content: '';
-          position: absolute;
-          width: 61.41px;
-          height: 2px;
-          right: 286px;
-          top: 53px;
-          background-color: #286982;
-          transform: rotate(-2.04deg);
+          &:last-child{
+            width: 60px;
+            top: 50px;
+            right: 4rem;
+          }
         }
       }
       p {
