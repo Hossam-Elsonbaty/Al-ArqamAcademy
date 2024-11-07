@@ -9,15 +9,15 @@
       color: var(--Deep-teal);
       position: relative;
       padding-bottom:24px ;
-      &::after{
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 3.7px;
-        background-color: var(--Golden-sand);
-      }
+      // &::after{
+      //   content: "";
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 80px;
+      //   height: 3.7px;
+      //   background-color: var(--Golden-sand);
+      // }
     }
   }
   .img-container{

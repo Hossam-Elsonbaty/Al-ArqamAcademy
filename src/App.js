@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'; 
 import {BrowserRouter as Router , Routes, Route, useLocation, Link } from 'react-router-dom';
 import Home from '../src/Pages/Home'
+import {AboutUs} from '../src/Pages/AboutUs'
 import {Login} from '../src/Pages/Login'
 import Navbar from '../src/Components/Navbar'
 import AOS from 'aos';
@@ -21,6 +22,7 @@ const App = ()=> {
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" exact element={<SignUp />} />
         <Route path="/" exact element={<Home />} />
+        <Route path="/about-us" exact element={<AboutUs />} />
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
       </Routes>

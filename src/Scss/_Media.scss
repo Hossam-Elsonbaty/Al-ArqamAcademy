@@ -21,3 +21,31 @@
     }
   }
 }
+@mixin header() {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: fit-content;
+  position: relative;
+  span{
+    position: absolute;
+    width: 123.41px;
+    height: 2px;
+    right: .5rem;
+    top: 42px;
+    background-color: #286982;
+    transform: rotate(-2.04deg);
+    &:last-child{
+      width: 68px;
+      top: 50px;
+      right: 4rem;
+    }
+  }
+}
+@mixin button() {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+}

@@ -8,14 +8,18 @@ import { SiKnowledgebase } from "react-icons/si";
 export const Objectives = () => {
   return (
     <>
-      <div id='objectiveSection' class="bg-white py-24 sm:py-32 objectives items-center flex flex-col gap-10">
+      <div id='objectiveSection' class=" py-24 sm:py-14 objectives items-center flex flex-col gap-28">
         <header className='header'>
-          <h1 className='font-LibreBaskerville mt-2 text-xl font-bold tracking-tight sm:text-4xl'>Objectives of Al-Arqam Academy</h1>
-          <span className='font-poppins'> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </span>
+          <h1 className='font-poppins mt-2 text-xl font-bold tracking-tight sm:text-2xl'>
+            Objectives of Al-Arqam Academy
+            <span></span>
+            <span></span>
+          </h1>
+          <p className='font-poppins'> Establish a generation that, </p>
         </header>
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-6 lg:px-14">
           <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-            <div className='objective'data-aos="fade-up"data-aos-delay="30" data-aos-duration="300">
+            <div className='objective 'data-aos="fade-up"data-aos-delay="30" data-aos-duration="300">
               <span className='icon-cont'><GiBookshelf /></span>
               <h1> Shariah-related information </h1>
               <span className='description'> 
