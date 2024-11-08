@@ -29,7 +29,7 @@ export default function About() {
               <FaCheckCircle/> Our Team
             </div>
           </div>
-          <button class="learn-more-btn">Learn More</button>
+          <a href='/about-us' class="learn-more-btn">Learn More</a>
         </div>
         <div class="image-section">
           <div className='before'></div>

@@ -10,6 +10,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import { SignUp } from './Pages/SignUp';
 import { ProgramApplication } from './Pages/ProgramApplication';
 import { ContactUs } from './Pages/ContactUs';
+import { Footer } from './Components/Footer';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -26,6 +27,7 @@ const App = ()=> {
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
       </Routes>
+      {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Footer />}
     </>
   )
 }

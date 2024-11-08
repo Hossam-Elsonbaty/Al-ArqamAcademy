@@ -32,6 +32,7 @@
     width: 123.41px;
     height: 2px;
     right: .5rem;
+    @content;
     top: 42px;
     background-color: #286982;
     transform: rotate(-2.04deg);
@@ -39,6 +40,7 @@
       width: 68px;
       top: 50px;
       right: 4rem;
+      @content;
     }
   }
 }

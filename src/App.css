@@ -138,8 +138,9 @@
 }
 
 .ourTeam .teammateImage {
-  width: 200px;
-  border-radius: 50%;
+  width: 280px;
+  height: 330px;
+  border-radius: 14px;
 }
 .ourTeam .social-media {
   display: flex;
@@ -559,7 +560,7 @@
 }
 
 .aboutUs-container {
-  padding: 5rem 0;
+  padding: 5rem 0 0 0;
   display: flex;
   flex-direction: column;
 }
@@ -702,6 +703,7 @@
 }
 .aboutUs-container .accomplish .col {
   display: flex;
+  justify-content: space-around;
   gap: 75px;
 }
 .aboutUs-container .accomplish .col .text-cont {
@@ -709,7 +711,14 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 553px;
+  width: 42%;
+  position: relative;
+}
+.aboutUs-container .accomplish .col .text-cont ul {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 51px;
 }
 .aboutUs-container .accomplish .col .text-cont p {
   display: -webkit-inline-box;
@@ -719,15 +728,90 @@
   font-size: 40px;
   margin-right: 10px;
 }
-.aboutUs-container .accomplish .col .text-cont p ul {
-  display: block;
-}
 .aboutUs-container .accomplish button {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+}
+.aboutUs-container .graduates-container {
+  display: flex;
+}
+.aboutUs-container .graduates-container aside {
+  background-color: #EBF7FC;
+}
+.aboutUs-container .graduates-container aside:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 6rem;
+}
+.aboutUs-container .graduates-container aside:first-child header h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.aboutUs-container .graduates-container aside:first-child header h1 span {
+  position: absolute;
+  width: 123.41px;
+  height: 2px;
+  right: 0.5rem;
+  top: 42px;
+  background-color: #286982;
+  transform: rotate(-2.04deg);
+}
+.aboutUs-container .graduates-container aside:first-child header h1 span:last-child {
+  width: 68px;
+  top: 50px;
+  right: 4rem;
+}
+.aboutUs-container .graduates-container aside:first-child p {
+  color: #404040;
+  font-size: 16px;
+}
+.aboutUs-container .graduates-container aside:first-child button {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+}
+.aboutUs-container .graduates-container aside:last-child img {
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.aboutUs-container #OurTeam header h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.aboutUs-container #OurTeam header h1 span {
+  position: absolute;
+  width: 123.41px;
+  height: 2px;
+  right: 0.5rem;
+  width: 72px;
+  right: 2px;
+  top: 42px;
+  background-color: #286982;
+  transform: rotate(-2.04deg);
+}
+.aboutUs-container #OurTeam header h1 span:last-child {
+  width: 68px;
+  top: 50px;
+  right: 4rem;
+  width: 72px;
+  right: 2px;
 }
 
 @font-face {

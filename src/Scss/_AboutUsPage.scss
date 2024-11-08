@@ -1,5 +1,5 @@
 .aboutUs-container{
-  padding: 5rem 0;
+  padding: 5rem 0 0 0;
   display: flex;
   flex-direction: column;
   .about-header{
@@ -25,6 +25,7 @@
       @include button()
     }
   }
+  // objectives ////////////////
   .objectives{
     #objectiveSection{
       background-color:#f0f8ff ;
@@ -69,6 +70,7 @@
       }
     }
   }
+  // accomplish //////////////////
   .accomplish{
     padding:6rem 4rem;
     display: flex;
@@ -83,13 +85,21 @@
     }
     .col{
       display: flex;
+      justify-content: space-around;
       gap: 75px;
       .text-cont{
         font-size: 16px;
         display: flex;
         flex-direction: column;
         gap: 30px;
-        width:553px ;
+        width:42% ;
+        position: relative;
+        ul{
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 51px;
+        }
         p{
           display: -webkit-inline-box;
           svg{
@@ -97,14 +107,55 @@
             font-size: 40px;
             margin-right: 10px;
           }
-          ul{
-            display: block;
-          }
         }
       }
     }
     button{
       @include button()
+    }
+  }
+  // graduates ///////////////////
+  .graduates-container{
+    display: flex;
+    aside{
+      background-color:#EBF7FC ;
+      &:first-child{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+        padding: 6rem;
+        header {
+          h1{
+            @include header()
+          }
+        }
+        p{
+          color: #404040;
+          font-size:16px ;
+        }
+        button{
+          @include button()
+        }
+      }
+      &:last-child{
+        img{
+          height: 100%;
+          width: 100%;
+          clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+      }
+    }
+  }
+  // Our team ///////////////////
+  #OurTeam{
+    header{
+      h1{
+        @include header(){
+          width: 72px;
+          right: 2px;
+        }
+      }
     }
   }
 }

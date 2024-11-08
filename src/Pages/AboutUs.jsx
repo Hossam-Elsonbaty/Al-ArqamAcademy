@@ -1,6 +1,8 @@
 import React from 'react';
 import { Objectives } from '../Components/Objectives';
 import { FaCircleCheck } from "react-icons/fa6";
+import { Graduates } from '../Components/Graduates';
+import { OurTeam } from '../Components/OurTeam';
 export const AboutUs = () => {
   return (
     <section className='aboutUs-container'>
@@ -41,22 +43,22 @@ export const AboutUs = () => {
             <p><FaCircleCheck/>Studying the Shariah Sciences from primary sources (the Quran and Sunnah) by understanding the best of generations of the righteous predecessors with the most significant explanations from previous and contemporary trusted scholars.</p>
             <p><FaCircleCheck/>
               Tijan Curriculum incorporates 7 domains of Shariah
-              <ul>
-                <li>1-Arabic Language</li>
-                <li>2-Aqeedah</li>
-                <li>3-Fiqh</li>
-                <li>4-Hadith</li>
-                <li>5-Tafseer</li>
-                <li>6-Islamic Akhlaq</li>
-                <li>7-Seerah</li>
-              </ul>
             </p>
+            <ul>
+              <li>1-Arabic Language</li>
+              <li>2-Aqeedah</li>
+              <li>3-Fiqh</li>
+              <li>4-Hadith</li>
+              <li>5-Tafseer</li>
+              <li>6-Islamic Akhlaq</li>
+              <li>7-Seerah</li>
+            </ul>
           </div>
         </div>
         <button>Register Now</button>
       </section>
-      <section className="graduate"></section>
-      <section className="our-team"></section>
+      <Graduates></Graduates>
+      <OurTeam></OurTeam>
     </section>
   )
 }
