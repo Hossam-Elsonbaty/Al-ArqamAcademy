@@ -814,6 +814,106 @@
   right: 2px;
 }
 
+main.programs-page {
+  background-image: url("./Images/Grey.png");
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 8rem 8rem 8rem;
+}
+main.programs-page .programs-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 4rem;
+}
+main.programs-page .programs-header h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+main.programs-page .programs-header h1 span {
+  position: absolute;
+  width: 123.41px;
+  height: 2px;
+  right: 0.5rem;
+  top: 42px;
+  background-color: #286982;
+  transform: rotate(-2.04deg);
+}
+main.programs-page .programs-header h1 span:last-child {
+  width: 68px;
+  top: 50px;
+  right: 4rem;
+}
+main.programs-page .programs-header p {
+  font-weight: 500;
+  color: #8C8B8B;
+}
+main.programs-page .programs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  width: 100%;
+}
+main.programs-page .programs-col .program {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+main.programs-page .programs-col .program aside.content-aside {
+  display: flex;
+  gap: 20px;
+}
+main.programs-page .programs-col .program aside.content-aside svg {
+  color: #286982;
+  font-size: 50px;
+}
+main.programs-page .programs-col .program aside.content-aside h2 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1C2D49;
+}
+main.programs-page .programs-col .program aside.content-aside p {
+  width: 343px;
+}
+main.programs-page .programs-col .program aside.image-aside {
+  position: relative;
+  z-index: 1;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main.programs-page .programs-col .program aside.image-aside::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #286982;
+  border-radius: 8px;
+  z-index: -1;
+  bottom: -20px;
+  left: 24px;
+}
+main.programs-page .programs-col .program aside.image-aside img {
+  width: 350px;
+  border-radius: 8px;
+}
+main.programs-page button {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 6rem;
+  margin-top: 4rem;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */

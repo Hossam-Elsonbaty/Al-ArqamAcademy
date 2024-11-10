@@ -21,7 +21,7 @@ export const OurTeam = () => {
               <div className="imgContainer">
                 <img src={image2} alt="image" className='teammateImage' />
               </div>
-              <h1 className='font-LibreBaskerville text-xl'>Dr. Hala Charif</h1>
+              <h1 className='font-poppins text-2xl font-bold'>Dr. Hala Charif</h1>
               <p className='description text-zinc-500'> 
                 Al-Arqam Academy Director
               </p>
@@ -35,7 +35,7 @@ export const OurTeam = () => {
               <div className="imgContainer">
                 <img src={image1} alt="image" className='teammateImage' />
               </div>
-              <h1 className='font-LibreBaskerville text-xl'>Moaz Raof</h1>
+              <h1 className='font-poppins text-2xl font-bold'>Imam. Moaz Raof</h1>
               <p className='description text-zinc-500'> 
                 Imam of Islamic Center of TN
               </p>
