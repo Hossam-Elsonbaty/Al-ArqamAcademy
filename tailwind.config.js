@@ -9,6 +9,9 @@ module.exports = {
       'cairo' : ['Cairo', 'sans-serif'],
       'LibreBaskerville' : ['Libre Baskerville', 'sans-serif'],
     },
+    boxShadow: {
+      'custom':'0px 4px 4px 0px #00000036'
+    },
     fontSize: {
       xxs: '0.6rem',
       sm: '0.8rem',
@@ -44,6 +47,7 @@ module.exports = {
         'deep-teal-hover' : '#22566a',
         'golden-sand-hover' : 'rgb(178 150 92)',
         'gray' : '#f5f5f5',
+        'input' : '#ECF9FE',
       }
     },
   },

@@ -1,0 +1,79 @@
+.application-container {
+  padding: 4.5rem 6rem 6rem 4.5rem;
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding-top: 2rem;
+    h1 {
+      @include header();
+      span{
+        position: absolute;
+        width: 56px;
+        height: 2px;
+        right: 4px;
+        top: 42px;
+        background-color: #286982;
+        transform: rotate(-2.04deg);
+        &:last-child{
+          width: 31px;
+          top: 50px;
+          right: 29px;
+        }
+      }
+    }
+    .switcher {
+      display: flex;
+      gap: 10px;
+      .choice{
+        width: 150px;
+        background-color: #286982;
+        color: #fff;
+        padding: 8px;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        p{
+          font-size: 18px;
+        }
+      }
+      .other{
+        width: 150px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: #a1a1a1;
+        padding: 8px;
+        text-align: center;
+        background-color: transparent;
+        p{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 2rem;
+    padding: 0 5rem;
+    .input-cont{
+      display: flex;
+      gap: 40px;
+      input,select{
+        width: 360px;
+        background-color: #ECF9FE;
+        border-radius: 15px;
+        padding: 16px;
+        box-shadow: 0 4px 4px 0 #00000036;
+      }
+    }
+    button{
+      @include button ();
+      width:260px;
+    }
+  }
+}

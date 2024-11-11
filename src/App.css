@@ -914,6 +914,109 @@ main.programs-page button {
   margin-top: 4rem;
 }
 
+.application-container {
+  padding: 4.5rem 6rem 6rem 4.5rem;
+}
+.application-container header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding-top: 2rem;
+}
+.application-container header h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.application-container header h1 span {
+  position: absolute;
+  width: 123.41px;
+  height: 2px;
+  right: 0.5rem;
+  top: 42px;
+  background-color: #286982;
+  transform: rotate(-2.04deg);
+}
+.application-container header h1 span:last-child {
+  width: 68px;
+  top: 50px;
+  right: 4rem;
+}
+.application-container header h1 span {
+  position: absolute;
+  width: 56px;
+  height: 2px;
+  right: 4px;
+  top: 42px;
+  background-color: #286982;
+  transform: rotate(-2.04deg);
+}
+.application-container header h1 span:last-child {
+  width: 31px;
+  top: 50px;
+  right: 29px;
+}
+.application-container header .switcher {
+  display: flex;
+  gap: 10px;
+}
+.application-container header .switcher .choice {
+  width: 150px;
+  background-color: #286982;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.application-container header .switcher .choice p {
+  font-size: 18px;
+}
+.application-container header .switcher .other {
+  width: 150px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #a1a1a1;
+  padding: 8px;
+  text-align: center;
+  background-color: transparent;
+}
+.application-container header .switcher .other p {
+  font-size: 18px;
+}
+.application-container form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 2rem;
+  padding: 0 5rem;
+}
+.application-container form .input-cont {
+  display: flex;
+  gap: 40px;
+}
+.application-container form .input-cont input, .application-container form .input-cont select {
+  width: 360px;
+  background-color: #ECF9FE;
+  border-radius: 15px;
+  padding: 16px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2117647059);
+}
+.application-container form button {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+  width: 260px;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */
