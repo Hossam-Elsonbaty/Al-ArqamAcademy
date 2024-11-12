@@ -1017,6 +1017,163 @@ main.programs-page button {
   width: 260px;
 }
 
+main.contact-us {
+  background: linear-gradient(0deg, #FFF, rgba(40, 105, 130, 0.17)), linear-gradient(359.45deg, #fff -24.57%, rgba(40, 105, 130, 0) 76.31%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+main.contact-us .dotted {
+  position: absolute;
+  top: -69px;
+  right: -69px;
+  z-index: -1;
+}
+main.contact-us .dot {
+  position: absolute;
+  bottom: -69px;
+  left: -69px;
+  z-index: -1;
+}
+main.contact-us .card {
+  position: relative;
+  background-color: #FFFFFF;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.0784313725);
+}
+main.contact-us .card h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+main.contact-us .card h1 img {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+}
+main.contact-us .card .elements {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+main.contact-us .card .elements aside.message {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main.contact-us .card .elements aside.message p {
+  font-weight: 400;
+  font-size: 18px;
+}
+main.contact-us .card .elements aside.message form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main.contact-us .card .elements aside.message form input {
+  width: 422px;
+  border: rgba(238, 238, 238, 0.9333333333);
+  border-radius: 15px;
+  border: 1px #B4BEC8 solid;
+  padding: 10px;
+  outline: none;
+}
+main.contact-us .card .elements aside.message form .checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #6c757d;
+}
+main.contact-us .card .elements aside.message form .checkbox-container input[type=checkbox] {
+  display: none;
+}
+main.contact-us .card .elements aside.message form .checkbox-container input[type=checkbox]:checked + .custom-checkbox::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+main.contact-us .card .elements aside.message form .checkbox-container .label {
+  font-size: 11px;
+  color: #757980;
+}
+main.contact-us .card .elements aside.message form .checkbox-container .custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #286982;
+  border-radius: 4px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+}
+main.contact-us .card .elements aside.message form .checkbox-container .custom-checkbox::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #286982;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+  border-radius: 2px;
+}
+main.contact-us .card .elements aside.message form button {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+  width: 422px;
+}
+main.contact-us .card .elements aside.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main.contact-us .card .elements aside.contact-info .social {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+main.contact-us .card .elements aside.contact-info .social .social-logo {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+main.contact-us .card .elements aside.contact-info .social .social-logo img {
+  width: 25px;
+}
+main.contact-us .card .elements aside.contact-info .icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main.contact-us .card .elements aside.contact-info .icons span {
+  font-size: 16px;
+  color: #1C2D49;
+}
+main.contact-us .card .elements aside.contact-info .icons svg {
+  color: #286982;
+  font-size: 20px;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */

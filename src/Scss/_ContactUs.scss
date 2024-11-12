@@ -1,0 +1,143 @@
+main.contact-us {
+  background:
+  linear-gradient(0deg, #FFF, rgb(40 105 130 / 17%)),
+  linear-gradient(359.45deg, #fff -24.57%, rgba(40, 105, 130, 0) 76.31%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+  .dotted {
+    position: absolute;
+    top: -69px;
+    right: -69px;
+    z-index: -1;
+  }
+  .dot {
+    position: absolute;
+    bottom: -69px;
+    left: -69px;
+    z-index: -1;
+  }
+  .card {
+    position: relative;
+    background-color: #FFFFFF;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 10px #00000014;
+    h1{
+      @include h1();
+    }
+    .elements{
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      aside.message {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        p{
+          font-weight: 400;
+          font-size:18px ;
+        }
+        form{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 40px;
+          width: fit-content;
+          input {
+            width:422px;
+            border: #eeee;
+            border-radius:15px ;
+            border: 1px #B4BEC8 solid;
+            padding: 10px;
+            outline: none;
+          }
+          .checkbox-container {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #6c757d;
+            input[type="checkbox"]{
+              display: none;
+              &:checked + .custom-checkbox::after{
+                transform: translate(-50%, -50%) scale(1);
+              }
+            }
+            .label{
+              font-size: 11px;
+              color: #757980;
+            }
+            .custom-checkbox {
+              width: 18px;
+              height: 18px;
+              border: 2px solid #286982;
+              border-radius: 4px;
+              background-color: transparent;
+              display: inline-block;
+              position: relative;
+              cursor: pointer;
+              margin-right: 8px;
+              &::after{
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: #286982;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                transition: transform 0.2s ease;
+                border-radius: 2px;
+              }
+            }
+          }
+          button {
+            @include button ();
+            width: 422px;
+          }
+        }
+      }
+      aside.contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .social{
+          align-self: center;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .social-logo{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            img{
+              width: 25px;
+            }
+          }
+        }
+        .icons{
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          span{
+            font-size: 16px;
+            color: #1C2D49;
+          }
+          svg {
+            color: #286982;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
