@@ -12,6 +12,7 @@ import { ProgramApplication } from './Pages/ProgramApplication';
 import { ContactUs } from './Pages/ContactUs';
 import { Footer } from './Components/Footer';
 import { OurPrograms } from './Pages/OurPrograms';
+import { Gift } from './Pages/Gift';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -28,6 +29,7 @@ const App = ()=> {
         <Route path="/our-programs" exact element={<OurPrograms />} />
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
+        <Route path="/support-our-journey" exact element={<Gift />} />
       </Routes>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Footer />}
     </>

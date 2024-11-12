@@ -1062,7 +1062,7 @@ main.contact-us .card h1 {
 main.contact-us .card h1 img {
   position: absolute;
   right: 0;
-  bottom: -8px;
+  bottom: -12px;
 }
 main.contact-us .card .elements {
   display: flex;
@@ -1174,9 +1174,201 @@ main.contact-us .card .elements aside.contact-info .icons svg {
   font-size: 20px;
 }
 
+main.gift-main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4.5rem;
+}
+main.gift-main .hero {
+  background-image: url("./Images/item9.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5rem 3rem;
+  height: 690px;
+}
+main.gift-main .hero .message {
+  border-radius: 15px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+  gap: 20px;
+}
+main.gift-main .hero .message h1 {
+  color: #1C2D49;
+  font-size: 26px;
+  font-weight: 600;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  font-size: 40px;
+}
+main.gift-main .hero .message h1 img {
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+}
+main.gift-main .hero .message .ayah {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Kawkab Mono Bold";
+  text-align: center;
+  line-height: 40px;
+}
+main.gift-main .hero .message .phrase, main.gift-main .hero .message .translate {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+main.gift-main .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: auto;
+  padding: 4rem;
+}
+main.gift-main .content header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+main.gift-main .content header h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+main.gift-main .content header .choice {
+  display: flex;
+  gap: 20px;
+}
+main.gift-main .content header .choice .normal {
+  cursor: pointer;
+  width: 358px;
+  padding: 17px;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #6F7578;
+  border: 1px solid #B4BEC8;
+  background-color: transparent;
+  text-align: center;
+}
+main.gift-main .content header .choice .selected {
+  color: #fff;
+  background-color: #286982;
+}
+main.gift-main .content .amount {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+main.gift-main .content .amount h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #757980;
+}
+main.gift-main .content .amount .amount-cont {
+  display: flex;
+  gap: 30px;
+}
+main.gift-main .content .amount .amount-cont .price {
+  width: 152px;
+  padding: 17px;
+  font-size: 20px;
+  border-radius: 15px;
+  border: 1px solid #B4BEC8;
+  color: rgba(135, 135, 135, 0.6784313725);
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+main.gift-main .content .amount .amount-cont .selected-price {
+  background-color: #286982;
+  color: #fff;
+}
+main.gift-main .content .amount .amount-cont .enter-anumber {
+  flex-grow: 2;
+  border: 1px solid #B4BEC8;
+  outline: none;
+  border-radius: 15px;
+  padding: 0 63px;
+}
+main.gift-main .content .amount .amount-cont .enter-anumber input {
+  outline: none;
+  color: rgba(135, 135, 135, 0.6784313725);
+}
+main.gift-main .content .amount .in-honor {
+  width: 358px;
+  font-size: 15px;
+  color: #878787;
+  border-radius: 15px;
+  border: 1px solid #B4BEC8;
+  padding: 17px;
+  outline: none;
+}
+main.gift-main .content .amount .proceed {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  padding: 17px;
+}
+main.gift-main .content .amount .checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #6c757d;
+}
+main.gift-main .content .amount .checkbox-container input[type=checkbox] {
+  display: none;
+}
+main.gift-main .content .amount .checkbox-container input[type=checkbox]:checked + .custom-checkbox::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+main.gift-main .content .amount .checkbox-container .label {
+  font-size: 11px;
+  color: #757980;
+}
+main.gift-main .content .amount .checkbox-container .custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #286982;
+  border-radius: 4px;
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+}
+main.gift-main .content .amount .checkbox-container .custom-checkbox::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #286982;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+  border-radius: 2px;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kawkab Mono Bold";
+  src: url("./Fonts/kawkab-bold.ttf") format("truetype"); /* Adjust path and format if needed */
   font-weight: normal;
   font-style: normal;
 }
