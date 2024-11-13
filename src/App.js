@@ -13,6 +13,7 @@ import { ContactUs } from './Pages/ContactUs';
 import { Footer } from './Components/Footer';
 import { OurPrograms } from './Pages/OurPrograms';
 import { Gift } from './Pages/Gift';
+import { Payment } from './Pages/Payment';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -30,6 +31,7 @@ const App = ()=> {
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
         <Route path="/support-our-journey" exact element={<Gift />} />
+        <Route path="/proceed-to-payment" exact element={<Payment />} />
       </Routes>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Footer />}
     </>

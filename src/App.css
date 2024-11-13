@@ -915,6 +915,9 @@ main.programs-page button {
 }
 
 .application-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   padding: 4.5rem 6rem 6rem 4.5rem;
 }
 .application-container header {
@@ -1015,6 +1018,85 @@ main.programs-page button {
   color: #fff;
   font-size: 18px;
   width: 260px;
+}
+.application-container .stay-in {
+  background: linear-gradient(95.04deg, rgba(40, 105, 130, 0.88) 4.18%, rgba(40, 105, 130, 0.19) 76.26%);
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 15rem;
+  margin-bottom: 5rem;
+  border-radius: 15px;
+  width: 100%;
+}
+.application-container .stay-in .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.application-container .stay-in .content h1 {
+  font-weight: 500;
+  font-size: 36px;
+  color: #fff;
+}
+.application-container .stay-in .content span {
+  font-size: 16px;
+  width: 525px;
+  color: #fff;
+}
+.application-container .stay-in .content .sign-up {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.application-container .stay-in .content .sign-up input {
+  outline: none;
+  background-color: #fff;
+  font-size: 16px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
+  padding: 18px;
+  width: 350px;
+}
+.application-container .stay-in .content .sign-up button {
+  width: 150px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #286982;
+  border-radius: 15px;
+  padding: 18px;
+  background-color: #fff;
+  box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
+}
+.application-container .stay-in .image-section {
+  position: absolute;
+  right: -20px;
+  top: -120px;
+}
+.application-container .stay-in .image-section .image-container {
+  position: relative;
+  width: 390px;
+  z-index: 2;
+}
+.application-container .stay-in .image-section .image-container .before {
+  border-top-left-radius: 256.02px;
+  border-top-right-radius: 256.02px;
+  border-top: 2px solid #286982;
+  border-left: 2px solid #286982;
+  width: 100%;
+  height: 102.5%;
+  position: absolute;
+  top: -12px;
+  left: -14px;
+  z-index: -1;
+}
+.application-container .stay-in .image-section .image-container img {
+  border-top-left-radius: 256.02px;
+  border-top-right-radius: 256.02px;
+  width: 100%;
+  height: 100%;
 }
 
 main.contact-us {
@@ -1172,6 +1254,75 @@ main.contact-us .card .elements aside.contact-info .icons span {
 main.contact-us .card .elements aside.contact-info .icons svg {
   color: #286982;
   font-size: 20px;
+}
+
+main.payment {
+  padding: 5rem;
+}
+main.payment .content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: -moz-min-content;
+  width: min-content;
+}
+main.payment .content h1 {
+  font-size: 22px;
+  color: #0F001A;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 4rem;
+}
+main.payment .content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #757980;
+}
+main.payment .content h2 span {
+  font-size: 22px;
+  font-weight: 400;
+}
+main.payment .content .credit-logo {
+  border: 1px solid #B4BEC8;
+  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main.payment .content .credit-logo img {
+  width: 48px;
+}
+main.payment .content .credit-logo span {
+  font-size: 20px;
+  color: #878787;
+}
+main.payment .content .input-cont {
+  display: flex;
+  gap: 20px;
+}
+main.payment .content .input-cont input {
+  width: 358px;
+  border-radius: 15px;
+  font-size: 15px;
+  color: #878787;
+  border: 1px solid #B4BEC8;
+  padding: 17px;
+  outline: none;
+}
+main.payment .content .input-cont .cvv-input {
+  text-align: center;
+}
+main.payment .content button {
+  background-color: #286982;
+  border-radius: 15px;
+  padding: 7px 2rem;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  padding: 17px;
 }
 
 main.gift-main {

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { ChildApplication } from '../Components/ChildApplication';
+import stayIn from '../Images/item10.jpeg'
 export const ProgramApplication = () => {
   const [student, setStudent] = useState(true);
   const [kidsCount, setKidsCount] = useState(0);
@@ -159,88 +160,23 @@ export const ProgramApplication = () => {
           </button>
         </form>
         }
+        <div className="stay-in">
+          <div className="content">
+            <h1>STAY IN TOUCH</h1>
+            <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
+            <div className='sign-up'>
+              <input type="email" placeholder='Enter Your Email' />
+              <button type="submit">Sign Up</button>
+            </div>
+          </div>
+          <div class="image-section">
+            <div className="image-container">
+              <div className='before'></div>
+              <img src={stayIn}/>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 };
-// import React, { useState } from 'react';
-// import { ChildApplication } from '../Components/ChildApplication';
-
-// export const ProgramApplication = () => {
-//   const [student, setStudent] = useState(true);
-//   const [kidsCount, setKidsCount] = useState(0);
-//   const [showChildForm, setShowChildForm] = useState(false); // New state to control ChildApplication
-//   const handleAddKids = (e) => {
-//     const value = e.target.value;
-//     setKidsCount(value);
-//     // Show ChildApplication component if a valid kids count is selected (1 or more)
-//     setShowChildForm(value > 0);
-//   };
-//   return (
-//     <>
-//       <div className="flex flex-col items-center justify-center">
-//         <div className="bg-white rounded-lg p-10 pt-20 w-full max-w-2xl">
-//           <div className="mb-8 flex justify-between items-center border-deep-teal border-solid border-t-2 rounded-t">
-//             <div
-//               className={`${
-//                 student
-//                   ? 'bg-deep-teal text-white student p-2 w-full text-center'
-//                   : 'student p-2 w-full text-center bg-transparent'
-//               }`}
-//               onClick={() => setStudent(true)}
-//             >
-//               <p className="text-base">Student</p>
-//             </div>
-//             <div
-//               className={`${
-//                 !student
-//                   ? 'bg-deep-teal text-white student p-2 w-full text-center'
-//                   : 'student p-2 w-full text-center bg-transparent'
-//               }`}
-//               onClick={() => setStudent(false)}
-//             >
-//               <p className="text-base">Parent</p>
-//             </div>
-//           </div>
-//           {student ? (
-//             // Student Form
-//             <form>
-//               {/* Student form fields */}
-//               <div className="mb-4">
-//                 <select
-//                   onChange={(e) => handleAddKids(e)}
-//                   name="kidsCount"
-//                   id="kidsCount"
-//                   className="text-sm w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none"
-//                 >
-//                   <option value="0" hidden selected>
-//                     How many kids are you interested in registering?
-//                   </option>
-//                   {[...Array(10).keys()].map((i) => (
-//                     <option key={i} value={i + 1}>
-//                       {i + 1}
-//                     </option>
-//                   ))}
-//                 </select>
-//               </div>
-//               {/* Conditionally render ChildApplication */}
-//               {showChildForm && <ChildApplication kidsCount={kidsCount} />}
-//               <button
-//                 type="submit"
-//                 className="w-full bg-deep-teal text-white py-2 rounded-md hover:bg-deep-teal-hover transition duration-200"
-//               >
-//                 Submit Application
-//               </button>
-//             </form>
-//           ) : (
-//             // Parent Form (if needed)
-//             <form>
-//               {/* Parent form fields */}
-//             </form>
-//           )}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-

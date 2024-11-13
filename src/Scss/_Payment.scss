@@ -1,0 +1,63 @@
+main.payment {
+  padding: 5rem;
+  .content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: min-content;
+    h1{
+      font-size: 22px;
+      color: #0F001A;
+      font-weight:500 ;
+      text-align: center;
+      padding-top: 4rem;
+    }
+    h2{
+      font-size: 22px;
+      font-weight: 700;
+      color:#757980 ;
+      span{
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+    .credit-logo{
+      border: 1px solid #B4BEC8;
+      border-radius: 15px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      img{
+        width: 48px;
+      }
+      span{
+        font-size: 20px;
+        color: #878787;
+      }
+    }
+    .input-cont {
+      display: flex;
+      gap: 20px;
+      input{
+        width: 358px;
+        border-radius: 15px;
+        font-size: 15px;
+        color: #878787;
+        border: 1px solid #B4BEC8;
+        padding: 17px;
+        outline: none;
+      }
+      .cvv-input{
+        text-align: center;
+      }
+    }
+    button{
+      @include button ();
+      width: 100%;
+      padding: 17px;
+    }
+  }
+}
