@@ -18,7 +18,7 @@ export const Graduates = () => {
           away from extremism and exaggeration, and what will lead them to noble characteristics and traits. If a participant is passionate about this knowledge, they can then serve the Shariah knowledge by pursuing work in related fields.
           Allah is behind the intention and He is the Guide to the right path.
         </p>
-        <button>Register Now</button>
+        <a href='/program-application'>Register Now</a>
       </aside>
       <aside>
         <img src={image} alt="image" />

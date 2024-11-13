@@ -58,7 +58,7 @@ export const OurPrograms = () => {
           </aside>
         </div>
       </section>
-      <button>Join Us</button>
+      <a href='/program-application'>Join Us</a>
     </main>
   )
 }

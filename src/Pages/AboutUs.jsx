@@ -19,7 +19,7 @@ export const AboutUs = () => {
           and to promote and reinforce sound Shariah studies with an understanding of the righteous predecessors through a modern,
           easily fathomable approach that is in touch with the reality of time and place.
         </p>
-        <button>Register Now</button>
+        <a href='/program-application'>Register Now</a>
       </header>
       <section className="objectives"><Objectives></Objectives></section>
       <section className="accomplish">
@@ -41,21 +41,24 @@ export const AboutUs = () => {
           </div>
           <div className='text-cont'>
             <p><FaCircleCheck/>Studying the Shariah Sciences from primary sources (the Quran and Sunnah) by understanding the best of generations of the righteous predecessors with the most significant explanations from previous and contemporary trusted scholars.</p>
-            <p><FaCircleCheck/>
-              Tijan Curriculum incorporates 7 domains of Shariah
-            </p>
-            <ul>
-              <li>1-Arabic Language</li>
-              <li>2-Aqeedah</li>
-              <li>3-Fiqh</li>
-              <li>4-Hadith</li>
-              <li>5-Tafseer</li>
-              <li>6-Islamic Akhlaq</li>
-              <li>7-Seerah</li>
-            </ul>
+            <div className='cell'>
+              <FaCircleCheck/>
+              <div className='p-container'>
+                <p>Tijan Curriculum incorporates 7 domains of Shariah</p>
+                <ul>
+                  <li>1-Arabic Language</li>
+                  <li>2-Aqeedah</li>
+                  <li>3-Fiqh</li>
+                  <li>4-Hadith</li>
+                  <li>5-Tafseer</li>
+                  <li>6-Islamic Akhlaq</li>
+                  <li>7-Seerah</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <button>Register Now</button>
+        <a href='/program-application'>Register Now</a>
       </section>
       <Graduates></Graduates>
       <OurTeam></OurTeam>

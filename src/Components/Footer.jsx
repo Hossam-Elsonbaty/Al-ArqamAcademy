@@ -38,7 +38,7 @@ export const Footer = () => {
             <span className='center'></span>
             <span></span>
           </div>
-          <button>Register Now</button>
+          <a href='/program-application'>Register Now</a>
           <div className='lines last'>
             <span></span>
             <span className='center'></span>
@@ -48,41 +48,6 @@ export const Footer = () => {
       </div>
       <div class="footer-bottom">
         <p>AlArqam Academy &copy; 2024. All rights reserved.</p>
-      </div>
-    </footer>
-  )
-  return (
-    <footer id='footerSection' class="bg-gray text-black py-28">
-      <div class="container mx-auto text-center">
-        <div class="flex justify-center mb-8">
-          <a href="#" class="mx-3 text-3xl ">
-            <CiFacebook/>
-          </a>
-          <a href="#" class="mx-3 text-3xl">
-            <CiInstagram/>
-          </a>
-          <a href="#" class="mx-3 text-3xl">
-            <CiTwitter/>
-          </a>
-        </div>
-        <div class="flex justify-center space-x-4 text-sm uppercase mb-8">
-          <a href="/" class="hover:underline">Home</a>
-          <a href="#" class="hover:underline">About</a>
-          <RouterLink 
-            to="/#programsSection"
-            smooth={true} 
-            duration={500} 
-            offset={-250}
-            className="cursor-pointer hover:underline"
-          >
-            Programs
-          </RouterLink>
-          <a href="/contact-us" class="hover:underline">Contact Us</a>
-          <a href="#" class="hover:underline">Our Team</a>
-        </div>
-        <div class="text-sm mt-4">
-          <p>Copyright ©2022, QuadraCode</p>
-        </div>
       </div>
     </footer>
   )

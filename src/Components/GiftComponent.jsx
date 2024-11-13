@@ -19,10 +19,10 @@ export const GiftComponent = () => {
             </p>
           </div>
           <p className='generosity'>Your generosity can transform lives. Even a small contribution can make a big difference. Let’s work together to build a brighter future for all. Donate now and be part of this blessed cause.</p>
-          <button className='gift-btn'>
+          <a href='/support-our-journey' className='gift-btn'>
             <BsGift/>
             <p>Gift</p>
-          </button>
+          </a>
         </div>
       </div>
     </section>

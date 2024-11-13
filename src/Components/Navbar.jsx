@@ -14,7 +14,7 @@ import {
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
-    <header className="z-10 bg-white fixed shadow-md top-0 w-full">
+    <header className="z-10 bg-white fixed navbar top-0 w-full">
       <nav aria-label="Global" className="mx-auto px-2 flex max-w-7xl items-center justify-between p-1 lg:px-8">
         <div className="flex lg:flex-1">
           <a href='/' className="-m-1.5 p-1.5">
@@ -36,21 +36,21 @@ const Navbar = () => {
           <a href='/' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Home
           </a>
-          <Link  spy={true} smooth={true} offset={50} duration={500} to="heroSection" className=" cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          <Link  spy={true} smooth={true} offset={-50} duration={500} to="about-section" className=" cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             About Us
           </Link>
-          <Link spy={true} smooth={true} offset={50} duration={500} to='programsSection' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          <Link spy={true} smooth={true} offset={-50} duration={500} to='programs-section' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Our Programs
           </Link>
-          <Link spy={true} smooth={true} offset={-250} duration={500} to='ourTeam' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          <a href= "/program-application" className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Register Now
-          </Link>
-          <Link spy={true} smooth={true} offset={50} duration={500} to='footerSection' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          </a>
+          <a href='/contact-us' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Contact Us
-          </Link>
+          </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login" className="py-3 px-6 flex gap-2 items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+          <a href="/support-our-journey" className="py-3 px-6 flex gap-2 items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
             <BsGift className='text-base'/> 
             <p className='text-base'>Gift</p>
           </a>

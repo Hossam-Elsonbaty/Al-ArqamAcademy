@@ -39,7 +39,7 @@ export default function OurPrograms() {
               </div>
             </div>
           </div>
-          <button class="learn-more-btn">Learn More</button>
+          <a href='/our-programs' class="learn-more-btn">Learn More</a>
         </div>
       </div>
     </section>

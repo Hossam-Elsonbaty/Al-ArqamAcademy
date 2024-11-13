@@ -494,7 +494,7 @@
   align-items: center;
   gap: 25px;
 }
-.footer .footer-content .btn-section button {
+.footer .footer-content .btn-section a {
   width: 300px;
   color: #fff;
   height: -moz-fit-content;
@@ -603,7 +603,7 @@
   text-align: center;
   max-width: 840px;
 }
-.aboutUs-container .about-header button {
+.aboutUs-container .about-header a {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
@@ -714,11 +714,17 @@
   width: 42%;
   position: relative;
 }
-.aboutUs-container .accomplish .col .text-cont ul {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 51px;
+.aboutUs-container .accomplish .col .text-cont .cell {
+  display: flex;
+  gap: 10px;
+}
+.aboutUs-container .accomplish .col .text-cont .cell svg {
+  font-size: 40px;
+  color: #286982;
+}
+.aboutUs-container .accomplish .col .text-cont .cell .p-container {
+  display: flex;
+  flex-direction: column;
 }
 .aboutUs-container .accomplish .col .text-cont p {
   display: -webkit-inline-box;
@@ -728,7 +734,7 @@
   font-size: 40px;
   margin-right: 10px;
 }
-.aboutUs-container .accomplish button {
+.aboutUs-container .accomplish a {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
@@ -774,7 +780,7 @@
   color: #404040;
   font-size: 16px;
 }
-.aboutUs-container .graduates-container aside:first-child button {
+.aboutUs-container .graduates-container aside:first-child a {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
@@ -904,7 +910,7 @@ main.programs-page .programs-col .program aside.image-aside img {
   width: 350px;
   border-radius: 8px;
 }
-main.programs-page button {
+main.programs-page a {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
@@ -1547,6 +1553,10 @@ html, body {
   --bg-100:#F7EEDD;
   --bg-200:#ede4d3;
   --bg-300:#c4bcab;
+}
+
+.navbar {
+  box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1490196078);
 }
 
 ::-webkit-scrollbar {
