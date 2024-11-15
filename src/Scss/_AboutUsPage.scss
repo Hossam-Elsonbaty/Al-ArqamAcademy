@@ -12,9 +12,29 @@
       margin-bottom: 1.5rem;
       margin-top: 4rem;
       position: relative;
-      @include header()
+      @include header();
+      @include breakpoint(mobile) {
+        font-size: 16px;
+      }
+      span{
+        @include breakpoint(mobile) {
+          width: 73px;
+          top: 24px;
+          right: 6px;
+        }
+        &:last-child {
+          @include breakpoint(mobile) {
+            top: 30px;
+            width: 36px;
+            right: 43px;
+          }        
+        }
+      }
     }
     p{
+      @include breakpoint(mobile) {
+        font-size: 10px;
+      }    
       font-weight: 500;
       font-size: 18px;
       color:#8C8B8B ;
@@ -22,7 +42,11 @@
       max-width: 840px;
     }
     a{
-      @include button()
+      @include button();
+      @include breakpoint(mobile) {
+        font-size: 15px;
+        border-radius: 11px;
+      }    
     }
   }
   // objectives ////////////////
@@ -31,15 +55,38 @@
       background-color:#f0f8ff ;
       header{
         gap: .5rem;
+        @include breakpoint (mobile) {
+          gap: 2rem;
+        }
         h1{
           width: fit-content;
           position: relative;
-          @include header()
+          @include header();
+          @include breakpoint(mobile) {
+            font-size: 16px;
+          }
+          span{
+            @include breakpoint(mobile) {
+              width: 73px;
+              top: 24px;
+              right: 6px;
+            }
+            &:last-child {
+              @include breakpoint(mobile) {
+                top: 30px;
+                width: 36px;
+                right: 43px;
+              }        
+            }
+          }
         }
         p{
           color: #8C8B8B;
           font-weight: 500;
           font-size: 18px;
+          @include breakpoint (mobile) {
+            font-size: 14px;
+          }
         }
       }
       .objective{
@@ -77,16 +124,41 @@
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    @include breakpoint (mobile) {
+      flex-direction: column;
+      padding:2rem 1rem;
+    }
     header{
       h1{
         margin: 0 auto;
-        @include header ()
+        @include header ();
+        @include breakpoint(mobile) {
+          font-size: 16px;
+        }
+        span{
+          @include breakpoint(mobile) {
+            width: 73px;
+            top: 24px;
+            right: 6px;
+          }
+          &:last-child {
+            @include breakpoint(mobile) {
+              top: 30px;
+              width: 36px;
+              right: 43px;
+            }        
+          }
+        }
       }
     }
     .col{
       display: flex;
       justify-content: space-around;
       gap: 75px;
+      @include breakpoint (mobile) {
+        flex-direction: column;
+        gap: 30px;
+      }
       .text-cont{
         font-size: 16px;
         display: flex;
@@ -94,21 +166,36 @@
         gap: 30px;
         width:42% ;
         position: relative;
+        @include breakpoint (mobile) {
+          width: 82%;
+        } 
         .cell{
           display: flex;
           gap: 10px;
           svg{
+            @include breakpoint (mobile) {
+              font-size: 35px;
+            }      
             font-size: 40px;
             color: #286982;
           }
           .p-container{
             display: flex;
             flex-direction: column;
+            @include breakpoint (mobile) {
+              font-size: 11px
+            }      
           }
         }
         p{
           display: -webkit-inline-box;
+          @include breakpoint (mobile) {
+            font-size: 11px;
+          }    
           svg{
+            @include breakpoint (mobile) {
+              font-size: 30px;
+            }      
             color: #286982;
             font-size: 40px;
             margin-right: 10px;
@@ -117,12 +204,59 @@
       }
     }
     a{
-      @include button()
+      @include button();
+      @include breakpoint(mobile) {
+        font-size: 15px;
+        border-radius: 11px;
+      }    
     }
   }
   // graduates ///////////////////
   .graduates-container{
     display: flex;
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }    
+    .graduates-mobile {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color:#EBF7FC ;
+      padding: 2rem;
+      gap: 4rem;
+      header{
+        h1{
+          @include header();
+          @include breakpoint(mobile) {
+            font-size: 16px;
+          }
+          span{
+            @include breakpoint(mobile) {
+              width: 73px;
+              top: 24px;
+              right: 6px;
+            }
+            &:last-child {
+              @include breakpoint(mobile) {
+                top: 30px;
+                width: 36px;
+                right: 43px;
+              }        
+            }
+          }    
+        }
+      }
+      p{
+        font-size: 12px;
+      }
+      a{
+        @include button();
+        @include breakpoint(mobile) {
+          font-size: 15px;
+          border-radius: 11px;
+        }  
+      }
+    }
     aside{
       background-color:#EBF7FC ;
       &:first-child{
@@ -131,9 +265,30 @@
         align-items: flex-start;
         gap: 3rem;
         padding: 6rem;
+        @include breakpoint(mobile) {
+          font-size: 16px;
+          padding: 2rem
+        }
         header {
           h1{
-            @include header()
+            @include header();
+            @include breakpoint(mobile) {
+              font-size: 16px;
+            }
+            span{
+              @include breakpoint(mobile) {
+                width: 73px;
+                top: 24px;
+                right: 6px;
+              }
+              &:last-child {
+                @include breakpoint(mobile) {
+                  top: 30px;
+                  width: 36px;
+                  right: 43px;
+                }        
+              }
+            }    
           }
         }
         p{
