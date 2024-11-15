@@ -6,17 +6,43 @@ main.programs-page{
   align-items: center;
   gap: 3rem;
   padding: 4rem 8rem 8rem 8rem;
+  @include breakpoint (mobile) {
+    padding: 4rem 2rem 2rem 2rem;
+  }
   .programs-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
     padding: 4rem;
+    @include breakpoint(mobile) {
+      padding: 4rem 0 0 0;
+    }
     h1{
-      @include header()
+      @include header();
+      @include breakpoint(mobile) {
+        font-size: 16px;
+      }
+      span{
+        @include breakpoint(mobile) {
+          width: 73px;
+          top: 24px;
+          right: 6px;
+        }
+        &:last-child {
+          @include breakpoint(mobile) {
+            top: 30px;
+            width: 36px;
+            right: 43px;
+          }        
+        }
+      }    
     }
     p{
       font-weight: 500;
+      @include breakpoint(mobile) {
+        font-size: 12px;
+      }
       color: #8C8B8B;
     }
   }
@@ -29,21 +55,59 @@ main.programs-page{
       display: flex;
       justify-content: space-around;
       width: 100%;
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      &:nth-child(2){
+        .content-aside{
+          h2, p{
+            @include breakpoint(mobile) {
+              text-align: end;
+            }
+          }
+        }
+        .image-aside{
+          &::before{
+            @include breakpoint (mobile){
+              left: -14px;
+            }
+          }
+        }
+      }
       aside{
         &.content-aside{
           display: flex;
           gap: 20px;
+          @include breakpoint(mobile) {
+            gap: 0px;
+          }    
           svg{
+            @include breakpoint(mobile) {
+              font-size: 80px;
+              margin-top:-12px ;
+            }      
             color:#286982 ;
             font-size: 50px;
           }
           h2{
+            @include breakpoint(mobile) {
+              font-size: 12px;
+            }
             font-weight: 600;
             font-size: 16px;
             color: #1C2D49;
           }
           p{
-            width: 343px;
+            max-width: 343px;
+            @include breakpoint(mobile) {
+              font-size: 9px;
+            }      
+            &:nth-child(1){
+              @include breakpoint(mobile) {
+                text-align: end;
+              }
+            }
           }
         }
         &.image-aside{
@@ -60,9 +124,18 @@ main.programs-page{
             z-index: -1;
             bottom: -20px;
             left: 24px;
+            @include breakpoint(mobile) {
+              left: 30px;
+              top: 33px;
+              width: 90%;
+              height: 90%;
+            }
           }
           img{
             width: 350px;
+            @include breakpoint(mobile) {
+              width: 296px;
+            }      
             border-radius:8px ;
           }
         }
@@ -73,5 +146,10 @@ main.programs-page{
     @include button();
     padding: 10px 6rem;
     margin-top: 4rem;
+    @include breakpoint (mobile){
+      font-size: 15px;
+      border-radius: 10px;
+      padding: 10px 5rem;
+    }
   }
 }
