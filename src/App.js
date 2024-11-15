@@ -14,6 +14,8 @@ import { Footer } from './Components/Footer';
 import { OurPrograms } from './Pages/OurPrograms';
 import { Gift } from './Pages/Gift';
 import { Payment } from './Pages/Payment';
+import { DesktopProvider } from './Context/IsDesktop.jsx';
+
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -40,7 +42,9 @@ const App = ()=> {
 const MainApp = () => (
   <Router>
     <ScrollToTop/>
-    <App />
+    <DesktopProvider>
+      <App />
+    </DesktopProvider>
   </Router>
 );
 export default MainApp;

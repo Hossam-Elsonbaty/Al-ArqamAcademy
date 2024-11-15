@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import BackgroundImage from '../Images/item3.jpeg';
 import { BsGift } from "react-icons/bs";
+import IsDesktop from '../Context/IsDesktop';
 export const GiftComponent = () => {
+  const {isDesktop} = useContext(IsDesktop)
   const text = '[ Sahih al-Bukhari #5352 ]'
   const imageStyle = {
     backgroundImage: `url(${BackgroundImage})`,
@@ -14,7 +16,16 @@ export const GiftComponent = () => {
         <div className='background-div'>
           <div className='hadith-div'>
             <p>
-              Allah said: “Spend in charity, O son of Adam, and I will spend on you.”
+              {isDesktop
+              ? 
+              <>
+              Allah said:“Spend in charity, O son of Adam, and I will spend on you.”
+              </>
+              :
+              <>
+              Allah said:<br/>“Spend in charity, O son of Adam, and I will spend on you.”
+              </>
+              }
               <span>{text}</span>
             </p>
           </div>

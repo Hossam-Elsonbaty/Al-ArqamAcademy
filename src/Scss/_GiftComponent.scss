@@ -3,6 +3,9 @@
   border-radius: 32px;
   position: relative;
   bottom: -4rem;
+  @include breakpoint (mobile) {
+    padding: 0rem 2rem;
+  }
   .child{
     width: 100%;
     border-radius: 32px;
@@ -12,28 +15,45 @@
       align-items: center;
       flex-direction: column;
       border-radius: 32px;
+      @include breakpoint (mobile) {
+        padding: 3rem .5rem;
+      }
       padding: 4rem 6rem;
       width: 100%;
       background-color: #286982D9;
       .hadith-div{
         p{
+          @include breakpoint (mobile) {
+            font-size: 17px;
+            line-height: 22px;
+          }
           font-size: 42px;
           line-height: 56px;
           font-weight: 500;
           color: #fff;
           text-align: center;
           span{
+            @include breakpoint (mobile) {
+              font-size: 4px;
+            }
             font-size: 12px;
           }
         }
       }
       .generosity{
+        @include breakpoint (mobile) {
+          font-size: 11px;
+        }
         font-size: 18px;
         color: #CACACA;
         text-align: center;
         padding: 10px 15px;
       }
       .gift-btn {
+        @include breakpoint (mobile) {
+          font-size: 18px;
+          padding: 7px 15px;
+        }
         border-radius: 10px;
         background-color: #fff;
         color: #00000080;

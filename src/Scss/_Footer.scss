@@ -7,6 +7,9 @@
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 auto;
+    @include breakpoint(mobile) {
+      gap: 30px;
+    }
     .logo-section {
       display: flex;
       flex-direction: column;
@@ -27,10 +30,19 @@
       }
     }
     .links-section{
+      @include breakpoint (mobile) {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 2rem;
+      }
       display: flex;
       flex-direction: column;
       gap: 10px;
       h3{
+        @include breakpoint (mobile) {
+          font-size: 15px;
+        }  
         font-size: 18px;
         font-weight: 700;
         color: #000;
@@ -40,11 +52,17 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        @include breakpoint (mobile) {
+          gap: 4px;
+        }  
         li{
           a{
             text-decoration: none;
             font-size: 16px;
             color: #000;
+            @include breakpoint (mobile) {
+              font-size: 10px;
+            }
           }
         }
       }
@@ -55,6 +73,9 @@
       flex-direction: column;
       gap: 10px;
       h3{
+        @include breakpoint (mobile) {
+          font-size: 15px;
+        }  
         font-size: 18px;
         font-weight: 700;
         color: #000;
@@ -62,6 +83,11 @@
       p{
         color: #000;
         max-width: 300px;
+        @include breakpoint (mobile) {
+          max-width: 150px;
+          font-size: 10px;
+          line-height: 22px;
+        }  
       }
     }
     .btn-section{
@@ -69,7 +95,30 @@
       flex-direction: column;
       align-items: center;
       gap: 25px;
-      a{
+      @include breakpoint (mobile) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+      }
+      .social-icons{
+        display: flex;
+        gap: 10px;
+        svg{
+          font-size:20px ;
+        }
+      }
+      aside{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+      }
+      img{
+        @include breakpoint (mobile) {
+          width:50px ;
+        }
+      }
+      a.btn{
         width: 300px;
         color: #fff;
         height: fit-content;
@@ -77,56 +126,62 @@
         border-radius: 15px;
         text-align: center;
         background-color: #286982;
-      }
-      .lines{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        gap: 50px;
-        align-items: flex-end;
-        width: 50%;
-        .center{
-          top: -56px;
-          height: 30px;
-          position: absolute;
-          width: 6px;
-          height: 47px;
-          background-color:#286982;
-        }
-        span{
-          position: absolute;
-          width: 6px;
-          height: 47px;
-          background-color:#286982;
-          &:first-child{
-            margin-right: 100px;
-            transform: rotate(140.16deg);
-          }
-          &:last-child{
-            margin-left: 100px;
-            transform: rotate(-140.16deg);
-          }
+        @include breakpoint (mobile) {
+          padding: 8px 12px;
+          width:113px ;
+          border-radius: 7px;
+          font-size: 10px;
         }
       }
-      .last{
-        top: 50px;
-        .center{
-          top: -36px;
-          height: 30px;
-          position: absolute;
-          width: 6px;
-          height: 47px;
-          background-color:#286982;
-        }
-        span{
-          &:first-child{
-            transform: rotate(-140.16deg);
-          }
-          &:last-child{
-            transform: rotate(140.16deg);
-          }
-        }
-      }
+      // .lines{
+      //   position: relative;
+      //   display: flex;
+      //   justify-content: center;
+      //   gap: 50px;
+      //   align-items: flex-end;
+      //   width: 50%;
+      //   .center{
+      //     top: -56px;
+      //     height: 30px;
+      //     position: absolute;
+      //     width: 6px;
+      //     height: 47px;
+      //     background-color:#286982;
+      //   }
+      //   span{
+      //     position: absolute;
+      //     width: 6px;
+      //     height: 47px;
+      //     background-color:#286982;
+      //     &:first-child{
+      //       margin-right: 100px;
+      //       transform: rotate(140.16deg);
+      //     }
+      //     &:last-child{
+      //       margin-left: 100px;
+      //       transform: rotate(-140.16deg);
+      //     }
+      //   }
+      // }
+      // .last{
+      //   top: 50px;
+      //   .center{
+      //     top: -36px;
+      //     height: 30px;
+      //     position: absolute;
+      //     width: 6px;
+      //     height: 47px;
+      //     background-color:#286982;
+      //   }
+      //   span{
+      //     &:first-child{
+      //       transform: rotate(-140.16deg);
+      //     }
+      //     &:last-child{
+      //       transform: rotate(140.16deg);
+      //     }
+      //   }
+      // }
     }
   }
   .footer-bottom {

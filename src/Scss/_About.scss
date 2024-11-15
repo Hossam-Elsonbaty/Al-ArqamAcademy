@@ -4,19 +4,32 @@
   justify-content: center;
   background-color: #f0f8ff;
   padding: 9rem;
+  @include breakpoint(mobile) {
+    padding: 2rem;
+  }
   .content-wrapper {
+    @include breakpoint(mobile) {
+      flex-direction: column;
+    }
     display: flex;
     align-items: center;
     gap: 4rem;
     max-width: 1200px;
     width: 100%;
     .text-section {
+      @include breakpoint(mobile) {
+        padding-right: 0px;
+        align-items: center;
+      }
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       flex: 1;
       padding-right: 50px;
       h2 {
+        @include breakpoint(mobile) {
+          font-size: 16px;
+        }    
         width: fit-content;
         font-size: 26px;
         font-weight: bold;
@@ -24,6 +37,11 @@
         margin-bottom: 10px;
         position: relative;
         span{
+          @include breakpoint(mobile) {
+            width: 131.41px;
+            right: 5px;
+            top: 26px;
+          }
           position: absolute;
           width: 123.41px;
           height: 2px;
@@ -35,6 +53,11 @@
             width: 68px;
             top: 50px;
             right: 4rem;
+            @include breakpoint(mobile) {
+              width: 70.41px;
+              right: 66px;
+              top: 35px;
+            }  
           }
         }
       }
@@ -53,6 +76,9 @@
         flex-direction: column;
         gap: 20px;
         .list-item {
+          @include breakpoint (mobile) {
+            font-size: 12px;
+          }
           display: flex;
           align-items: center;
           color: #2a2a2a;
@@ -75,10 +101,20 @@
     }
     .image-section{
       position: relative;
+      @include breakpoint(mobile) {
+        width: 288px;
+        height: 365px;  
+      }
       width: 470px;
       height: 610px;
       z-index: 2;
       .before{
+        @include breakpoint(mobile) {
+          height: 103.5%;
+          position: absolute;
+          top: -10px;
+          left: -10px;
+        }  
         border-top-left-radius: 256.02px;
         border-top-right-radius: 256.02px;
         border-top: 2px solid #286982;

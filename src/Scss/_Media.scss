@@ -3,8 +3,8 @@
     @media (min-width : 768px ){
       @content ;
     }
-  } @else if $point == small {
-    @media (min-width : 767px ) and (max-width : 991 ){
+  } @else if $point == mobile {
+    @media (max-width : 768px ){
       @content ;
     }
   } @else if $point == medium {
