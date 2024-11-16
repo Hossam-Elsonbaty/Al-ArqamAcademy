@@ -76,7 +76,8 @@ main.gift-main{
     margin: auto;
     padding: 4rem;
     @include breakpoint(mobile) {
-      padding: 0 ;
+      padding: 0 2rem;
+      margin: unset;
     }
     header{
       display: flex;
@@ -92,11 +93,13 @@ main.gift-main{
         gap: 20px;
         @include breakpoint(mobile) {
           flex-direction: column;
+          width: 100%;
         }
         .normal{
           @include breakpoint(mobile) {
             font-size: 12px;
             border-radius: 8px;
+            width: 100%;
           }  
           cursor: pointer;
           width: 358px;

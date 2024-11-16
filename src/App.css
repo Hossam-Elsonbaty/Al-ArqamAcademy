@@ -2110,7 +2110,8 @@ main.gift-main .content {
 }
 @media (max-width: 768px) {
   main.gift-main .content {
-    padding: 0;
+    padding: 0 2rem;
+    margin: unset;
   }
 }
 main.gift-main .content header {
@@ -2130,6 +2131,7 @@ main.gift-main .content header .choice {
 @media (max-width: 768px) {
   main.gift-main .content header .choice {
     flex-direction: column;
+    width: 100%;
   }
 }
 main.gift-main .content header .choice .normal {
@@ -2147,6 +2149,7 @@ main.gift-main .content header .choice .normal {
   main.gift-main .content header .choice .normal {
     font-size: 12px;
     border-radius: 8px;
+    width: 100%;
   }
 }
 main.gift-main .content header .choice .selected {
