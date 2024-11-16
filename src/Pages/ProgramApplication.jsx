@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { ChildApplication } from '../Components/ChildApplication';
-import stayIn from '../Images/item10.jpeg'
+import stayIn from '../Images/item10.jpeg';
+import IsDesktop from '../Context/IsDesktop'
 export const ProgramApplication = () => {
   const [student, setStudent] = useState(true);
   const [kidsCount, setKidsCount] = useState(0);
+  const {isDesktop} = useContext(IsDesktop);
   const handleAddKids = (e)=>{
     setKidsCount(Number(e.target.value))
     console.log(e.target.value);
@@ -64,7 +66,7 @@ export const ProgramApplication = () => {
               <option value="Female">Female</option>
             </select>
           </div>
-          <div className='input-cont' style={{width:'760px'}}><input type="text" style={{width:'100%'}} placeholder='Address' /></div>
+          <div className='input-cont address' ><input type="text"  placeholder='Address' /></div>
           <div className='input-cont'>
             <input
               type="text"
@@ -77,8 +79,8 @@ export const ProgramApplication = () => {
               className=""
             />
           </div>
-          <div className='input-cont' style={{width: '760px'}}>
-            <select  name="programType" id="programType" style={{width:'100%'}} className='text-zinc-400'>
+          <div className='input-cont program-type' >
+            <select  name="programType" id="programType"  className='text-zinc-400'>
               <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
               <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>
               <option value="Hoffaz Dar Al-Arqam (Memorization)">Hoffaz Dar Al-Arqam (Memorization)</option>
@@ -118,7 +120,7 @@ export const ProgramApplication = () => {
               className=""
             />
           </div>
-          <div className='input-cont' style={{width:'760px'}}><input type="text" style={{width:'100%'}} placeholder='Address' /></div>
+          <div className='input-cont address'><input type="text" placeholder='Address' /></div>
           <div className="input-cont">
             <input
               type="text"
@@ -131,7 +133,7 @@ export const ProgramApplication = () => {
               className=""
             />
           </div>
-          <div className="input-cont"style={{width:'760px'}}>
+          <div className="input-cont program-type">
             <select
               onChange={(e) => handleAddKids(e)}
               name="kidsCount"
@@ -156,26 +158,46 @@ export const ProgramApplication = () => {
             type="submit"
             className=""
           >
-            Submit Application
+            SUBMIT
           </button>
         </form>
         }
-        <div className="stay-in">
-          <div className="content">
-            <h1>STAY IN TOUCH</h1>
-            <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
-            <div className='sign-up'>
-              <input type="email" placeholder='Enter Your Email' />
-              <button type="submit">Sign Up</button>
+        {isDesktop
+          ?
+          <div className="stay-in">
+            <div className="content">
+              <h1>STAY IN TOUCH</h1>
+              <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
+              <div className='sign-up'>
+                <input type="email" placeholder='Enter Your Email' />
+                <button type="submit">Sign Up</button>
+              </div>
+            </div>
+            <div class="image-section">
+              <div className="image-container">
+                <div className='before'></div>
+                <img src={stayIn}/>
+              </div>
             </div>
           </div>
-          <div class="image-section">
-            <div className="image-container">
-              <div className='before'></div>
-              <img src={stayIn}/>
+          :
+          <div className="stay-in">
+            <div class="image-section">
+              <div className="image-container">
+                <div className='before'></div>
+                <img src={stayIn}/>
+              </div>
             </div>
+            <div className="content">
+              <h1>STAY IN TOUCH</h1>
+              <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
+              <div className='sign-up'>
+                <input type="email" placeholder='Enter Your Email' />
+              </div>
+            </div>
+            <button type="submit">Sign Up</button>
           </div>
-        </div>
+        }
       </div>
     </>
   );

@@ -31,7 +31,7 @@ export const ChildApplication = ({kidsCount}) => {
             <option value="Female">Female</option>
           </select>
         </div>
-        <div className="input-cont" style={{width:'760px'}}>
+        <div className="input-cont program-type" >
           <select  name="programType" id="programType" className='text-zinc-400' style={{width:'100%'}}>
             <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
             <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>

@@ -1343,7 +1343,12 @@ main.programs-page a {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 4.5rem 6rem 6rem 4.5rem;
+  padding: 4.5rem 6rem 4.5rem 6rem;
+}
+@media (max-width: 768px) {
+  .application-container {
+    padding: 4.5rem 2rem 4.5rem 2rem;
+  }
 }
 .application-container header {
   display: flex;
@@ -1374,6 +1379,11 @@ main.programs-page a {
   top: 50px;
   right: 4rem;
 }
+@media (max-width: 768px) {
+  .application-container header h1 {
+    font-size: 16px;
+  }
+}
 .application-container header h1 span {
   position: absolute;
   width: 56px;
@@ -1383,10 +1393,24 @@ main.programs-page a {
   background-color: #286982;
   transform: rotate(-2.04deg);
 }
+@media (max-width: 768px) {
+  .application-container header h1 span {
+    width: 36px;
+    top: 24px;
+    right: 0px;
+  }
+}
 .application-container header h1 span:last-child {
   width: 31px;
   top: 50px;
   right: 29px;
+}
+@media (max-width: 768px) {
+  .application-container header h1 span:last-child {
+    top: 30px;
+    width: 18px;
+    right: 18px;
+  }
 }
 .application-container header .switcher {
   display: flex;
@@ -1401,8 +1425,18 @@ main.programs-page a {
   border-radius: 8px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .application-container header .switcher .choice {
+    width: 100px;
+  }
+}
 .application-container header .switcher .choice p {
   font-size: 18px;
+}
+@media (max-width: 768px) {
+  .application-container header .switcher .choice p {
+    font-size: 15px;
+  }
 }
 .application-container header .switcher .other {
   width: 150px;
@@ -1413,8 +1447,18 @@ main.programs-page a {
   text-align: center;
   background-color: transparent;
 }
+@media (max-width: 768px) {
+  .application-container header .switcher .other {
+    width: 100px;
+  }
+}
 .application-container header .switcher .other p {
   font-size: 18px;
+}
+@media (max-width: 768px) {
+  .application-container header .switcher .other p {
+    font-size: 15px;
+  }
 }
 .application-container form {
   display: flex;
@@ -1425,9 +1469,23 @@ main.programs-page a {
   margin-top: 2rem;
   padding: 0 5rem;
 }
+@media (max-width: 768px) {
+  .application-container form {
+    padding: 0rem;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
+}
 .application-container form .input-cont {
   display: flex;
   gap: 40px;
+}
+@media (max-width: 768px) {
+  .application-container form .input-cont {
+    gap: 30px;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .application-container form .input-cont input, .application-container form .input-cont select {
   width: 360px;
@@ -1436,6 +1494,22 @@ main.programs-page a {
   padding: 16px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2117647059);
 }
+@media (max-width: 768px) {
+  .application-container form .input-cont input, .application-container form .input-cont select {
+    width: 100%;
+  }
+}
+.application-container form .address, .application-container form .program-type {
+  width: 760px;
+}
+@media (max-width: 768px) {
+  .application-container form .address, .application-container form .program-type {
+    width: 100%;
+  }
+}
+.application-container form .address input, .application-container form .address select, .application-container form .program-type input, .application-container form .program-type select {
+  width: 100%;
+}
 .application-container form button {
   background-color: #286982;
   border-radius: 15px;
@@ -1443,6 +1517,14 @@ main.programs-page a {
   color: #fff;
   font-size: 18px;
   width: 260px;
+}
+@media (max-width: 768px) {
+  .application-container form button {
+    width: 180px;
+    font-size: 13px;
+    border-radius: 9px;
+    margin-top: 2rem;
+  }
 }
 .application-container .stay-in {
   background: linear-gradient(95.04deg, rgba(40, 105, 130, 0.88) 4.18%, rgba(40, 105, 130, 0.19) 76.26%);
@@ -1455,25 +1537,74 @@ main.programs-page a {
   border-radius: 15px;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .application-container .stay-in {
+    margin-bottom: 0rem;
+    margin-top: 1rem;
+    padding: 0rem;
+    flex-direction: column;
+    position: unset;
+    background: #fff;
+    gap: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .application-container .stay-in button {
+    width: 150px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 18px;
+    background-color: #286982;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
+  }
+}
 .application-container .stay-in .content {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+@media (max-width: 768px) {
+  .application-container .stay-in .content {
+    padding: 2rem 13px;
+    gap: 5px;
+    border-radius: 9px;
+    width: 100%;
+    background: linear-gradient(95.04deg, rgba(40, 105, 130, 0.9) 4.18%, rgba(40, 105, 130, 0.4) 76.26%);
+  }
 }
 .application-container .stay-in .content h1 {
   font-weight: 500;
   font-size: 36px;
   color: #fff;
 }
+@media (max-width: 768px) {
+  .application-container .stay-in .content h1 {
+    font-size: 22px;
+  }
+}
 .application-container .stay-in .content span {
   font-size: 16px;
   width: 525px;
   color: #fff;
 }
+@media (max-width: 768px) {
+  .application-container .stay-in .content span {
+    font-size: 12px;
+    width: 100%;
+  }
+}
 .application-container .stay-in .content .sign-up {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .application-container .stay-in .content .sign-up {
+    margin-top: 30px;
+  }
 }
 .application-container .stay-in .content .sign-up input {
   outline: none;
@@ -1483,6 +1614,14 @@ main.programs-page a {
   box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
   padding: 18px;
   width: 350px;
+}
+@media (max-width: 768px) {
+  .application-container .stay-in .content .sign-up input {
+    padding: 10px;
+    font-size: 11px;
+    width: 280px;
+    border-radius: 10px;
+  }
 }
 .application-container .stay-in .content .sign-up button {
   width: 150px;
@@ -1495,15 +1634,30 @@ main.programs-page a {
   background-color: #fff;
   box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
 }
+@media (max-width: 768px) {
+  .application-container .stay-in .content .sign-up button {
+    width: 150px;
+  }
+}
 .application-container .stay-in .image-section {
   position: absolute;
   right: -20px;
   top: -120px;
 }
+@media (max-width: 768px) {
+  .application-container .stay-in .image-section {
+    position: unset;
+  }
+}
 .application-container .stay-in .image-section .image-container {
   position: relative;
   width: 390px;
   z-index: 2;
+}
+@media (max-width: 768px) {
+  .application-container .stay-in .image-section .image-container {
+    width: 290px;
+  }
 }
 .application-container .stay-in .image-section .image-container .before {
   border-top-left-radius: 256.02px;
@@ -1511,11 +1665,18 @@ main.programs-page a {
   border-top: 2px solid #286982;
   border-left: 2px solid #286982;
   width: 100%;
-  height: 102.5%;
   position: absolute;
   top: -12px;
   left: -14px;
+  height: 102.5%;
   z-index: -1;
+}
+@media (max-width: 768px) {
+  .application-container .stay-in .image-section .image-container .before {
+    height: 102%;
+    top: -7px;
+    left: -8px;
+  }
 }
 .application-container .stay-in .image-section .image-container img {
   border-top-left-radius: 256.02px;
