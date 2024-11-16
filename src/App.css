@@ -526,6 +526,11 @@
   color: #4a768a;
   padding-top: 10rem;
 }
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 3rem;
+  }
+}
 .footer .footer-content {
   display: flex;
   justify-content: space-around;
@@ -1510,6 +1515,7 @@ main.programs-page a {
   background-color: #ECF9FE;
   border-radius: 15px;
   padding: 16px;
+  outline: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2117647059);
 }
 @media (max-width: 768px) {
@@ -1632,6 +1638,7 @@ main.programs-page a {
   box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
   padding: 18px;
   width: 350px;
+  border: none;
 }
 @media (max-width: 768px) {
   .application-container .stay-in .content .sign-up input {
@@ -1713,17 +1720,37 @@ main.contact-us {
   position: relative;
   z-index: 2;
 }
+@media (max-width: 768px) {
+  main.contact-us {
+    background: #fff;
+    padding: 2rem;
+    height: auto;
+  }
+}
 main.contact-us .dotted {
   position: absolute;
   top: -69px;
   right: -69px;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  main.contact-us .dotted {
+    position: unset;
+    display: none;
+  }
+}
 main.contact-us .dot {
   position: absolute;
   bottom: -69px;
   left: -69px;
   z-index: -1;
+}
+@media (max-width: 768px) {
+  main.contact-us .dot {
+    left: -115px;
+    bottom: 2px;
+    z-index: 1;
+  }
 }
 main.contact-us .card {
   position: relative;
@@ -1736,6 +1763,13 @@ main.contact-us .card {
   padding: 4rem;
   border-radius: 15px;
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.0784313725);
+}
+@media (max-width: 768px) {
+  main.contact-us .card {
+    box-shadow: unset;
+    padding: 4rem 0rem 6rem 0rem;
+    gap: 10px;
+  }
 }
 main.contact-us .card h1 {
   color: #1C2D49;
@@ -1750,19 +1784,41 @@ main.contact-us .card h1 img {
   right: 0;
   bottom: -12px;
 }
+@media (max-width: 768px) {
+  main.contact-us .card h1 img {
+    width: 30px;
+    top: 30px;
+  }
+}
 main.contact-us .card .elements {
   display: flex;
   align-items: center;
   gap: 4rem;
+}
+@media (max-width: 768px) {
+  main.contact-us .card .elements {
+    flex-direction: column;
+    align-items: normal;
+  }
 }
 main.contact-us .card .elements aside.message {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.message {
+    align-items: center;
+  }
+}
 main.contact-us .card .elements aside.message p {
   font-weight: 400;
   font-size: 18px;
+}
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.message p {
+    font-size: 12px;
+  }
 }
 main.contact-us .card .elements aside.message form {
   display: flex;
@@ -1780,6 +1836,11 @@ main.contact-us .card .elements aside.message form input {
   padding: 10px;
   outline: none;
 }
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.message form input {
+    width: 100%;
+  }
+}
 main.contact-us .card .elements aside.message form .checkbox-container {
   display: flex;
   align-items: center;
@@ -1795,6 +1856,11 @@ main.contact-us .card .elements aside.message form .checkbox-container input[typ
 main.contact-us .card .elements aside.message form .checkbox-container .label {
   font-size: 11px;
   color: #757980;
+}
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.message form .checkbox-container .label {
+    font-size: 8px;
+  }
 }
 main.contact-us .card .elements aside.message form .checkbox-container .custom-checkbox {
   width: 18px;
@@ -1827,6 +1893,13 @@ main.contact-us .card .elements aside.message form button {
   font-size: 18px;
   width: 422px;
 }
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.message form button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 12px 2rem;
+  }
+}
 main.contact-us .card .elements aside.contact-info {
   display: flex;
   flex-direction: column;
@@ -1837,6 +1910,11 @@ main.contact-us .card .elements aside.contact-info .social {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+@media (max-width: 768px) {
+  main.contact-us .card .elements aside.contact-info .social {
+    margin-top: 2rem;
+  }
 }
 main.contact-us .card .elements aside.contact-info .social .social-logo {
   display: flex;
@@ -1934,16 +2012,30 @@ main.gift-main {
   flex-direction: column;
   padding-top: 4.5rem;
 }
+@media (max-width: 768px) {
+  main.gift-main {
+    padding: 5rem 0;
+  }
+}
 main.gift-main .hero {
   background-image: url("./Images/item9.jpeg");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 5rem 3rem;
   height: 690px;
+}
+@media (max-width: 768px) {
+  main.gift-main .hero {
+    padding: 4rem 0;
+    height: auto;
+    flex-direction: column;
+    background-image: none;
+    gap: 4rem;
+  }
 }
 main.gift-main .hero .message {
   border-radius: 15px;
@@ -1954,6 +2046,13 @@ main.gift-main .hero .message {
   padding: 2rem;
   background-color: #fff;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  main.gift-main .hero .message {
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1294117647);
+    border-radius: 0;
+  }
 }
 main.gift-main .hero .message h1 {
   color: #1C2D49;
@@ -1969,6 +2068,16 @@ main.gift-main .hero .message h1 img {
   right: 0;
   bottom: -12px;
 }
+@media (max-width: 768px) {
+  main.gift-main .hero .message h1 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 768px) {
+  main.gift-main .hero .message h1 img {
+    display: none;
+  }
+}
 main.gift-main .hero .message .ayah {
   font-size: 14px;
   font-weight: 600;
@@ -1976,10 +2085,21 @@ main.gift-main .hero .message .ayah {
   text-align: center;
   line-height: 40px;
 }
+@media (max-width: 768px) {
+  main.gift-main .hero .message .ayah {
+    line-height: 20px;
+    font-size: 10px;
+  }
+}
 main.gift-main .hero .message .phrase, main.gift-main .hero .message .translate {
   font-size: 16px;
   font-weight: 500;
   text-align: center;
+}
+@media (max-width: 768px) {
+  main.gift-main .hero .message .phrase, main.gift-main .hero .message .translate {
+    font-size: 13px;
+  }
 }
 main.gift-main .content {
   display: flex;
@@ -1987,6 +2107,11 @@ main.gift-main .content {
   gap: 30px;
   margin: auto;
   padding: 4rem;
+}
+@media (max-width: 768px) {
+  main.gift-main .content {
+    padding: 0;
+  }
 }
 main.gift-main .content header {
   display: flex;
@@ -2002,6 +2127,11 @@ main.gift-main .content header .choice {
   display: flex;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  main.gift-main .content header .choice {
+    flex-direction: column;
+  }
+}
 main.gift-main .content header .choice .normal {
   cursor: pointer;
   width: 358px;
@@ -2013,6 +2143,12 @@ main.gift-main .content header .choice .normal {
   background-color: transparent;
   text-align: center;
 }
+@media (max-width: 768px) {
+  main.gift-main .content header .choice .normal {
+    font-size: 12px;
+    border-radius: 8px;
+  }
+}
 main.gift-main .content header .choice .selected {
   color: #fff;
   background-color: #286982;
@@ -2022,6 +2158,11 @@ main.gift-main .content .amount {
   flex-direction: column;
   gap: 30px;
 }
+@media (max-width: 768px) {
+  main.gift-main .content .amount {
+    align-items: center;
+  }
+}
 main.gift-main .content .amount h1 {
   font-size: 22px;
   font-weight: 700;
@@ -2030,6 +2171,12 @@ main.gift-main .content .amount h1 {
 main.gift-main .content .amount .amount-cont {
   display: flex;
   gap: 30px;
+}
+@media (max-width: 768px) {
+  main.gift-main .content .amount .amount-cont {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 main.gift-main .content .amount .amount-cont .price {
   width: 152px;
@@ -2042,16 +2189,21 @@ main.gift-main .content .amount .amount-cont .price {
   text-align: center;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  main.gift-main .content .amount .amount-cont .price {
+    width: 100%;
+  }
+}
 main.gift-main .content .amount .amount-cont .selected-price {
   background-color: #286982;
   color: #fff;
 }
 main.gift-main .content .amount .amount-cont .enter-anumber {
-  flex-grow: 2;
+  flex-grow: 12;
   border: 1px solid #B4BEC8;
   outline: none;
   border-radius: 15px;
-  padding: 0 63px;
+  padding: 17px;
 }
 main.gift-main .content .amount .amount-cont .enter-anumber input {
   outline: none;
@@ -2075,11 +2227,19 @@ main.gift-main .content .amount .proceed {
   width: 100%;
   padding: 17px;
 }
+@media (max-width: 768px) {
+  main.gift-main .content .amount .proceed {
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 12px;
+  }
+}
 main.gift-main .content .amount .checkbox-container {
   display: flex;
   align-items: center;
   font-family: Arial, sans-serif;
   color: #6c757d;
+  width: 100%;
 }
 main.gift-main .content .amount .checkbox-container input[type=checkbox] {
   display: none;

@@ -54,6 +54,7 @@
     position: absolute;
     right: 0;
     bottom: -12px;
+    @content
   }
 }
 @mixin button() {

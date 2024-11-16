@@ -9,19 +9,38 @@ main.contact-us {
   height: 100vh;
   position: relative;
   z-index: 2;
+  @include breakpoint(mobile) {
+    background: #fff;
+    padding: 2rem ;
+    height: auto;
+  }
   .dotted {
     position: absolute;
     top: -69px;
     right: -69px;
     z-index: -1;
+    @include breakpoint(mobile) {
+      position: unset;
+      display: none;
+    }    
   }
   .dot {
     position: absolute;
     bottom: -69px;
     left: -69px;
     z-index: -1;
+    @include breakpoint(mobile) {
+      left: -115px;
+      bottom: 2px;
+      z-index: 1;
+    }    
   }
   .card {
+    @include breakpoint(mobile) {
+      box-shadow: unset;
+      padding: 4rem 0rem 6rem 0rem;
+      gap: 10px;
+    }    
     position: relative;
     background-color: #FFFFFF;
     margin: auto;
@@ -34,18 +53,34 @@ main.contact-us {
     box-shadow: 0px 0px 10px 10px #00000014;
     h1{
       @include h1();
+      img{
+        @include breakpoint(mobile) {
+          width: 30px;
+          top: 30px;
+        }       
+      }
     }
     .elements{
+      @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: normal;
+      }      
       display: flex;
       align-items: center;
       gap: 4rem;
       aside.message {
         display: flex;
         flex-direction: column;
+        @include breakpoint(mobile) {
+          align-items: center;
+        }        
         gap: 30px;
         p{
           font-weight: 400;
           font-size:18px ;
+          @include breakpoint(mobile) {
+            font-size: 12px;
+          }          
         }
         form{
           display: flex;
@@ -54,6 +89,9 @@ main.contact-us {
           gap: 40px;
           width: fit-content;
           input {
+            @include breakpoint(mobile) {
+              width: 100%;
+            }            
             width:422px;
             border: #eeee;
             border-radius:15px ;
@@ -75,6 +113,9 @@ main.contact-us {
             .label{
               font-size: 11px;
               color: #757980;
+              @include breakpoint(mobile) {
+                font-size: 8px;
+              }              
             }
             .custom-checkbox {
               width: 18px;
@@ -103,6 +144,11 @@ main.contact-us {
           button {
             @include button ();
             width: 422px;
+            @include breakpoint(mobile) {
+              width: 100%;
+              border-radius: 10px;
+              padding: 12px 2rem;
+            }            
           }
         }
       }
@@ -115,6 +161,9 @@ main.contact-us {
           display: flex;
           flex-direction: column;
           gap: 15px;
+          @include breakpoint(mobile) {
+            margin-top: 2rem;
+          }          
           .social-logo{
             display: flex;
             gap: 10px;

@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import lines from'../Images/Vector (2).png';
 import { InputNumber } from 'primereact/inputnumber';
+import IsDesktop from '../Context/IsDesktop';
+import item9 from '../Images/item9.jpeg'
 export const Gift = () => {
+  const {isDesktop} = useContext(IsDesktop)
   const [oneTime, setOneTime] = useState(true);
   const [value1, setValue1] = useState(0);
   const [selected, setSelected] = useState(null);
@@ -17,17 +20,33 @@ export const Gift = () => {
   const text3 = "“And whatever good you [believers] spend is for yourselves, and you do not spend except seeking the countenance of Allah. And whatever you spend of good - it will be fully repaid to you, and you will not be wronged”"
   return (
     <main className='gift-main'>
-      <div className="hero">
-        <section className='message'>
-          <h1>
-            Support Our Journey
-            <img src={lines} alt="" />
-          </h1>
-          <span className='ayah'>{text1}</span>
-          <span className='phrase'>{text2}</span>
-          <span className='translate'>{text3}</span>
-        </section>
-      </div>
+      {isDesktop
+        ?
+        <div className="hero">
+          <section className='message'>
+            <h1>
+              Support Our Journey
+              <img src={lines} alt="" />
+            </h1>
+            <span className='ayah'>{text1}</span>
+            <span className='phrase'>{text2}</span>
+            <span className='translate'>{text3}</span>
+          </section>
+        </div>
+        :
+        <div className="hero">
+          <img src={item9} alt="image" />
+          <section className='message'>
+            <h1>
+              Support Our Journey
+              <img src={lines} alt="" />
+            </h1>
+            <span className='ayah'>{text1}</span>
+            <span className='phrase'>{text2}</span>
+            <span className='translate'>{text3}</span>
+          </section>
+        </div>
+      }
       <section className="content">
         <header>
           <h2>Your Gift</h2>
