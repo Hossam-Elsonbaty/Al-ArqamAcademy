@@ -62,10 +62,10 @@ export const Footer = () => {
             <aside>
               <h3>Links</h3>
               <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Programs</a></li>
-                <li><a href="#">Register Now</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/our-programs">Our Programs</a></li>
+                <li><a href="/program-application">Register Now</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
               </ul>
             </aside>
             <div class="contact-section">

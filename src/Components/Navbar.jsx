@@ -87,19 +87,19 @@ const Navbar = () => {
                 >
                   Home
                 </a>
-                <Link
+                <a
                   smooth={true}
                   spy={true} 
                   offset={-200}
                   duration={500}
                   onClick={() => setMobileMenuOpen(false)}
-                  to='heroSection'
+                  href='about-us'
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   About Us
-                </Link>
-                <Link
-                  to='programsSection'
+                </a>
+                <a
+                  href='/our-programs'
                   onClick={() => setMobileMenuOpen(false)}
                   smooth={true}
                   spy={true} 
@@ -108,9 +108,9 @@ const Navbar = () => {
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Our Programs
-                </Link>
-                <Link
-                  to='ourTeam'
+                </a>
+                <a
+                  href='/program-application'
                   onClick={() => setMobileMenuOpen(false)}
                   smooth={true}
                   spy={true} 
@@ -119,9 +119,9 @@ const Navbar = () => {
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Register Now
-                </Link>
-                <Link
-                  to='footerSection'
+                </a>
+                <a
+                  href='/contact-us'
                   onClick={() => setMobileMenuOpen(false)}
                   smooth={true}
                   spy={true} 
@@ -130,7 +130,7 @@ const Navbar = () => {
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Contact Us
-                </Link>
+                </a>
               </div>
               <div className="py-6">
                 <a
