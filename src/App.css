@@ -1510,16 +1510,27 @@ main.programs-page a {
     width: 100%;
   }
 }
-.application-container form .input-cont input, .application-container form .input-cont select {
+.application-container form .input-cont .ant-picker input {
+  padding: 0;
+  box-shadow: none;
+}
+.application-container form .input-cont .ant-picker input::-moz-placeholder {
+  color: #a1a1a1;
+}
+.application-container form .input-cont .ant-picker input::placeholder {
+  color: #a1a1a1;
+}
+.application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker {
   width: 360px;
   background-color: #ECF9FE;
   border-radius: 15px;
   padding: 16px;
   outline: none;
+  border: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2117647059);
 }
 @media (max-width: 768px) {
-  .application-container form .input-cont input, .application-container form .input-cont select {
+  .application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker {
     width: 100%;
   }
 }
@@ -2220,6 +2231,11 @@ main.gift-main .content .amount .in-honor {
   border: 1px solid #B4BEC8;
   padding: 17px;
   outline: none;
+}
+@media (max-width: 768px) {
+  main.gift-main .content .amount .in-honor {
+    width: 100%;
+  }
 }
 main.gift-main .content .amount .proceed {
   background-color: #286982;

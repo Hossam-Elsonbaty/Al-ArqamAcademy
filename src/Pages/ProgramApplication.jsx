@@ -1,7 +1,8 @@
 import React, {useContext, useState} from 'react';
 import { ChildApplication } from '../Components/ChildApplication';
 import stayIn from '../Images/item10.jpeg';
-import IsDesktop from '../Context/IsDesktop'
+import IsDesktop from '../Context/IsDesktop';
+import { DatePicker} from 'antd';
 export const ProgramApplication = () => {
   const [student, setStudent] = useState(true);
   const [kidsCount, setKidsCount] = useState(0);
@@ -10,6 +11,9 @@ export const ProgramApplication = () => {
     setKidsCount(Number(e.target.value))
     console.log(e.target.value);
   }
+  const onDateChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
   return (
     <>
       <div className="application-container">
@@ -55,11 +59,12 @@ export const ProgramApplication = () => {
             />
           </div>
           <div className='input-cont'>
-            <input
+            {/* <input
               type="date"
               placeholder="E.g. johndoe@email.com"
               className="text-zinc-400"
-            />
+            /> */}
+            <DatePicker onChange={onDateChange} className='antd'/>
             <select id="programType" className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
               <option value="Male">Male</option>

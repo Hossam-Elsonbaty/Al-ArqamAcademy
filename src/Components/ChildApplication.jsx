@@ -1,6 +1,9 @@
 import React from 'react';
-
+import { DatePicker} from 'antd';
 export const ChildApplication = ({kidsCount}) => {
+  const onDateChange = (date, dateString) => {
+    console.log(date, dateString);
+  };
   console.log(kidsCount);
   return (
     <>
@@ -21,10 +24,7 @@ export const ChildApplication = ({kidsCount}) => {
           />
         </div>
         <div className="input-cont">
-          <input
-            type="date"
-            className='text-zinc-400'
-          />
+          <DatePicker onChange={onDateChange} className='antd'/>
           <select id="programType" className='text-zinc-400'>
             <option value="Male" hidden selected>Gender</option>
             <option value="Male">Male</option>

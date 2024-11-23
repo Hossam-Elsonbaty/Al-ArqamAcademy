@@ -167,6 +167,9 @@ main.gift-main{
         }
       }
       .in-honor{
+        @include breakpoint(mobile) {
+          width: 100%;
+        }
         width: 358px;
         font-size: 15px;
         color:#878787 ;
