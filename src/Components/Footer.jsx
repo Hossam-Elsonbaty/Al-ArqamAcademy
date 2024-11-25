@@ -34,23 +34,13 @@ export const Footer = () => {
           </div>
           <div class="contact-section">
             <h3>Contact us</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
             <p>+908 89097 890</p>
           </div>
           <div class="btn-section">
             <img src={lines1} alt="lines" />
             <a className="btn" href='/program-application'>Register Now</a>
             <img src={lines2} alt="lines" />
-            {/* <div className='lines'>
-              <span></span>
-              <span className='center'></span>
-              <span></span>
-            </div> */}
-            {/* <div className='lines last'>
-              <span></span>
-              <span className='center'></span>
-              <span></span>
-            </div> */}
           </div>
         </div>
         :
@@ -70,7 +60,7 @@ export const Footer = () => {
             </aside>
             <div class="contact-section">
               <h3>Contact us</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
               <p>+908 89097 890</p>
             </div>
           </div>
