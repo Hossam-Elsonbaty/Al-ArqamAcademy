@@ -170,18 +170,44 @@
 }
 .about-section .content-wrapper .text-section .list .list-item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+.about-section .content-wrapper .text-section .list .list-item .link-cont {
   color: #2a2a2a;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 768px) {
-  .about-section .content-wrapper .text-section .list .list-item {
+  .about-section .content-wrapper .text-section .list .list-item .link-cont {
     font-size: 12px;
   }
 }
 .about-section .content-wrapper .text-section .list .list-item svg {
   color: #286982;
   margin-right: 10px;
+}
+.about-section .content-wrapper .text-section .list .list-item:hover span {
+  width: 90%;
+}
+.about-section .content-wrapper .text-section .list .list-item:hover .our-team {
+  width: 76%;
+}
+.about-section .content-wrapper .text-section .list .list-item .our-team {
+  left: 62%;
+}
+.about-section .content-wrapper .text-section .list .list-item span {
+  position: absolute;
+  bottom: -4px;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 1px;
+  background-color: #286982;
+  transition: width 0.2s;
 }
 .about-section .content-wrapper .text-section .learn-more-btn {
   padding: 10px 20px;
@@ -315,13 +341,14 @@
     width: 40px;
   }
 }
-.programs-section .content-wrapper .text-section .list {
+.programs-section .content-wrapper .text-section .items {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.programs-section .content-wrapper .text-section .list .list-item {
+.programs-section .content-wrapper .text-section .items .item a {
+  width: 478px;
   display: flex;
   gap: 10px;
   color: #2a2a2a;
@@ -333,38 +360,39 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 768px) {
-  .programs-section .content-wrapper .text-section .list .list-item {
+  .programs-section .content-wrapper .text-section .items .item a {
     padding: 20px 12px;
     align-items: center;
+    width: 306px;
   }
 }
-.programs-section .content-wrapper .text-section .list .list-item svg {
+.programs-section .content-wrapper .text-section .items .item a svg {
   font-size: 60px;
   color: #286982;
   margin-right: 10px;
 }
 @media (max-width: 768px) {
-  .programs-section .content-wrapper .text-section .list .list-item svg {
+  .programs-section .content-wrapper .text-section .items .item a svg {
     font-size: 50px;
     margin-right: 0;
   }
 }
-.programs-section .content-wrapper .text-section .list .list-item .col h3 {
+.programs-section .content-wrapper .text-section .items .item a .col h3 {
   font-size: 18px;
   margin-bottom: 5px;
 }
 @media (max-width: 768px) {
-  .programs-section .content-wrapper .text-section .list .list-item .col h3 {
+  .programs-section .content-wrapper .text-section .items .item a .col h3 {
     font-size: 15px;
   }
 }
-.programs-section .content-wrapper .text-section .list .list-item .col p {
+.programs-section .content-wrapper .text-section .items .item a .col p {
   font-size: 15px;
   color: #757980;
   font-weight: 400;
 }
 @media (max-width: 768px) {
-  .programs-section .content-wrapper .text-section .list .list-item .col p {
+  .programs-section .content-wrapper .text-section .items .item a .col p {
     font-size: 12px;
   }
 }
@@ -841,24 +869,49 @@
   align-items: center;
   background-color: #fff;
 }
+@media (max-width: 768px) {
+  .aboutUs-container .objectives #objectiveSection .objective {
+    padding: 2.4rem 1rem;
+  }
+}
 .aboutUs-container .objectives #objectiveSection .objective .icon-cont {
   width: 105px;
   height: 105px;
   border-radius: 50%;
   position: absolute;
   top: -50px;
-  background-color: #fff;
+  background-color: #286982;
 }
-.aboutUs-container .objectives #objectiveSection .objective .icon-cont svg {
-  font-size: 45px;
-  color: #286982;
+@media (max-width: 768px) {
+  .aboutUs-container .objectives #objectiveSection .objective .icon-cont {
+    width: 86px;
+    height: 86px;
+  }
+}
+.aboutUs-container .objectives #objectiveSection .objective .icon-cont img {
+  width: 57px;
+}
+@media (max-width: 768px) {
+  .aboutUs-container .objectives #objectiveSection .objective .icon-cont img {
+    width: 46px;
+  }
 }
 .aboutUs-container .objectives #objectiveSection .objective h1 {
   margin-top: 1.5rem;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .aboutUs-container .objectives #objectiveSection .objective h1 {
+    font-size: 16px;
+  }
+}
 .aboutUs-container .objectives #objectiveSection .objective .description {
   text-align: center;
+}
+@media (max-width: 768px) {
+  .aboutUs-container .objectives #objectiveSection .objective .description {
+    font-size: 13px;
+  }
 }
 .aboutUs-container .accomplish {
   padding: 6rem 4rem;
@@ -1245,13 +1298,14 @@ main.programs-page .programs-header p {
 main.programs-page .programs-col {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: 1rem;
   width: 100%;
 }
 main.programs-page .programs-col .program {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  padding: 3rem 0;
 }
 @media (max-width: 768px) {
   main.programs-page .programs-col .program {
@@ -1263,6 +1317,10 @@ main.programs-page .programs-col .program {
   main.programs-page .programs-col .program:nth-child(2) .content-aside h2, main.programs-page .programs-col .program:nth-child(2) .content-aside p {
     text-align: end;
   }
+}
+main.programs-page .programs-col .program:nth-child(2) .image-aside {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (max-width: 768px) {
   main.programs-page .programs-col .program:nth-child(2) .image-aside::before {
@@ -1316,6 +1374,8 @@ main.programs-page .programs-col .program aside.image-aside {
   z-index: 1;
   height: -moz-fit-content;
   height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main.programs-page .programs-col .program aside.image-aside::before {
   content: "";
@@ -1332,7 +1392,7 @@ main.programs-page .programs-col .program aside.image-aside::before {
   main.programs-page .programs-col .program aside.image-aside::before {
     left: 30px;
     top: 33px;
-    width: 90%;
+    width: 96%;
     height: 90%;
   }
 }
@@ -1583,19 +1643,6 @@ main.programs-page a {
     gap: 3rem;
   }
 }
-@media (max-width: 768px) {
-  .application-container .stay-in button {
-    width: 150px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 16px;
-    color: #ffffff;
-    border-radius: 15px;
-    padding: 18px;
-    background-color: #286982;
-    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.2196078431);
-  }
-}
 .application-container .stay-in .content {
   display: flex;
   flex-direction: column;
@@ -1663,7 +1710,7 @@ main.programs-page a {
   width: 150px;
   text-align: center;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   color: #286982;
   border-radius: 15px;
   padding: 18px;
@@ -1672,7 +1719,9 @@ main.programs-page a {
 }
 @media (max-width: 768px) {
   .application-container .stay-in .content .sign-up button {
-    width: 150px;
+    padding: 13px;
+    font-size: 14px;
+    width: 120px;
   }
 }
 .application-container .stay-in .image-section {
@@ -2294,6 +2343,49 @@ main.gift-main .content .amount .checkbox-container .custom-checkbox::after {
   border-radius: 2px;
 }
 
+.navbar {
+  box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1490196078);
+}
+
+.links-nav {
+  position: relative;
+}
+.links-nav:hover .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.links-nav .nav-menu {
+  opacity: 0;
+  visibility: hidden; /* Ensure the element is not interactable */
+  position: absolute;
+  bottom: -199px;
+  left: -5px;
+  padding: 8px;
+  min-width: 160px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1490196078);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transform: translateY(-10px); /* Initial state */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.links-nav .nav-menu a {
+  background-color: #eee;
+  color: #a1a1a1;
+  border-radius: 10px;
+  padding: 8px;
+}
+.links-nav .nav-menu a:hover {
+  color: #fff;
+  background-color: #286982;
+}
+.links-nav .nav-menu2 {
+  bottom: -160px;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */
@@ -2330,10 +2422,6 @@ html, body {
   --bg-100:#F7EEDD;
   --bg-200:#ede4d3;
   --bg-300:#c4bcab;
-}
-
-.navbar {
-  box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.1490196078);
 }
 
 ::-webkit-scrollbar {

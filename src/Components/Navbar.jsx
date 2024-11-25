@@ -1,17 +1,23 @@
 import React,{ useState } from 'react';
 import Logo from '../Images/PNG Blue Horizontal.png';
-import { Link } from 'react-scroll';
+import { HashLink } from "react-router-hash-link"; // Import HashLink
 import { BsGift } from "react-icons/bs";
-import {
-  Dialog,
-  DialogPanel,
-  PopoverGroup,
-} from '@headlessui/react'
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
+import {Dialog,DialogPanel,PopoverGroup,Disclosure,DisclosureButton,DisclosurePanel,} from '@headlessui/react';
+import { ChevronDownIcon} from '@heroicons/react/20/solid';
+import {Bars3Icon,XMarkIcon,} from '@heroicons/react/24/outline';
+import { HashLinkComponent } from './HashLinkComponent';
 const Navbar = () => {
+  const ourPrograms = [
+    { name: 'Program 1', href: '/our-programs#program1'},
+    { name: 'Program 2', href: '/our-programs#program2'},
+    { name: 'Program 3', href: '/our-programs#program3'}
+  ]
+  const aboutUs = [
+    { name: 'Objectives', href: '/about-us#Objectives'},
+    { name: 'Accomplish', href: '/about-us#Accomplish'},
+    { name: 'Graduates', href: '/about-us#Graduates'},
+    { name: 'Our team', href: '/about-us#OurTeam'}
+  ]
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <header className="z-10 bg-white fixed navbar top-0 w-full">
@@ -36,12 +42,27 @@ const Navbar = () => {
           <a href='/' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Home
           </a>
-          <Link  spy={true} smooth={true} offset={-50} duration={500} to="about-section" className=" cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            About Us
-          </Link>
-          <Link spy={true} smooth={true} offset={-50} duration={500} to='programs-section' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
-            Our Programs
-          </Link>
+          <div className="links-nav cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+            <HashLink smooth to="/#about-section">
+              About Us
+            </HashLink>
+            <div className="nav-menu">
+              <HashLinkComponent name="Objectives" link="/about-us#Objectives"></HashLinkComponent>
+              <HashLinkComponent name="Accomplish" link="/about-us#Accomplish"></HashLinkComponent>
+              <HashLinkComponent name="Graduates" link="/about-us#Graduates"></HashLinkComponent>
+              <HashLinkComponent name="Our team" link="/about-us#OurTeam"></HashLinkComponent>
+            </div>
+          </div>
+          <div className="links-nav cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+            <HashLink smooth to="/#programs-section">
+              Our Programs
+            </HashLink>
+            <div className="nav-menu nav-menu2"> 
+              <HashLinkComponent name="Program 1" link="/our-programs#program1"></HashLinkComponent>
+              <HashLinkComponent name="Program 2" link="/our-programs#program2"></HashLinkComponent>
+              <HashLinkComponent name="Program 3" link="/our-programs#program3"></HashLinkComponent>
+            </div>
+          </div>
           <a href= "/program-application" className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Register Now
           </a>
@@ -87,35 +108,57 @@ const Navbar = () => {
                 >
                   Home
                 </a>
-                <a
-                  smooth={true}
-                  spy={true} 
-                  offset={-200}
-                  duration={500}
-                  onClick={() => setMobileMenuOpen(false)}
-                  href='about-us'
-                  className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
-                >
-                  About Us
-                </a>
-                <a
-                  href='/our-programs'
-                  onClick={() => setMobileMenuOpen(false)}
-                  smooth={true}
-                  spy={true} 
-                  offset={-50}
-                  duration={500}
-                  className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
-                >
-                  Our Programs
-                </a>
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-navbar-blue hover:bg-gray-50">
+                    About Us
+                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-[open]:rotate-180" />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...aboutUs].map((item) => (
+                      <HashLink
+                        key={item.name}
+                        smooth
+                        to={item.href}
+                        scroll={(el) => {
+                          const yOffset = -60; // Adjust this value to match the height of your navbar
+                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-navbar-blue hover:bg-gray-50"
+                      >
+                        {item.name}
+                      </HashLink>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-navbar-blue hover:bg-gray-50">
+                    Our Programs
+                    <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-[open]:rotate-180" />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...ourPrograms].map((item) => (
+                      <HashLink
+                        key={item.name}
+                        smooth
+                        to={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        scroll={(el) => {
+                          const yOffset = -60; // Adjust this value to match the height of your navbar
+                          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }}
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm/7 font-semibold text-navbar-blue hover:bg-gray-50"
+                      >
+                        {item.name}
+                      </HashLink>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
                 <a
                   href='/program-application'
                   onClick={() => setMobileMenuOpen(false)}
-                  smooth={true}
-                  spy={true} 
-                  offset={-200}
-                  duration={500}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Register Now
@@ -123,22 +166,16 @@ const Navbar = () => {
                 <a
                   href='/contact-us'
                   onClick={() => setMobileMenuOpen(false)}
-                  smooth={true}
-                  spy={true} 
-                  offset={-200}
-                  duration={500}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Contact Us
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="/login"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+              <a href="/support-our-journey" className="py-3 px-6 flex gap-2 w-fit items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+                <BsGift className='text-base'/> 
+                <p className='text-base'>Gift</p>
+              </a>
               </div>
             </div>
           </div>

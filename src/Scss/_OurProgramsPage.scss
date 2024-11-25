@@ -49,12 +49,13 @@ main.programs-page{
   .programs-col {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 1rem;
     width: 100%;
     .program{
       display: flex;
       justify-content: space-around;
       width: 100%;
+      padding: 3rem 0;
       @include breakpoint(mobile) {
         flex-direction: column;
         gap: 2rem;
@@ -68,6 +69,7 @@ main.programs-page{
           }
         }
         .image-aside{
+          width: fit-content;
           &::before{
             @include breakpoint (mobile){
               left: -14px;
@@ -114,6 +116,7 @@ main.programs-page{
           position: relative;
           z-index: 1;
           height: fit-content;
+          width: fit-content;
           &::before{
             content: "";
             position: absolute;
@@ -127,7 +130,7 @@ main.programs-page{
             @include breakpoint(mobile) {
               left: 30px;
               top: 33px;
-              width: 90%;
+              width: 96%;
               height: 90%;
             }
           }

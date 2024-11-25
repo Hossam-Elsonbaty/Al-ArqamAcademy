@@ -11,6 +11,7 @@
 @import'ContactUs';
 @import'Payment';
 @import'Gift';
+@import'Navbar';
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
@@ -49,9 +50,6 @@ html,body{
   --bg-100:#F7EEDD;
   --bg-200:#ede4d3;
   --bg-300:#c4bcab;
-}
-.navbar {
-  box-shadow: 1px 1px 10px 4px #00000026;
 }
 ::-webkit-scrollbar {
   width: 5px; /* width of the scrollbar */

@@ -21,8 +21,8 @@ export const AboutUs = () => {
         </p>
         <a href='/program-application'>Register Now</a>
       </header>
-      <section className="objectives"><Objectives></Objectives></section>
-      <section className="accomplish">
+      <section className="objectives" id='Objectives'><Objectives></Objectives></section>
+      <section className="accomplish" id='Accomplish'>
         <header>
           <h1>
             How Al-Arqam Accomplish Goals ?
@@ -60,8 +60,8 @@ export const AboutUs = () => {
         </div>
         <a href='/program-application'>Register Now</a>
       </section>
-      <Graduates></Graduates>
-      <OurTeam></OurTeam>
+      <section id="Graduates"><Graduates></Graduates></section>
+      <section id="OurTeam"><OurTeam></OurTeam></section>
     </section>
   )
 }

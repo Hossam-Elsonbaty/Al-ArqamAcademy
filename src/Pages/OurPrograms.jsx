@@ -18,9 +18,8 @@ export const OurPrograms = () => {
       </section>
       {isDesktop
       ?
-
       <section className='programs-col'>
-        <div className='program'>
+        <div className='program' id="program1">
           <aside className='content-aside'>
             <TbSquareNumber1/>
             <div>
@@ -32,7 +31,7 @@ export const OurPrograms = () => {
             <img src={image6} alt="image"/>
           </aside>
         </div>
-        <div className='program'>
+        <div className='program' id="program2">
           <aside className='image-aside'>
             <img src={image7} alt="image"/>
           </aside>
@@ -44,7 +43,7 @@ export const OurPrograms = () => {
             </div>
           </aside>
         </div>
-        <div className='program'>
+        <div className='program' id="program3">
           <aside className='content-aside'>
             <TbSquareNumber3/>
             <div>
@@ -64,7 +63,7 @@ export const OurPrograms = () => {
       </section>
       :
       <section className='programs-col'>
-        <div className='program'>
+        <div className='program' id="program1">
           <aside className='content-aside'>
             <TbSquareNumber1/>
             <div>
@@ -76,7 +75,7 @@ export const OurPrograms = () => {
             <img src={image6} alt="image"/>
           </aside>
         </div>
-        <div className='program'>
+        <div className='program' id="program2">
           <aside className='content-aside'>
             <div>
               <h2>Hoffaz Dar Al-Arqam “Memorization”</h2>
@@ -88,7 +87,7 @@ export const OurPrograms = () => {
             <img src={image7} alt="image"/>
           </aside>
         </div>
-        <div className='program'>
+        <div className='program' id="program3">
           <aside className='content-aside'>
             <TbSquareNumber3/>
             <div>

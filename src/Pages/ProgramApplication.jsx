@@ -11,8 +11,8 @@ export const ProgramApplication = () => {
     setKidsCount(Number(e.target.value))
     console.log(e.target.value);
   }
-  const onDateChange = (date, dateString) => {
-    console.log(date, dateString);
+  const onDateChange = (date) => {
+    console.log(date);
   };
   return (
     <>
@@ -59,11 +59,6 @@ export const ProgramApplication = () => {
             />
           </div>
           <div className='input-cont'>
-            {/* <input
-              type="date"
-              placeholder="E.g. johndoe@email.com"
-              className="text-zinc-400"
-            /> */}
             <DatePicker onChange={onDateChange} className='antd'/>
             <select id="programType" className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
@@ -174,8 +169,7 @@ export const ProgramApplication = () => {
               <h1>STAY IN TOUCH</h1>
               <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
               <div className='sign-up'>
-                <input type="email" placeholder='Enter Your Email' />
-                <button type="submit">Sign Up</button>
+                <button type="submit">Contact Us</button>
               </div>
             </div>
             <div class="image-section">
@@ -197,10 +191,10 @@ export const ProgramApplication = () => {
               <h1>STAY IN TOUCH</h1>
               <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
               <div className='sign-up'>
-                <input type="email" placeholder='Enter Your Email' />
+                {/* <input type="email" placeholder='Enter Your Email' /> */}
+                <button type="submit">Contact Us</button>
               </div>
             </div>
-            <button type="submit">Sign Up</button>
           </div>
         }
       </div>

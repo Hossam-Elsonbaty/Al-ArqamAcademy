@@ -76,16 +76,43 @@
         flex-direction: column;
         gap: 20px;
         .list-item {
-          @include breakpoint (mobile) {
-            font-size: 12px;
-          }
           display: flex;
-          align-items: center;
-          color: #2a2a2a;
-          font-weight: 500;
+          flex-direction: column;
+          width: fit-content;
+          position: relative;
+          .link-cont{
+            @include breakpoint (mobile) {
+              font-size: 12px;
+            }
+            color: #2a2a2a;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+          }
           svg {
             color: #286982;
             margin-right: 10px;
+          }
+          &:hover {
+            span {
+              width: 90%;
+            }
+            .our-team {
+              width: 76%;
+            }
+          }
+          .our-team {
+            left: 62%;
+          }
+          span {
+            position: absolute;
+            bottom: -4px;
+            left: 53%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 1px;
+            background-color: #286982;
+            transition: width 0.2s;
           }
         }
       }

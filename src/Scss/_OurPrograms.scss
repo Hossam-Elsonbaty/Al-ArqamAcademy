@@ -65,48 +65,52 @@
           }
         }
       }
-      .list {
+      .items {
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        .list-item {
-          @include breakpoint(mobile) {
-            padding: 20px 12px;
-            align-items: center;
-          }
-          display: flex;
-          gap: 10px;
-          color: #2a2a2a;
-          font-weight: 500;
-          background: #fff;
-          padding: 25px 50px;
-          border-radius: 5px;
-          border: 1px solid #eee;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          svg {
-            font-size: 60px;
-            color: #286982;
-            margin-right: 10px;
-            @include breakpoint (mobile) {
-              font-size: 50px;
-              margin-right: 0;
+        .item {
+          a{
+            @include breakpoint(mobile) {
+              padding: 20px 12px;
+              align-items: center;
+              width: 306px;
             }
-          }
-          .col{
-            h3{
+            width: 478px;
+            display: flex;
+            gap: 10px;
+            color: #2a2a2a;
+            font-weight: 500;
+            background: #fff;
+            padding: 25px 50px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            svg {
+              font-size: 60px;
+              color: #286982;
+              margin-right: 10px;
               @include breakpoint (mobile) {
-                font-size: 15px;
+                font-size: 50px;
+                margin-right: 0;
               }
-              font-size: 18px;
-              margin-bottom: 5px;
             }
-            p{
-              font-size: 15px;
-              color: #757980;
-              font-weight: 400;
-              @include breakpoint (mobile) {
-                font-size: 12px;
+            .col{
+              h3{
+                @include breakpoint (mobile) {
+                  font-size: 15px;
+                }
+                font-size: 18px;
+                margin-bottom: 5px;
+              }
+              p{
+                font-size: 15px;
+                color: #757980;
+                font-weight: 400;
+                @include breakpoint (mobile) {
+                  font-size: 12px;
+                }
               }
             }
           }

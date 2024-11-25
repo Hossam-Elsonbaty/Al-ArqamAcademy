@@ -21,7 +21,7 @@ export const OurTeam = () => {
               <div className="imgContainer">
                 <img src={image2} alt="image" className='teammateImage' />
               </div>
-              <h1 className='font-poppins text-2xl font-bold'>Dr. Hala Charif</h1>
+              <h1 className='font-poppins text-2xl font-bold'>Ustatha. Hala Charif</h1>
               <p className='description text-zinc-500'> 
                 Al-Arqam Academy Director
               </p>

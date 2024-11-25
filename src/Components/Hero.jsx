@@ -6,7 +6,8 @@ import { TbBorderRadius } from 'react-icons/tb';
 export default function Example() {
   const [displayedText, setDisplayedText] = useState('');
   const text2 = "“Of all of Allah’s servants, only the knowledgeable (of His might) are (Truly)in awe of Him”";
-  const text3 = "” ۗإِنَّمَا يَخْشَى ٱللَّهَ مِنْ عِبَادِهِ ٱلْعُلَمَـٰٓؤُا۟“";
+  // const text3 = "” ۗإِنَّمَا يَخْشَى ٱللَّهَ مِنْ عِبَادِهِ ٱلْعُلَمَـٰٓؤُا۟“";
+  const text3= "“إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُۗ”"
   const text4 = "(Fatir: 28)  (فاطر: ٢٨) "
   const [text] = useTypewriter({
     words:[text3],

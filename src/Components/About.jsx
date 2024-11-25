@@ -2,6 +2,8 @@ import React, {useContext} from 'react';
 import image from '../Images/item1.jpeg';
 import { FaCheckCircle } from "react-icons/fa";
 import IsDesktop from '../Context/IsDesktop';
+import { HashLink } from "react-router-hash-link"; // Import HashLink
+import { HashLinkComponent } from './HashLinkComponent';
 // import Poster from 'https://s3-alpha-sig.figma.com/img/a2a5/39bd/d8cf38fab44d70581688c226544c2bec?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jqQ9i2vaRCKW~YbCzyufHsDpIRhHz9Fuzo7BGpzTq6LuoYUa1zH5hVEUl2R9SQo4TFanFZlHJz6N6P2BTuCaJ8MIQd99TBZrPIXGvBTBCbyRo4TbaGKjZcDhvTbuDQPmLBc0DBsDl7c4MG4qfyi99o4VuGeCoW0AyZGak24CVhq7iLrOH0hcPaYAotZbh9M9EKF~CckaU6vfBI1dhJtiWXKeMTxTsNJDetLtxQb54WVnkKSBJVT26FWC0yHXtlCnkxiN4EJifAeI4Z84BnMAbx~gytnyGdm2gqAAOCgNVnU79PfT~B1V-2OkqEaoYFGeAPDjsruTF5UtEFGBfC3MHg__';
 export default function About() {
   const { isDesktop } = useContext(IsDesktop);
@@ -21,16 +23,32 @@ export default function About() {
             </p>
             <div class="list">
               <div class="list-item">
-                <FaCheckCircle/> Objectives of Al-Arqam Academy
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Objectives of Al-Arqam Academy" link="/about-us#Objectives"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> How Al-Arqam accomplish goals?
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="How Al-Arqam accomplish goals?" link="/about-us#Accomplish"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> Graduates of Al-Arqam Academy
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Graduates of Al-Arqam Academy" link="/about-us#Graduates"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> Our Team
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Our Team" link="/about-us#OurTeam"></HashLinkComponent>
+                </div>
+                <span className='our-team'></span>
               </div>
             </div>
             <a href='/about-us' class="learn-more-btn">Learn More</a>
@@ -57,16 +75,32 @@ export default function About() {
             </p>
             <div class="list">
               <div class="list-item">
-                <FaCheckCircle/> Objectives of Al-Arqam Academy
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Objectives of Al-Arqam Academy" link="/about-us#Objectives"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> How Al-Arqam accomplish goals?
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="How Al-Arqam accomplish goals?" link="/about-us#Accomplish"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> Graduates of Al-Arqam Academy
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Graduates of Al-Arqam Academy" link="/about-us#Graduates"></HashLinkComponent>
+                </div>
+                <span></span>
               </div>
               <div class="list-item">
-                <FaCheckCircle/> Our Team
+                <div className='link-cont'>
+                  <FaCheckCircle/> 
+                  <HashLinkComponent name="Our Team" link="/about-us#OurTeam"></HashLinkComponent>
+                </div>
+                <span className='our-team'></span>
               </div>
             </div>
             <a href='/about-us' class="learn-more-btn">Learn More</a>
