@@ -12,10 +12,10 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 const transporter = nodemailer.createTransport({
-  service: 'Gmail', // Or use your preferred email service
+  service: 'Gmail', 
   auth: {
-    user: process.env.EMAIL_USER, // Your email address
-    pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+    user: process.env.EMAIL_USER, 
+    pass: process.env.EMAIL_PASS, 
   },
 });
 
@@ -34,7 +34,7 @@ app.post('/api/users-application', async (req, res) => {
     await newApplication.save();
     const mailOptions = {
       from: process.env.EMAIL_USER, // Sender address
-      to: 'mostafasonbaty0@gmail.com', // Recipient
+      to: 'moazraof101@gmail.com', // Recipient
       subject: 'New Application Submitted',
       text: `
         A new application has been submitted:
