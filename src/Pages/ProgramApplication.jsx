@@ -3,8 +3,19 @@ import { ChildApplication } from '../Components/ChildApplication';
 import stayIn from '../Images/item10.jpeg';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
+import axios from 'axios';
 export const ProgramApplication = () => {
   const [student, setStudent] = useState(true);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [gender, setGender] = useState("");
+  const [dob, setDob] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState(Number);
+  const [selectedApplication, setSelectedApplication] = useState("");
   const [kidsCount, setKidsCount] = useState(0);
   const {isDesktop} = useContext(IsDesktop);
   const handleAddKids = (e)=>{
@@ -12,8 +23,57 @@ export const ProgramApplication = () => {
     console.log(e.target.value);
   }
   const onDateChange = (date) => {
-    console.log(date);
+    const dateString = new Date(date.$d);
+    const formattedDate = dateString.toLocaleDateString()
+    console.log(formattedDate);
+    setDob(formattedDate)
   };
+  const handleInputNumber = (e) => {
+    const inputValue = e.target.value;
+    if (/^\d*$/.test(inputValue)) {
+      setPhoneNumber(inputValue);
+    }
+  };
+  const handleApplication = async(e) => {
+    e.preventDefault();
+    console.log(
+      firstName,lastName,email,phoneNumber,gender,
+      dob,address,city,zipCode,selectedApplication,student
+    );
+    axios.post('http://localhost:5555/api/users-application', {
+      firstName,lastName,email,phoneNumber,gender,
+      dob,address,city,zipCode,selectedApplication,student
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+  // const url = 'http://localhost:5555/api/users-application';
+  // const formData = new FormData();
+  // formData.append(firstName,firstName);
+  // formData.append(lastName,lastName);
+  // formData.append(email,email);
+  // formData.append(phoneNumber,phoneNumber);
+  // formData.append(gender,gender);
+  // formData.append(dob,dob);
+  // formData.append(address,address);
+  // formData.append(city,city);
+  // formData.append(zipCode,zipCode);
+  // formData.append(selectedApplication,selectedApplication);
+  // formData.append(student,student);
+  // try {
+  //   const response = await axios.post(url, formData, {
+  //     headers: {
+  //       'Content-Type': 'multipart/form-data',
+  //     },
+  //   });
+  //   console.log('Response:', response.data);
+  // } catch (error) {
+  //   console.error('Error posting form data:', error);
+  // }
   return (
     <>
       <div className="application-container">
@@ -33,54 +93,55 @@ export const ProgramApplication = () => {
           </div>
         </header>
         {student?
-        <form>
+        <form onSubmit={handleApplication}>
           <div className='input-cont'>
             <input
               type="text"
               placeholder="First Name"
-              className=""
+              onChange={(e)=>{setFirstName(e.target.value)}}
             />
             <input
               type="text"
               placeholder="Last Name"
-              className=""
+              onChange={(e)=>{setLastName(e.target.value)}}
             />
           </div>
           <div className='input-cont'>
             <input
               type="email"
               placeholder="EMAIL Address"
-              className=""
+              onChange={(e)=>{setEmail(e.target.value)}}
             />
             <input
-              type="number"
+              type="text"
+              value={phoneNumber}
               placeholder="Phone Number"
-              className=""
+              onChange={handleInputNumber}
             />
           </div>
           <div className='input-cont'>
             <DatePicker onChange={onDateChange} className='antd'/>
-            <select id="programType" className="text-zinc-400">
+            <select id="programType" onChange={(e)=>{setGender(e.target.value)}} className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
           </div>
-          <div className='input-cont address' ><input type="text"  placeholder='Address' /></div>
+          <div className='input-cont address' ><input type="text"onChange={(e)=>{setAddress(e.target.value)}}  placeholder='Address' /></div>
           <div className='input-cont'>
             <input
               type="text"
               placeholder="City / State"
-              className=""
+              onChange={(e)=>{setCity(e.target.value)}}
             />
             <input
               type="text"
               placeholder="zip Code"
-              className=""
+              onChange={(e)=>{setZipCode(e.target.value)}}
             />
           </div>
           <div className='input-cont program-type' >
-            <select  name="programType" id="programType"  className='text-zinc-400'>
+            <select onChange={(e)=>{setSelectedApplication(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
               <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
               <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>
               <option value="Hoffaz Dar Al-Arqam (Memorization)">Hoffaz Dar Al-Arqam (Memorization)</option>
@@ -89,7 +150,6 @@ export const ProgramApplication = () => {
           </div>
           <button
             type="submit"
-            className=""
           >
             SUBMIT
           </button>
