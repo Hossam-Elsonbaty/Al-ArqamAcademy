@@ -216,7 +216,7 @@
             border-radius: 10px;
           }        
         }
-        button{
+        a{
           @include breakpoint(mobile) {
             padding: 13px;
             font-size: 14px;

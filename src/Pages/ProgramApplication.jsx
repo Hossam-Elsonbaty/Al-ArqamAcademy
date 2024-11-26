@@ -169,7 +169,7 @@ export const ProgramApplication = () => {
               <h1>STAY IN TOUCH</h1>
               <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
               <div className='sign-up'>
-                <button type="submit">Contact Us</button>
+                <a href='contact-us'>Contact Us</a>
               </div>
             </div>
             <div class="image-section">
@@ -192,7 +192,7 @@ export const ProgramApplication = () => {
               <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
               <div className='sign-up'>
                 {/* <input type="email" placeholder='Enter Your Email' /> */}
-                <button type="submit">Contact Us</button>
+                <a href='contact-us'>Contact Us</a>
               </div>
             </div>
           </div>
