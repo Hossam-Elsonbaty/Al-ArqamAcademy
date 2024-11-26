@@ -14,8 +14,8 @@ export const ProgramApplication = () => {
   const [dob, setDob] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
-  const [zipCode, setZipCode] = useState(Number);
-  const [selectedApplication, setSelectedApplication] = useState("");
+  const [zipCode, setZipCode] = useState(0);
+  const [selectedProgram, setSelectedProgram] = useState("");
   const [kidsCount, setKidsCount] = useState(0);
   const {isDesktop} = useContext(IsDesktop);
   const handleAddKids = (e)=>{
@@ -34,46 +34,38 @@ export const ProgramApplication = () => {
       setPhoneNumber(inputValue);
     }
   };
-  const handleApplication = async(e) => {
+  const handleApplication = async (e) => {
     e.preventDefault();
-    console.log(
-      firstName,lastName,email,phoneNumber,gender,
-      dob,address,city,zipCode,selectedApplication,student
-    );
-    axios.post('http://localhost:5555/api/users-application', {
-      firstName,lastName,email,phoneNumber,gender,
-      dob,address,city,zipCode,selectedApplication,student
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-  // const url = 'http://localhost:5555/api/users-application';
-  // const formData = new FormData();
-  // formData.append(firstName,firstName);
-  // formData.append(lastName,lastName);
-  // formData.append(email,email);
-  // formData.append(phoneNumber,phoneNumber);
-  // formData.append(gender,gender);
-  // formData.append(dob,dob);
-  // formData.append(address,address);
-  // formData.append(city,city);
-  // formData.append(zipCode,zipCode);
-  // formData.append(selectedApplication,selectedApplication);
-  // formData.append(student,student);
-  // try {
-  //   const response = await axios.post(url, formData, {
-  //     headers: {
-  //       'Content-Type': 'multipart/form-data',
-  //     },
-  //   });
-  //   console.log('Response:', response.data);
-  // } catch (error) {
-  //   console.error('Error posting form data:', error);
-  // }
+    const applicationData = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      gender,
+      dob,
+      address,
+      city,
+      zipCode,
+      selectedProgram,
+      student,
+    };
+    console.log('Submitting:', applicationData);
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/api/users-application',
+        JSON.stringify(applicationData) ,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error.response?.data || error.message);
+    }
+  };
+  
   return (
     <>
       <div className="application-container">
@@ -137,11 +129,11 @@ export const ProgramApplication = () => {
             <input
               type="text"
               placeholder="zip Code"
-              onChange={(e)=>{setZipCode(e.target.value)}}
+              onChange={(e)=>{setZipCode(Number(e.target.value))}}
             />
           </div>
           <div className='input-cont program-type' >
-            <select onChange={(e)=>{setSelectedApplication(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
+            <select onChange={(e)=>{setSelectedProgram(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
               <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
               <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>
               <option value="Hoffaz Dar Al-Arqam (Memorization)">Hoffaz Dar Al-Arqam (Memorization)</option>
