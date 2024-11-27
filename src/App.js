@@ -15,7 +15,7 @@ import { OurPrograms } from './Pages/OurPrograms';
 import { Gift } from './Pages/Gift';
 import { Payment } from './Pages/Payment';
 import { DesktopProvider } from './Context/IsDesktop.jsx';
-
+import { ChildrenProvider } from './Context/ChildrenContext.jsx';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -43,7 +43,9 @@ const MainApp = () => (
   <Router>
     <ScrollToTop/>
     <DesktopProvider>
-      <App />
+      <ChildrenProvider>
+        <App />
+      </ChildrenProvider>
     </DesktopProvider>
   </Router>
 );

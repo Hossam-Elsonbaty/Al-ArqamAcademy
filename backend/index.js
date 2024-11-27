@@ -24,9 +24,17 @@ app.post('/api/users-application', async (req, res) => {
   if(
     !application.firstName || !application.lastName || !application.email || !application.phoneNumber
     || !application.gender || !application.dob || !application.address || !application.city
-    || !application.zipCode || !application.selectedProgram || !application.student
+    || !application.zipCode || !application.selectedProgram 
   ){
     return res.status(400).json({ message: "Please fill in all fields" });
+  }else if(application.isParent) {
+    if (application.children.length<1) {
+      return res.status(400).json({ message: "Please fill in all fields" });
+    }
+    application.children.forEach(element => {
+      if(!element.firstName || !element.lastName || !element.gender || !element.dob || !element.selectedProgram)
+        return res.status(400).json({ message: "Please fill in all fields" });
+    });
   }
   console.log(application);
   const newApplication = new userApplication(application);
@@ -47,7 +55,7 @@ app.post('/api/users-application', async (req, res) => {
         City: ${application.city}
         Zip Code: ${application.zipCode}
         Selected Program: ${application.selectedProgram}
-        Student: ${application.student}
+        Student: ${application.isParent}
         `,
     };
     transporter.sendMail(mailOptions, (error, info) => {

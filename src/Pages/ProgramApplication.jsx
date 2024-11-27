@@ -1,11 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React, {useContext, useState} from 'react';
 import { ChildApplication } from '../Components/ChildApplication';
 import stayIn from '../Images/item10.jpeg';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
+import { ChildrenContext } from '../Context/ChildrenContext';
 import axios from 'axios';
 export const ProgramApplication = () => {
-  const [student, setStudent] = useState(true);
+  const {childrenState} = useContext(ChildrenContext)
+  const [isParent, setIsParent] = useState(true);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +23,6 @@ export const ProgramApplication = () => {
   const {isDesktop} = useContext(IsDesktop);
   const handleAddKids = (e)=>{
     setKidsCount(Number(e.target.value))
-    console.log(e.target.value);
   }
   const onDateChange = (date) => {
     const dateString = new Date(date.$d);
@@ -36,7 +38,7 @@ export const ProgramApplication = () => {
   };
   const handleApplication = async (e) => {
     e.preventDefault();
-    const applicationData = {
+    let applicationData ={
       firstName,
       lastName,
       email,
@@ -47,8 +49,13 @@ export const ProgramApplication = () => {
       city,
       zipCode,
       selectedProgram,
-      student,
-    };
+      isParent,
+    }
+    if(isParent) {
+      applicationData = {
+
+      };
+    }
     console.log('Submitting:', applicationData);
     try {
       const response = await axios.post(
@@ -76,15 +83,15 @@ export const ProgramApplication = () => {
             <span></span>
           </h1>
           <div className='switcher'>
-            <div className={`${student? "choice" : "other"}`} onClick={()=>setStudent(true)}>
+            <div className={`${isParent? "choice" : "other"}`} onClick={()=>setIsParent(true)}>
               <p className="text-base">Student</p>
             </div>
-            <div className={`${!student ? "choice" : "other"}`}onClick={()=>setStudent(false)}>
+            <div className={`${!isParent ? "choice" : "other"}`}onClick={()=>setIsParent(false)}>
               <p className="text-base">Parent</p>
             </div>
           </div>
         </header>
-        {student?
+        {isParent?
         <form onSubmit={handleApplication}>
           <div className='input-cont'>
             <input

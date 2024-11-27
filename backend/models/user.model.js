@@ -41,13 +41,16 @@ const userApplicationSchema = new mongoose.Schema({
     type:String,
     required: true
   },
-  student: {
+  isParent: {
     type:Boolean,
     required: true
   },
+  children : {
+    type: Array,
+    required: false
+  }
 },{
   timestamps: true
 });
-
 const userApplication = mongoose.model('UserApplication',userApplicationSchema);
 export default userApplication;
