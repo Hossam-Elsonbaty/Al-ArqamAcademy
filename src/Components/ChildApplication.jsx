@@ -86,10 +86,11 @@
 //   )
 // }
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DatePicker } from 'antd';
-
+import { ChildrenContext } from '../Context/ChildrenContext';
 export const ChildApplication = ({key}) => {
+  const {childrenState,removeChild} = useContext(ChildrenContext);
   const [children, setChildren] = useState([
     {
       child: {
@@ -208,6 +209,7 @@ export const ChildApplication = ({key}) => {
                 </option>
               </select>
             </div>
+            <button onClick={() => removeChild(key)}>Remove</button>
           </form>
         </div>
       ))}

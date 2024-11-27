@@ -8,7 +8,7 @@ import { ChildrenContext } from '../Context/ChildrenContext';
 import axios from 'axios';
 export const ProgramApplication = () => {
   const {childrenState} = useContext(ChildrenContext)
-  const [isParent, setIsParent] = useState(true);
+  const [isParent, setIsParent] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,7 +27,6 @@ export const ProgramApplication = () => {
   const onDateChange = (date) => {
     const dateString = new Date(date.$d);
     const formattedDate = dateString.toLocaleDateString()
-    console.log(formattedDate);
     setDob(formattedDate)
   };
   const handleInputNumber = (e) => {
@@ -38,6 +37,16 @@ export const ProgramApplication = () => {
   };
   const handleApplication = async (e) => {
     e.preventDefault();
+    const childrenData = Array.from({ length: kidsCount }).map((_, index) => {
+      const childForm = document.querySelector(`#child-form-${index}`);
+      return {
+        firstName: childForm.querySelector(`#child-${index}-firstName`).value,
+        lastName: childForm.querySelector(`#child-${index}-lastName`).value,
+        dob: childForm.querySelector(`#child-${index}-dob`).value,
+        gender: childForm.querySelector(`#child-${index}-gender`).value,
+        selectedProgram: childForm.querySelector(`#child-${index}-program-type`).value,
+      };
+    });
     let applicationData ={
       firstName,
       lastName,
@@ -52,27 +61,29 @@ export const ProgramApplication = () => {
       isParent,
     }
     if(isParent) {
-      applicationData = {
-
-      };
+      applicationData.children = childrenData
     }
-    console.log('Submitting:', applicationData);
-    try {
-      const response = await axios.post(
-        'http://localhost:5000/api/users-application',
-        JSON.stringify(applicationData) ,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      console.log('Response:', response.data);
-    } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-    }
+    console.log(applicationData);
   };
-  
+    // console.log('Submitting:', applicationData);
+    // try {
+    //   const response = await axios.post(
+    //     'http://localhost:5000/api/users-application',
+    //     JSON.stringify(applicationData) ,
+    //     {
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //     }
+    //   );
+    //   console.log('Response:', response.data);
+    // } catch (error) {
+    //   console.error('Error:', error.response?.data || error.message);
+    // }
+  // const applicationData = {
+  //   parent: isParent ? parentData : {}, // Include parent data only if the user is a parent
+  //   children: childrenData, // Add all collected children data
+  // };
   return (
     <>
       <div className="application-container">
@@ -83,15 +94,140 @@ export const ProgramApplication = () => {
             <span></span>
           </h1>
           <div className='switcher'>
-            <div className={`${isParent? "choice" : "other"}`} onClick={()=>setIsParent(true)}>
+            <div className={`${!isParent? "choice" : "other"}`} onClick={()=>setIsParent(false)}>
               <p className="text-base">Student</p>
             </div>
-            <div className={`${!isParent ? "choice" : "other"}`}onClick={()=>setIsParent(false)}>
+            <div className={`${isParent ? "choice" : "other"}`}onClick={()=>setIsParent(true)}>
               <p className="text-base">Parent</p>
             </div>
           </div>
         </header>
         {isParent?
+        <form onSubmit={handleApplication}>
+          <div className='input-cont'>
+            <input
+              type="text"
+              placeholder="First Name"
+              onChange={(e)=>{setFirstName(e.target.value)}}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              onChange={(e)=>{setLastName(e.target.value)}}
+            />
+          </div>
+          <div className='input-cont'>
+            <input
+              type="email"
+              placeholder="EMAIL Address"
+              onChange={(e)=>{setEmail(e.target.value)}}
+            />
+            <input
+              type="number"
+              placeholder="Phone Number"
+              onChange={(e)=>{setPhoneNumber(e.target.value)}}
+            />
+          </div>
+          <div className='input-cont address'><input type="text" onChange={(e)=>{setAddress(e.target.value)}} placeholder='Address' /></div>
+          <div className="input-cont">
+            <input
+              type="text"
+              placeholder="City / State"
+              onChange={(e)=>{setFirstName(e.target.value)}}
+            />
+            <input
+              type="text"
+              placeholder="zip Code"
+              onChange={(e)=>{setFirstName(e.target.value)}}
+            />
+          </div>
+          <div className="input-cont program-type">
+            <select
+              onChange={(e) => handleAddKids(e)}
+              name="kidsCount"
+              id="kidsCount"
+              style={{width:'100%'}}
+              className='text-zinc-400'
+            >
+              <option value="0" hidden selected>
+                How many kids are you interested in registering?
+              </option>
+              {[...Array(10).keys()].map((i) => (
+                <option key={i} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}
+            </select>
+          </div>
+          {Array.from({ length: kidsCount }).map((_, index) => (
+            <div key={index}>
+              <div className="flex items-center my-4 w-50 justify-center gap-4">
+                <div className="bg-deep-teal w-10 h-1"></div>
+                <div>Child {index + 1}</div>
+                <div className="bg-deep-teal w-10 h-1"></div>
+              </div>
+              <div className='form-div' id={`child-form-${index}`}>
+                <div className="input-cont">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    id={`child-${index}-firstName`}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    id={`child-${index}-lastName`}
+                  />
+                </div>
+                <div className="input-cont">
+                  <DatePicker
+                    id={`child-${index}-dob`}
+                    onChange={(date) => onDateChange(index, date)}
+                    className="antd"
+                  />
+                  <select
+                    id={`child-${index}-gender`}
+                    className="text-zinc-400"
+                  >
+                    <option value="" hidden>
+                      Gender
+                    </option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+                <div className="input-cont program-type">
+                  <select
+                    name="programType"
+                    id={`child-${index}-program-type`}
+                    className="text-zinc-400"
+                    style={{ width: "100%" }}
+                  >
+                    <option value="" hidden>
+                      Select A Program For Your Application
+                    </option>
+                    <option value="Step One in the Quran Journey">
+                      Step One in the Quran Journey
+                    </option>
+                    <option value="Hoffaz Dar Al-Arqam (Memorization)">
+                      Hoffaz Dar Al-Arqam (Memorization)
+                    </option>
+                    <option value="Inheritors of the Prophets’ program">
+                      Inheritors of the Prophets’ program
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          ))}
+          <button
+            type="submit"
+            className=""
+          >
+            SUBMIT
+          </button>
+        </form>
+        : 
         <form onSubmit={handleApplication}>
           <div className='input-cont'>
             <input
@@ -148,74 +284,7 @@ export const ProgramApplication = () => {
             </select>
           </div>
           <button
-            type="submit"
-          >
-            SUBMIT
-          </button>
-        </form>
-        : 
-        <form>
-          <div className='input-cont'>
-            <input
-              type="text"
-              placeholder="First Name"
-              className=""
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className=""
-            />
-          </div>
-          <div className='input-cont'>
-            <input
-              type="email"
-              placeholder="EMAIL Address"
-              className=""
-            />
-            <input
-              type="number"
-              placeholder="Phone Number"
-              className=""
-            />
-          </div>
-          <div className='input-cont address'><input type="text" placeholder='Address' /></div>
-          <div className="input-cont">
-            <input
-              type="text"
-              placeholder="City / State"
-              className=""
-            />
-            <input
-              type="text"
-              placeholder="zip Code"
-              className=""
-            />
-          </div>
-          <div className="input-cont program-type">
-            <select
-              onChange={(e) => handleAddKids(e)}
-              name="kidsCount"
-              id="kidsCount"
-              style={{width:'100%'}}
-              className='text-zinc-400'
-            >
-              <option value="0" hidden selected>
-                How many kids are you interested in registering?
-              </option>
-              {[...Array(10).keys()].map((i) => (
-                <option key={i} value={i + 1}>
-                  {i + 1}
-                </option>
-              ))}
-            </select>
-          </div>
-          {Array.from({ length: kidsCount }).map((_, index) => (
-            <ChildApplication key={index} kidsCount={index + 1} />
-          ))}
-          <button
-            type="submit"
-            className=""
+            type='submit'
           >
             SUBMIT
           </button>
@@ -234,7 +303,7 @@ export const ProgramApplication = () => {
             <div class="image-section">
               <div className="image-container">
                 <div className='before'></div>
-                <img src={stayIn}/>
+                <img src={stayIn} alt='image'/>
               </div>
             </div>
           </div>
@@ -243,14 +312,13 @@ export const ProgramApplication = () => {
             <div class="image-section">
               <div className="image-container">
                 <div className='before'></div>
-                <img src={stayIn}/>
+                <img src={stayIn} alt='image'/>
               </div>
             </div>
             <div className="content">
               <h1>STAY IN TOUCH</h1>
               <span>Be the first to hear about upcoming classes, exclusive events, and the latest resources to help you or your child gain accessible Shariah knowledge grounded in the Quran and Sunnah.</span>
               <div className='sign-up'>
-                {/* <input type="email" placeholder='Enter Your Email' /> */}
                 <a href='contact-us'>Contact Us</a>
               </div>
             </div>

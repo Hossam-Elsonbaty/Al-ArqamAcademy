@@ -7,6 +7,7 @@ export const ChildrenProvider = ({ children }) => {
   const [childrenState, setChildrenState] = useState([
     {
       child: {
+        id:0,
         firstName: "",
         LastName: "",
         dob: "",
@@ -15,9 +16,9 @@ export const ChildrenProvider = ({ children }) => {
       },
     },
   ]);
-  const addChild = () => {
+  const addChild = (id,firstName,lastName,dob,gender,selectedProgram) => {
     setChildrenState([
-      ...children,
+      ...childrenState,
       {
         child: {
           id:0,
@@ -29,6 +30,9 @@ export const ChildrenProvider = ({ children }) => {
         },
       },
     ]);
+  };
+  const removeChild = (index) => {
+    setChildrenState(children.filter((_, i) => i !== index));
   };
   const updateChild = (index, field, value) => {
     setChildrenState(

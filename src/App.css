@@ -1543,7 +1543,7 @@ main.programs-page a {
     font-size: 15px;
   }
 }
-.application-container form {
+.application-container form, .application-container .form-div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1553,34 +1553,34 @@ main.programs-page a {
   padding: 0 5rem;
 }
 @media (max-width: 768px) {
-  .application-container form {
+  .application-container form, .application-container .form-div {
     padding: 0rem;
     flex-wrap: nowrap;
     gap: 30px;
   }
 }
-.application-container form .input-cont {
+.application-container form .input-cont, .application-container .form-div .input-cont {
   display: flex;
   gap: 40px;
 }
 @media (max-width: 768px) {
-  .application-container form .input-cont {
+  .application-container form .input-cont, .application-container .form-div .input-cont {
     gap: 30px;
     flex-direction: column;
     width: 100%;
   }
 }
-.application-container form .input-cont .ant-picker input {
+.application-container form .input-cont .ant-picker input, .application-container .form-div .input-cont .ant-picker input {
   padding: 0;
   box-shadow: none;
 }
-.application-container form .input-cont .ant-picker input::-moz-placeholder {
+.application-container form .input-cont .ant-picker input::-moz-placeholder, .application-container .form-div .input-cont .ant-picker input::-moz-placeholder {
   color: #a1a1a1;
 }
-.application-container form .input-cont .ant-picker input::placeholder {
+.application-container form .input-cont .ant-picker input::placeholder, .application-container .form-div .input-cont .ant-picker input::placeholder {
   color: #a1a1a1;
 }
-.application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker {
+.application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker, .application-container .form-div .input-cont input, .application-container .form-div .input-cont select, .application-container .form-div .input-cont .ant-picker {
   width: 360px;
   background-color: #ECF9FE;
   border-radius: 15px;
@@ -1590,22 +1590,22 @@ main.programs-page a {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2117647059);
 }
 @media (max-width: 768px) {
-  .application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker {
+  .application-container form .input-cont input, .application-container form .input-cont select, .application-container form .input-cont .ant-picker, .application-container .form-div .input-cont input, .application-container .form-div .input-cont select, .application-container .form-div .input-cont .ant-picker {
     width: 100%;
   }
 }
-.application-container form .address, .application-container form .program-type {
+.application-container form .address, .application-container form .program-type, .application-container .form-div .address, .application-container .form-div .program-type {
   width: 760px;
 }
 @media (max-width: 768px) {
-  .application-container form .address, .application-container form .program-type {
+  .application-container form .address, .application-container form .program-type, .application-container .form-div .address, .application-container .form-div .program-type {
     width: 100%;
   }
 }
-.application-container form .address input, .application-container form .address select, .application-container form .program-type input, .application-container form .program-type select {
+.application-container form .address input, .application-container form .address select, .application-container form .program-type input, .application-container form .program-type select, .application-container .form-div .address input, .application-container .form-div .address select, .application-container .form-div .program-type input, .application-container .form-div .program-type select {
   width: 100%;
 }
-.application-container form button {
+.application-container form button, .application-container .form-div button {
   background-color: #286982;
   border-radius: 15px;
   padding: 7px 2rem;
@@ -1614,7 +1614,7 @@ main.programs-page a {
   width: 260px;
 }
 @media (max-width: 768px) {
-  .application-container form button {
+  .application-container form button, .application-container .form-div button {
     width: 180px;
     font-size: 13px;
     border-radius: 9px;
