@@ -250,11 +250,13 @@ export const ProgramApplication = () => {
           <div className='input-cont'>
             <input
               type="text"
+              required
               placeholder="First Name"
               onChange={(e)=>{setFirstName(e.target.value)}}
             />
             <input
               type="text"
+              required
               placeholder="Last Name"
               onChange={(e)=>{setLastName(e.target.value)}}
             />
@@ -262,11 +264,13 @@ export const ProgramApplication = () => {
           <div className='input-cont'>
             <input
               type="email"
+              required
               placeholder="EMAIL Address"
               onChange={(e)=>{setEmail(e.target.value)}}
             />
             <input
               type="text"
+              required
               value={phoneNumber}
               placeholder="Phone Number"
               onChange={handleInputNumber}
@@ -274,7 +278,7 @@ export const ProgramApplication = () => {
           </div>
           <div className='input-cont'>
             <DatePicker onChange={onDateChange} className='antd'/>
-            <select id="programType" onChange={(e)=>{setGender(e.target.value)}} className="text-zinc-400">
+            <select required id="programType" onChange={(e)=>{setGender(e.target.value)}} className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -284,17 +288,19 @@ export const ProgramApplication = () => {
           <div className='input-cont'>
             <input
               type="text"
+              required
               placeholder="City / State"
               onChange={(e)=>{setCity(e.target.value)}}
             />
             <input
               type="text"
+              required
               placeholder="zip Code"
               onChange={(e)=>{setZipCode(Number(e.target.value))}}
             />
           </div>
           <div className='input-cont program-type' >
-            <select onChange={(e)=>{setSelectedProgram(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
+            <select required onChange={(e)=>{setSelectedProgram(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
               <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
               <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>
               <option value="Hoffaz Dar Al-Arqam (Memorization)">Hoffaz Dar Al-Arqam (Memorization)</option>
