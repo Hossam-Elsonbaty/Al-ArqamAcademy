@@ -15,7 +15,6 @@ import { OurPrograms } from './Pages/OurPrograms';
 import { Gift } from './Pages/Gift';
 import { Payment } from './Pages/Payment';
 import { DesktopProvider } from './Context/IsDesktop.jsx';
-import { ChildrenProvider } from './Context/ChildrenContext.jsx';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -25,8 +24,6 @@ const App = ()=> {
     <>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Navbar />}
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" exact element={<SignUp />} />
         <Route path="/" exact element={<Home />} />
         <Route path="/about-us" exact element={<AboutUs />} />
         <Route path="/our-programs" exact element={<OurPrograms />} />
@@ -43,9 +40,7 @@ const MainApp = () => (
   <Router>
     <ScrollToTop/>
     <DesktopProvider>
-      <ChildrenProvider>
-        <App />
-      </ChildrenProvider>
+      <App />
     </DesktopProvider>
   </Router>
 );

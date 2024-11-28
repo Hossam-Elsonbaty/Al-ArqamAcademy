@@ -21,43 +21,81 @@ const transporter = nodemailer.createTransport({
 
 app.post('/api/users-application', async (req, res) => {
   const application = req.body;
-  if(
-    !application.firstName || !application.lastName || !application.email || !application.phoneNumber
-    || !application.gender || !application.dob || !application.address || !application.city
-    || !application.zipCode || !application.selectedProgram 
-  ){
-    return res.status(400).json({ message: "Please fill in all fields" });
-  }else if(application.isParent) {
-    if (application.children.length<1) {
-      return res.status(400).json({ message: "Please fill in all fields" });
-    }
-    application.children.forEach(element => {
-      if(!element.firstName || !element.lastName || !element.gender || !element.dob || !element.selectedProgram)
-        return res.status(400).json({ message: "Please fill in all fields" });
-    });
+  // Validate common fields for all applications
+  if (
+    !application.firstName || 
+    !application.lastName || 
+    !application.email || 
+    !application.phoneNumber || 
+    !application.address || 
+    !application.city || 
+    !application.zipCode
+  ) {
+    return res.status(400).json({ message: "Please fill in all required fields" });
   }
-  console.log(application);
+  // Additional validation for students (isParent = false)
+  if (!application.isParent) {
+    if (!application.dob || !application.selectedProgram || !application.gender) {
+      return res.status(400).json({ message: "Students must provide Date of Birth and Selected Program" });
+    }
+  }
+  // Additional validation for parents (isParent = true)
+  if (application.isParent) {
+    if (!application.children || application.children.length < 1) {
+      return res.status(400).json({ message: "Parents must register at least one child" });
+    }
+    // Validate each child in the application
+    const invalidChild = application.children.some(child =>
+      !child.firstName || !child.lastName || !child.gender || !child.dob || !child.selectedProgram
+    );
+    if (invalidChild) {
+      return res.status(400).json({ message: "Please fill in all fields for each child" });
+    }
+  }
+  // Save the application to the database
   const newApplication = new userApplication(application);
   try {
     await newApplication.save();
-    const mailOptions = {
-      from: process.env.EMAIL_USER, // Sender address
-      to: 'moazraof101@gmail.com', // Recipient
-      subject: 'New Application Submitted',
-      text: `
-        A new application has been submitted:
-        Name: ${application.firstName} ${application.lastName}
-        Email: ${application.email}
-        Phone: ${application.phoneNumber}
-        Gender: ${application.gender}
+    // Prepare the email content
+    let emailContent = `
+      A new application has been submitted:
+      Name: ${application.firstName} ${application.lastName}
+      Email: ${application.email}
+      Phone: ${application.phoneNumber}
+      Gender: ${application.gender}
+      Address: ${application.address}
+      City: ${application.city}
+      Zip Code: ${application.zipCode}
+    `;
+    if (!application.isParent) {
+      emailContent += `
+        Role: Student
         Date of Birth: ${application.dob}
-        Address: ${application.address}
-        City: ${application.city}
-        Zip Code: ${application.zipCode}
         Selected Program: ${application.selectedProgram}
-        Student: ${application.isParent}
-        `,
+      `;
+    } else {
+      emailContent += `
+        Role: Parent
+        Children:
+      `;
+      application.children.forEach((child, index) => {
+        emailContent += `
+          Child ${index + 1}:
+          Name: ${child.firstName} ${child.lastName}
+          Gender: ${child.gender}
+          Date of Birth: ${child.dob}
+          Selected Program: ${child.selectedProgram}
+        `;
+      });
+    }
+    // Email configuration
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: 'moazraof101@gmail.com',
+      subject: 'New Application Submitted',
+      text: emailContent,
     };
+    // Send the email
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
@@ -65,10 +103,11 @@ app.post('/api/users-application', async (req, res) => {
         console.log('Email sent:', info.response);
       }
     });
-    res.status(201).json({success: true, data: newApplication})
+    // Send a success response
+    res.status(201).json({ success: true, data: newApplication });
   } catch (error) {
-    console.error("Error in create application: ", error.message);
-    res.status(500).json({success: false, message: "server Error"})
+    console.error("Error in create application:", error.message);
+    res.status(500).json({ success: false, message: "Server Error" });
   }
 });
 

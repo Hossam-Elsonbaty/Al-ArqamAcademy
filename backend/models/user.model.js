@@ -1,56 +1,26 @@
 import mongoose from 'mongoose';
 
 const userApplicationSchema = new mongoose.Schema({
-  firstName: {
-    type:String,
-    required: true
-  },
-  lastName: {
-    type:String,
-    required: true
-  },
-  email: {
-    type:String,
-    required: true
-  },
-  phoneNumber: {
-    type:String,
-    required: true
-  },
-  gender: {
-    type:String,
-    required: true
-  },
-  dob: {
-    type:String,
-    required: true
-  },
-  address: {
-    type:String,
-    required: true
-  },
-  city: {
-    type:String,
-    required: true
-  },
-  zipCode: {
-    type:Number,
-    required: true
-  },
-  selectedProgram: {
-    type:String,
-    required: true
-  },
-  isParent: {
-    type:Boolean,
-    required: true
-  },
-  children : {
-    type: Array,
-    required: false
-  }
-},{
-  timestamps: true
+  firstName: String,
+  lastName: String,
+  email: String,
+  phoneNumber: String,
+  gender: { type: String, required: function() { return !this.isParent; } },
+  dob: { type: String, required: function() { return !this.isParent; } },
+  address: String,
+  city: String,
+  zipCode: Number,
+  selectedProgram: { type: String, required: function() { return !this.isParent; } },
+  isParent: Boolean,
+  children: [
+    {
+      firstName: String,
+      lastName: String,
+      gender: String,
+      dob: String,
+      selectedProgram: String,
+    },
+  ],
 });
 const userApplication = mongoose.model('UserApplication',userApplicationSchema);
 export default userApplication;

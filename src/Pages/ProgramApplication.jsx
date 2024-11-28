@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, {useContext, useState} from 'react';
-import { ChildApplication } from '../Components/ChildApplication';
 import stayIn from '../Images/item10.jpeg';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
-import { ChildrenContext } from '../Context/ChildrenContext';
 import axios from 'axios';
 export const ProgramApplication = () => {
-  const {childrenState} = useContext(ChildrenContext)
   const [isParent, setIsParent] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -64,26 +61,21 @@ export const ProgramApplication = () => {
       applicationData.children = childrenData
     }
     console.log(applicationData);
+    try {
+      const response = await axios.post(
+        'http://localhost:5000/api/users-application',
+        JSON.stringify(applicationData) ,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error.response?.data || error.message);
+    }
   };
-    // console.log('Submitting:', applicationData);
-    // try {
-    //   const response = await axios.post(
-    //     'http://localhost:5000/api/users-application',
-    //     JSON.stringify(applicationData) ,
-    //     {
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //     }
-    //   );
-    //   console.log('Response:', response.data);
-    // } catch (error) {
-    //   console.error('Error:', error.response?.data || error.message);
-    // }
-  // const applicationData = {
-  //   parent: isParent ? parentData : {}, // Include parent data only if the user is a parent
-  //   children: childrenData, // Add all collected children data
-  // };
   return (
     <>
       <div className="application-container">
@@ -133,12 +125,12 @@ export const ProgramApplication = () => {
             <input
               type="text"
               placeholder="City / State"
-              onChange={(e)=>{setFirstName(e.target.value)}}
+              onChange={(e)=>{setCity(e.target.value)}}
             />
             <input
               type="text"
               placeholder="zip Code"
-              onChange={(e)=>{setFirstName(e.target.value)}}
+              onChange={(e)=>{setZipCode(e.target.value)}}
             />
           </div>
           <div className="input-cont program-type">
