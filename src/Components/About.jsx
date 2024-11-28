@@ -55,14 +55,14 @@ export default function About() {
           </div>
           <div class="image-section">
             <div className='before'></div>
-            <img src={image}/>
+            <img src={image} alt='image'/>
           </div>
         </div>
         :
         <div class="content-wrapper">
           <div class="image-section">
             <div className='before'></div>
-            <img src={image}/>
+            <img src={image} alt='image'/>
           </div>
           <div class="text-section">
             <h2>

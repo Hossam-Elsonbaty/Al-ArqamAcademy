@@ -26,7 +26,7 @@ export const Gift = () => {
           <section className='message'>
             <h1>
               Support Our Journey
-              <img src={lines} alt="" />
+              <img src={lines} alt='image' />
             </h1>
             <span className='ayah'>{text1}</span>
             <span className='phrase'>{text2}</span>
@@ -39,7 +39,7 @@ export const Gift = () => {
           <section className='message'>
             <h1>
               Support Our Journey
-              <img src={lines} alt="" />
+              <img src={lines} alt='image' />
             </h1>
             <span className='ayah'>{text1}</span>
             <span className='phrase'>{text2}</span>

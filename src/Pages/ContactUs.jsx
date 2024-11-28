@@ -50,7 +50,7 @@ export const ContactUs = () => {
         <img src={dotted} alt="" className='dotted'/>
         <h1>
           Contact Us
-          <img src={line} alt="" />
+          <img src={line} alt='image' />
         </h1>
         <div className="elements">
           <aside className='message'>
@@ -82,14 +82,14 @@ export const ContactUs = () => {
             </div>
             <div className='social'>
               <div className='social-logo'>
-                <img src={instagramLogo} alt="" />
-                <img src={faceLogo} alt="" />
+                <img src={instagramLogo} alt='image' />
+                <img src={faceLogo} alt='image' />
               </div>
               <span>AlarqamAcademy</span>
             </div>
           </aside>
         </div>
-        <img src={dotted} alt="" className='dot'/>
+        <img src={dotted} alt='image' className='dot'/>
       </div>
     </main>
   );
