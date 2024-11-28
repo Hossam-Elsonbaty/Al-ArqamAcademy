@@ -91,18 +91,18 @@ app.post('/api/users-application', async (req, res) => {
     // Email configuration
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'moazraof101@gmail.com',
+      to: 'mostafasonbaty0@gmail.com',
       subject: 'New Application Submitted',
       text: emailContent,
     };
     // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error sending email:', error);
-      } else {
-        console.log('Email sent:', info.response);
-      }
-    });
+    // transporter.sendMail(mailOptions, (error, info) => {
+    //   if (error) {
+    //     console.error('Error sending email:', error);
+    //   } else {
+    //     console.log('Email sent:', info.response);
+    //   }
+    // });
     // Send a success response
     res.status(201).json({ success: true, data: newApplication });
   } catch (error) {

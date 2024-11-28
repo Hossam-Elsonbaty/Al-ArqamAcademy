@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useRef} from 'react';
 import stayIn from '../Images/item10.jpeg';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
 import axios from 'axios';
+import { Toast } from 'primereact/toast';
+import { notification } from 'antd';
 export const ProgramApplication = () => {
+  const toast = useRef(null);
   const [isParent, setIsParent] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,6 +21,13 @@ export const ProgramApplication = () => {
   const [selectedProgram, setSelectedProgram] = useState("");
   const [kidsCount, setKidsCount] = useState(0);
   const {isDesktop} = useContext(IsDesktop);
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = (type, message, description) => {
+    api[type]({
+      message,
+      description
+    });
+  };
   const handleAddKids = (e)=>{
     setKidsCount(Number(e.target.value))
   }
@@ -72,12 +82,15 @@ export const ProgramApplication = () => {
         }
       );
       console.log('Response:', response.data);
+      openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been sent')
     } catch (error) {
+      openNotificationWithIcon('error','failed operation','Please fill your data correctly')
       console.error('Error:', error.response?.data || error.message);
     }
   };
   return (
     <>
+      {contextHolder}
       <div className="application-container">
         <header className="header">
           <h1>
@@ -98,11 +111,13 @@ export const ProgramApplication = () => {
         <form onSubmit={handleApplication}>
           <div className='input-cont'>
             <input
+              required
               type="text"
               placeholder="First Name"
               onChange={(e)=>{setFirstName(e.target.value)}}
             />
             <input
+              required
               type="text"
               placeholder="Last Name"
               onChange={(e)=>{setLastName(e.target.value)}}
@@ -111,30 +126,36 @@ export const ProgramApplication = () => {
           <div className='input-cont'>
             <input
               type="email"
+              required
               placeholder="EMAIL Address"
               onChange={(e)=>{setEmail(e.target.value)}}
             />
             <input
-              type="number"
+              type="text"
+              required
+              value={phoneNumber}
               placeholder="Phone Number"
-              onChange={(e)=>{setPhoneNumber(e.target.value)}}
+              onChange={handleInputNumber}
             />
           </div>
-          <div className='input-cont address'><input type="text" onChange={(e)=>{setAddress(e.target.value)}} placeholder='Address' /></div>
+          <div className='input-cont address'><input required type="text" onChange={(e)=>{setAddress(e.target.value)}} placeholder='Address' /></div>
           <div className="input-cont">
             <input
               type="text"
+              required
               placeholder="City / State"
               onChange={(e)=>{setCity(e.target.value)}}
             />
             <input
               type="text"
+              required
               placeholder="zip Code"
               onChange={(e)=>{setZipCode(e.target.value)}}
             />
           </div>
           <div className="input-cont program-type">
             <select
+              required
               onChange={(e) => handleAddKids(e)}
               name="kidsCount"
               id="kidsCount"
@@ -162,11 +183,13 @@ export const ProgramApplication = () => {
                 <div className="input-cont">
                   <input
                     type="text"
+                    required
                     placeholder="First Name"
                     id={`child-${index}-firstName`}
                   />
                   <input
                     type="text"
+                    required
                     placeholder="Last Name"
                     id={`child-${index}-lastName`}
                   />
@@ -176,9 +199,11 @@ export const ProgramApplication = () => {
                     id={`child-${index}-dob`}
                     onChange={(date) => onDateChange(index, date)}
                     className="antd"
+                    required
                   />
                   <select
                     id={`child-${index}-gender`}
+                    required
                     className="text-zinc-400"
                   >
                     <option value="" hidden>
@@ -191,6 +216,7 @@ export const ProgramApplication = () => {
                 <div className="input-cont program-type">
                   <select
                     name="programType"
+                    required
                     id={`child-${index}-program-type`}
                     className="text-zinc-400"
                     style={{ width: "100%" }}
