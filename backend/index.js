@@ -96,13 +96,13 @@ app.post('/api/users-application', async (req, res) => {
       text: emailContent,
     };
     // Send the email
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //   if (error) {
-    //     console.error('Error sending email:', error);
-    //   } else {
-    //     console.log('Email sent:', info.response);
-    //   }
-    // });
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('Error sending email:', error);
+      } else {
+        console.log('Email sent:', info.response);
+      }
+    });
     // Send a success response
     res.status(201).json({ success: true, data: newApplication });
   } catch (error) {
