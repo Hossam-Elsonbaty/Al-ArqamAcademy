@@ -28,7 +28,7 @@ export const ContactUs = () => {
     try {
       console.log("Attempting request with data:", contactData);
       const res = await axios.post(
-        'http://localhost:5000/api/contact-us',
+        'https://al-arqam-academy.vercel.app/api/contact-us',
         contactData,
         {
           headers: {
