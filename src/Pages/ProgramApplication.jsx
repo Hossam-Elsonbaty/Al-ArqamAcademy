@@ -4,10 +4,8 @@ import stayIn from '../Images/item10.jpeg';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
 import axios from 'axios';
-import { Toast } from 'primereact/toast';
 import { notification } from 'antd';
 export const ProgramApplication = () => {
-  const toast = useRef(null);
   const [isParent, setIsParent] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -82,7 +80,7 @@ export const ProgramApplication = () => {
         }
       );
       console.log('Response:', response.data);
-      openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been sent')
+      openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
     } catch (error) {
       openNotificationWithIcon('error','failed operation','Please fill your data correctly')
       console.error('Error:', error.response?.data || error.message);

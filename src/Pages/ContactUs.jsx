@@ -1,13 +1,51 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { SlLocationPin } from "react-icons/sl";
 import line from '../Images/Vector (1).webp';
 import dotted from '../Images/Group 71.png';
-import faceLogo from '../Images/facebook.png'
-import instagramLogo from '../Images/instagram.png'
+import faceLogo from '../Images/facebook.png';
+import instagramLogo from '../Images/instagram.png';
+import axios from 'axios';
+import { notification } from 'antd';
 export const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [checkbox, setCheckbox] = useState(false);
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = (type, message, description) => {
+    api[type]({
+      message,
+      description
+    });
+  };
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    let contactData = { name, email, message };
+    if (!checkbox) {
+      return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
+    }
+    try {
+      console.log("Attempting request with data:", contactData);
+      const res = await axios.post(
+        'http://localhost:5000/api/contact-us',
+        contactData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log("Request succeeded:", res); 
+      openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
+    } catch (error) {
+      console.error("Request failed:", error.response?.data || error.message);
+      openNotificationWithIcon('error', 'Failed Operation', 'Please fill your data correctly');
+    }
+  };
   return (
     <main className='contact-us'>
+      {contextHolder}
       <div className="card">
         <img src={dotted} alt="" className='dotted'/>
         <h1>
@@ -17,16 +55,16 @@ export const ContactUs = () => {
         <div className="elements">
           <aside className='message'>
             <p>Send Us a Message </p>
-            <form action="">
-              <input type="text" placeholder='Your Name'/>
-              <input type="text" placeholder='Your Email'/>
-              <input type="text" placeholder='Your Message'/>
+            <form onSubmit={handleContactSubmit}>
+              <input type="text" placeholder='Your Name' required onChange={(e)=>{setName(e.target.value)}}/>
+              <input type="email" placeholder='Your Email' required onChange={(e)=>{setEmail(e.target.value)}}/>
+              <input type="text" placeholder='Your Message' required onChange={(e)=>{setMessage(e.target.value)}}/>
               <div class="checkbox-container">
-                <input type="checkbox" id="consentCheckbox"/>
+                <input type="checkbox" id="consentCheckbox" onChange={(e)=>{setCheckbox(!checkbox)}}/>
                 <label for="consentCheckbox" class="custom-checkbox"></label>
                 <label for="consentCheckbox" className='label'>I consent to Alarqm Academy collecting my details through this form</label>
               </div>
-              <button>Send</button>
+              <button type='submit'>Send</button>
             </form>
           </aside>
           <aside className='contact-info'>

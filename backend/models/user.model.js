@@ -22,5 +22,13 @@ const userApplicationSchema = new mongoose.Schema({
     },
   ],
 });
-const userApplication = mongoose.model('UserApplication',userApplicationSchema);
-export default userApplication;
+const contactUsSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+});
+const models = {
+  userApplication : mongoose.model('userApplication',userApplicationSchema),
+  contactUsModel : mongoose.model('contactUsModel',contactUsSchema)
+}
+export default models
