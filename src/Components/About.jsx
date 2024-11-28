@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import image from '../Images/item1.jpeg';
+import image from '../Images/item1.webp';
 import { FaCheckCircle } from "react-icons/fa";
 import IsDesktop from '../Context/IsDesktop';
 import { HashLink } from "react-router-hash-link"; // Import HashLink

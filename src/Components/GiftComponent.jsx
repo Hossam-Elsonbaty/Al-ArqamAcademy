@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import BackgroundImage from '../Images/item3.jpeg';
+import BackgroundImage from '../Images/item3.webp';
 import { BsGift } from "react-icons/bs";
 import IsDesktop from '../Context/IsDesktop';
 export const GiftComponent = () => {

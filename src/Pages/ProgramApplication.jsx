@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {useContext, useState, useRef} from 'react';
-import stayIn from '../Images/item10.jpeg';
+import stayIn from '../Images/item10.webp';
 import IsDesktop from '../Context/IsDesktop';
 import { DatePicker} from 'antd';
 import axios from 'axios';

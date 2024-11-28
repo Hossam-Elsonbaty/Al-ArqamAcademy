@@ -1220,7 +1220,7 @@
 }
 
 main.programs-page {
-  background-image: url("./Images/Grey.png");
+  background-image: url("./Images/Grey.webp");
   background-size: contain;
   display: flex;
   flex-direction: column;
@@ -2078,7 +2078,7 @@ main.gift-main {
   }
 }
 main.gift-main .hero {
-  background-image: url("./Images/item9.jpeg");
+  background-image: url("./Images/item9.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

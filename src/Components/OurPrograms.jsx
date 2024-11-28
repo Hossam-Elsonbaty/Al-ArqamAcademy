@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import image from '../Images/item2.jpeg';
+import image from '../Images/item2.webp';
 import { TbSquareNumber1, TbSquareNumber2, TbSquareNumber3 } from "react-icons/tb";
 import IsDesktop from '../Context/IsDesktop';
 import { HashLinkComponent } from './HashLinkComponent';

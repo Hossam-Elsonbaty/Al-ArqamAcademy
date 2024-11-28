@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { SlLocationPin } from "react-icons/sl";
 import line from '../Images/Vector (1).webp';
-import dotted from '../Images/Group 71.png';
-import faceLogo from '../Images/facebook.png';
-import instagramLogo from '../Images/instagram.png';
+import dotted from '../Images/Group 71.webp';
+import faceLogo from '../Images/facebook.webp';
+import instagramLogo from '../Images/instagram.webp';
 import axios from 'axios';
 import { notification } from 'antd';
 export const ContactUs = () => {

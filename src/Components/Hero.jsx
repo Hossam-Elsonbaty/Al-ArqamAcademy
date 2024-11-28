@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
-import BackgroundImage from '../Images/Grey.png';
-import Logo from '../Images/PNG Blue vertical.png';
+import BackgroundImage from '../Images/Grey.webp';
+import Logo from '../Images/PNG Blue vertical.webp';
 import { TbBorderRadius } from 'react-icons/tb';
 export default function Example() {
   const [displayedText, setDisplayedText] = useState('');

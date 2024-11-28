@@ -1,6 +1,6 @@
 import React from 'react';
-import image1 from '../Images/Moaz.png';
-import image2 from '../Images/drHala.png';
+import image1 from '../Images/Moaz.webp';
+import image2 from '../Images/drHala.webp';
 import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";

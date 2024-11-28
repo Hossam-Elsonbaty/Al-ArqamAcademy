@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { InputText } from "primereact/inputtext";
-import image from '../Images/credit.png'
+import image from '../Images/credit.webp'
 export const Payment = () => {
   const [value, setValue] = useState('');
   const [cvv, setCvv] = useState('');

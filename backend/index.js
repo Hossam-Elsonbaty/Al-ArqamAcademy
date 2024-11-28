@@ -11,7 +11,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 const PORT = process.env.PORT || 5000;
+// Serve static files from React build directory
+app.use(express.static(path.join(__dirname, '../build')));
 
+// API routes
+app.get('/api/hello', (req, res) => {
+  res.json({ message: "Hello from API!" });
+});
+
+// Catch-all route to serve React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 const transporter = nodemailer.createTransport({
   service: 'Gmail', 
   auth: {

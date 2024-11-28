@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import Logo from '../Images/PNG Blue Horizontal.png';
+import Logo from '../Images/PNG Blue Horizontal.webp';
 import { HashLink } from "react-router-hash-link"; // Import HashLink
 import { BsGift } from "react-icons/bs";
 import {Dialog,DialogPanel,PopoverGroup,Disclosure,DisclosureButton,DisclosurePanel,} from '@headlessui/react';

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import image from '../Images/item4.jpeg';
+import image from '../Images/item4.webp';
 import IsDesktop from '../Context/IsDesktop';
 export const Graduates = () => {
   const {isDesktop} = useContext(IsDesktop);

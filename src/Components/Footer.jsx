@@ -3,10 +3,10 @@ import { CiFacebook } from "react-icons/ci";
 import { CiInstagram } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
-import Logo from '../Images/PNG Blue.png';
+import Logo from '../Images/PNG Blue.webp';
 import IsDesktop from '../Context/IsDesktop';
-import lines1 from '../Images/Group 38.png'
-import lines2 from '../Images/Group 39.png'
+import lines1 from '../Images/Group 38.webp'
+import lines2 from '../Images/Group 39.webp'
 export const Footer = () => {
   const {isDesktop} = useContext(IsDesktop) ;
   return(

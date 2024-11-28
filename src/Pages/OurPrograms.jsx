@@ -1,7 +1,7 @@
 import React,{useContext} from 'react';
-import image6 from '../Images/item6.jpeg';
-import image7 from '../Images/item7.jpeg';
-import image8 from '../Images/item8.jpeg';
+import image6 from '../Images/item6.webp';
+import image7 from '../Images/item7.webp';
+import image8 from '../Images/item8.webp';
 import { TbSquareNumber1, TbSquareNumber2, TbSquareNumber3 } from "react-icons/tb";
 import IsDesktop from '../Context/IsDesktop';
 export const OurPrograms = () => {

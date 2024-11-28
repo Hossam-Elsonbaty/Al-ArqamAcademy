@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
-import lines from'../Images/Vector (2).png';
+import lines from'../Images/Vector (2).webp';
 import { InputNumber } from 'primereact/inputnumber';
 import IsDesktop from '../Context/IsDesktop';
-import item9 from '../Images/item9.jpeg'
+import item9 from '../Images/item9.webp'
 export const Gift = () => {
   const {isDesktop} = useContext(IsDesktop)
   const [oneTime, setOneTime] = useState(true);
