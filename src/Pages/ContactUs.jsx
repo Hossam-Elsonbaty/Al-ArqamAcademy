@@ -27,16 +27,23 @@ export const ContactUs = () => {
     }
     try {
       console.log("Attempting request with data:", contactData);
-      const res = await axios.post(
-        'https://al-arqam-academy.vercel.app/api/contact-us',
-        contactData,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      console.log("Request succeeded:", res); 
+      const response = await fetch('https://al-arqam-banckend.vercel.app/api/contact-us', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData),
+      });
+      // const res = await axios.post(
+      //   'http://localhost:5555/api/contact-us',
+      //   contactData,
+      //   {
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   }
+      // );
+      console.log("Request succeeded:", response); 
       openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
     } catch (error) {
       console.error("Request failed:", error.response?.data || error.message);
