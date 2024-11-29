@@ -34,15 +34,6 @@ export const ContactUs = () => {
         },
         body: JSON.stringify(contactData),
       });
-      // const res = await axios.post(
-      //   'http://localhost:5555/api/contact-us',
-      //   contactData,
-      //   {
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //   }
-      // );
       console.log("Request succeeded:", response); 
       openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
     } catch (error) {
