@@ -1,11 +1,17 @@
 main.payment {
   padding: 5rem;
+  @include breakpoint(mobile) {
+    padding: 5rem 2rem;
+  }
   .content {
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
     width: min-content;
+    @include breakpoint(mobile) {
+      width: 100%;
+    }      
     h1{
       font-size: 22px;
       color: #0F001A;
@@ -15,16 +21,26 @@ main.payment {
     }
     h2{
       font-size: 22px;
+      @include breakpoint(mobile) {
+        font-size: 14px;
+      }      
       font-weight: 700;
       color:#757980 ;
       span{
         font-size: 22px;
         font-weight: 400;
+        @include breakpoint(mobile) {
+          font-size: 14px;
+        }      
       }
     }
     .credit-logo{
-      border: 1px solid #B4BEC8;
+      border: 1.2px solid #B4BEC8;
       border-radius: 15px;
+      @include breakpoint(mobile) {
+        border-radius: 8px;
+        padding: 10px;
+      }      
       width: 100%;
       display: flex;
       align-items: center;
@@ -32,17 +48,29 @@ main.payment {
       gap: 20px;
       img{
         width: 48px;
+        @include breakpoint(mobile) {
+          width: 28px;
+        }      
       }
       span{
         font-size: 20px;
         color: #878787;
+        @include breakpoint(mobile) {
+          font-size: 12px;
+        }      
       }
     }
     .input-cont {
       display: flex;
+      @include breakpoint(mobile) {
+        flex-direction: column;
+      }      
       gap: 20px;
       input{
         width: 358px;
+        @include breakpoint(mobile) {
+          width: 100%;
+        }      
         border-radius: 15px;
         font-size: 15px;
         color: #878787;

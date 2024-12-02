@@ -92,7 +92,7 @@ export const Gift = () => {
           </div>
           {selected === 'option2' && <input type="text" placeholder='In honor of'  className='in-honor'/>}
           
-          <button className='proceed'>Proceed to Payment Method</button>
+          <a href='/proceed-to-payment' className='proceed'>Proceed to Payment Method</a>
         </div>
       </section>
     </main>

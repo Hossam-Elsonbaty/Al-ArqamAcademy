@@ -31,10 +31,12 @@ export const Payment = () => {
     <main className='payment'>
       <div className="content">
         <h1>Payment Details</h1>
-        <h2>Chase Bank</h2>
-        <h2>
-          Account Name: <span>UPPING ORGANIZATION, INC</span>
-        </h2>
+        <div className='labels'>
+          <h2>Chase Bank</h2>
+          <h2>
+            Account Name: <span>UPPING ORGANIZATION, INC</span>
+          </h2>
+        </div>
         <div className='credit-logo'>
           <img src={image} alt="image"></img>
           <span>Credit/Debit Card</span>

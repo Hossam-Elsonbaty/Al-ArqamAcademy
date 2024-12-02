@@ -182,6 +182,7 @@ main.gift-main{
         @include button();
         width:100% ;
         padding: 17px;
+        text-align: center;
         @include breakpoint(mobile) {
           font-size: 14px;
           border-radius: 10px;

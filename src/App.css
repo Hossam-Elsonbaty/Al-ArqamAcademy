@@ -2001,6 +2001,11 @@ main.contact-us .card .elements aside.contact-info .icons svg {
 main.payment {
   padding: 5rem;
 }
+@media (max-width: 768px) {
+  main.payment {
+    padding: 5rem 2rem;
+  }
+}
 main.payment .content {
   margin: auto;
   display: flex;
@@ -2008,6 +2013,11 @@ main.payment .content {
   gap: 30px;
   width: -moz-min-content;
   width: min-content;
+}
+@media (max-width: 768px) {
+  main.payment .content {
+    width: 100%;
+  }
 }
 main.payment .content h1 {
   font-size: 22px;
@@ -2021,12 +2031,22 @@ main.payment .content h2 {
   font-weight: 700;
   color: #757980;
 }
+@media (max-width: 768px) {
+  main.payment .content h2 {
+    font-size: 14px;
+  }
+}
 main.payment .content h2 span {
   font-size: 22px;
   font-weight: 400;
 }
+@media (max-width: 768px) {
+  main.payment .content h2 span {
+    font-size: 14px;
+  }
+}
 main.payment .content .credit-logo {
-  border: 1px solid #B4BEC8;
+  border: 1.2px solid #B4BEC8;
   border-radius: 15px;
   width: 100%;
   display: flex;
@@ -2034,16 +2054,37 @@ main.payment .content .credit-logo {
   justify-content: center;
   gap: 20px;
 }
+@media (max-width: 768px) {
+  main.payment .content .credit-logo {
+    border-radius: 8px;
+    padding: 10px;
+  }
+}
 main.payment .content .credit-logo img {
   width: 48px;
+}
+@media (max-width: 768px) {
+  main.payment .content .credit-logo img {
+    width: 28px;
+  }
 }
 main.payment .content .credit-logo span {
   font-size: 20px;
   color: #878787;
 }
+@media (max-width: 768px) {
+  main.payment .content .credit-logo span {
+    font-size: 12px;
+  }
+}
 main.payment .content .input-cont {
   display: flex;
   gap: 20px;
+}
+@media (max-width: 768px) {
+  main.payment .content .input-cont {
+    flex-direction: column;
+  }
 }
 main.payment .content .input-cont input {
   width: 358px;
@@ -2053,6 +2094,11 @@ main.payment .content .input-cont input {
   border: 1px solid #B4BEC8;
   padding: 17px;
   outline: none;
+}
+@media (max-width: 768px) {
+  main.payment .content .input-cont input {
+    width: 100%;
+  }
 }
 main.payment .content .input-cont .cvv-input {
   text-align: center;
@@ -2294,6 +2340,7 @@ main.gift-main .content .amount .proceed {
   font-size: 18px;
   width: 100%;
   padding: 17px;
+  text-align: center;
 }
 @media (max-width: 768px) {
   main.gift-main .content .amount .proceed {
