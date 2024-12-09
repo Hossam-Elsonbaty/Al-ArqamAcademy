@@ -58,7 +58,6 @@ export const ProgramApplication = () => {
       email,
       phoneNumber,
       gender,
-      dob,
       address,
       city,
       zipCode,
@@ -139,6 +138,7 @@ export const ProgramApplication = () => {
       email,
       phoneNumber,
       address,
+      dob,
       city,
       zipCode,
     }
