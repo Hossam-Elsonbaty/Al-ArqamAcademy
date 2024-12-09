@@ -348,7 +348,7 @@ export const ProgramApplication = () => {
             />
           </div>
           <div className='input-cont'>
-            <DatePicker onChange={(date) => onDateChange(index, date)} className='antd'/>
+            <DatePicker onChange={(date) => onDateChange(date)} className='antd'/>
             <select required id="programType" onChange={(e)=>{setGender(e.target.value)}} className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
               <option value="Male">Male</option>
