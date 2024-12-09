@@ -57,11 +57,9 @@ export const ProgramApplication = () => {
       lastName,
       email,
       phoneNumber,
-      gender,
       address,
       city,
       zipCode,
-      selectedProgram,
     }
     applicationData.children = childrenData
     try {
@@ -138,9 +136,11 @@ export const ProgramApplication = () => {
       email,
       phoneNumber,
       address,
+      gender,
       dob,
       city,
       zipCode,
+      selectedProgram
     }
     try {
       const response = await axios.post(
