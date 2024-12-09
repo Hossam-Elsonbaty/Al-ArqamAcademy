@@ -40,7 +40,7 @@ export const ProgramApplication = () => {
       setPhoneNumber(inputValue);
     }
   };
-  const handleApplication = async (e) => {
+  const handleParentApplication = async (e) => {
     e.preventDefault();
     const childrenData = Array.from({ length: kidsCount }).map((_, index) => {
       const childForm = document.querySelector(`#child-form-${index}`);
@@ -63,17 +63,89 @@ export const ProgramApplication = () => {
       city,
       zipCode,
       selectedProgram,
-      isParent,
     }
-    if(isParent) {
-      applicationData.children = childrenData
-    }
-    console.log(applicationData);
-    
+    applicationData.children = childrenData
     try {
       
       const response = await axios.post(
-        'https://al-arqam-banckend.vercel.app/api/users-application',
+        'https://al-arqam-banckend.vercel.app/api/parent-application',
+        JSON.stringify(applicationData) ,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      console.log('Response:', response.data);
+      openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
+    } catch (error) {
+      openNotificationWithIcon('error','failed operation','Please fill your data correctly')
+      console.error('Error:', error.response?.data || error.message);
+    }
+  };
+  // const handleParentApplication = async (e) => {
+  //   e.preventDefault();
+  //   const childrenData = Array.from({ length: kidsCount }).map((_, index) => {
+  //     const childForm = document.querySelector(`#child-form-${index}`);
+  //     return {
+  //       firstName: childForm.querySelector(`#child-${index}-firstName`).value,
+  //       lastName: childForm.querySelector(`#child-${index}-lastName`).value,
+  //       dob: childForm.querySelector(`#child-${index}-dob`).value,
+  //       gender: childForm.querySelector(`#child-${index}-gender`).value,
+  //       selectedProgram: childForm.querySelector(`#child-${index}-program-type`).value,
+  //     };
+  //   });
+  //   let applicationData ={
+  //     firstName,
+  //     lastName,
+  //     email,
+  //     phoneNumber,
+  //     gender,
+  //     dob,
+  //     address,
+  //     city,
+  //     zipCode,
+  //     selectedProgram,
+  //     isParent,
+  //   }
+  //   if(isParent) {
+  //     applicationData.children = childrenData
+  //   }
+  //   console.log(applicationData);
+    
+  //   try {
+      
+  //     const response = await axios.post(
+  //       'https://al-arqam-banckend.vercel.app/api/users-application',
+  //       JSON.stringify(applicationData) ,
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       }
+  //     );
+  //     console.log('Response:', response.data);
+  //     openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
+  //   } catch (error) {
+  //     openNotificationWithIcon('error','failed operation','Please fill your data correctly')
+  //     console.error('Error:', error.response?.data || error.message);
+  //   }
+  // };
+  const handleStudentApplication = async (e) => {
+    e.preventDefault();
+    let applicationData ={
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      address,
+      city,
+      zipCode,
+    }
+    try {
+      
+      const response = await axios.post(
+        'https://al-arqam-banckend.vercel.app/api/student-application',
         JSON.stringify(applicationData) ,
         {
           headers: {
@@ -108,7 +180,7 @@ export const ProgramApplication = () => {
           </div>
         </header>
         {isParent?
-        <form onSubmit={handleApplication}>
+        <form onSubmit={handleParentApplication}>
           <div className='input-cont'>
             <input
               required
@@ -246,7 +318,7 @@ export const ProgramApplication = () => {
           </button>
         </form>
         : 
-        <form onSubmit={handleApplication}>
+        <form onSubmit={handleStudentApplication}>
           <div className='input-cont'>
             <input
               type="text"
