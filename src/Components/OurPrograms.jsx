@@ -25,7 +25,7 @@ export default function OurPrograms() {
                 <TbSquareNumber1 />
                 <div className='col'>
                   <h3>Program   1</h3>
-                  <p>My first step in the Quran Journey</p>
+                  <p> My First Step in the Quran Language (Arabic)</p>
                 </div>
               </HashLinkComponent>
             </div>
