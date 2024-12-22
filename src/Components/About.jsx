@@ -31,7 +31,7 @@ export default function About() {
               <div class="list-item">
                 <div className='link-cont'>
                   <FaCheckCircle/> 
-                  <HashLinkComponent name="How Al-Arqam accomplish goals?" link="/about-us#Accomplish"></HashLinkComponent>
+                  <HashLinkComponent name="How Al-Arqam accomplishes goals?" link="/about-us#Accomplish"></HashLinkComponent>
                 </div>
                 <span></span>
               </div>
