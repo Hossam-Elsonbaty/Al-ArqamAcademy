@@ -24,7 +24,7 @@ export const Objectives = () => {
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
               </span>
-              <h1> Shariah-related information </h1>
+              <h1> Shariah-Related Information </h1>
               <span className='description'> 
                 Is capable of obtaining Shariah-related information from primary sources in
                 the Arabic language through valid, reliable, and credible research methods.
@@ -45,17 +45,16 @@ export const Objectives = () => {
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
               </span>
-              <h1>Teaching of the Quran </h1>
+              <h1>Teaching the Language of the Quran </h1>
               <span className='description'> 
-                Is keen on passing down the teaching of the Quran to future generations
-                along with the necessary tools to understand it.
+                Knows the language of the Holy Quran (Arabic) in terms of its letters, words, structures, meanings, and interpretation; is equipped with the tools required to obtain religious information from primary sources in Arabic and is keen on passing down this sacred knowledge to future generations.
               </span>
             </div>
             <div className='objective' data-aos="fade-up"data-aos-offset="200"data-aos-delay="150" data-aos-duration="1000">
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
               </span>
-              <h1> Qualified teachers </h1>
+              <h1> Qualified Teachers </h1>
               <span className='description'> 
                 Has qualified teachers of the Arabic language and Shariah studies from the
                 second generation that are capable of balancing sound knowledge with the
@@ -77,7 +76,7 @@ export const Objectives = () => {
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
               </span>
-              <h1> Free from the mixing of religion </h1>
+              <h1> Distinguishing Religion from Culture </h1>
               <span className='description'> 
                 Is not captive to the understanding of the translator translating texts and
                 sayings for them or limited by meanings lost in translation; is free from the

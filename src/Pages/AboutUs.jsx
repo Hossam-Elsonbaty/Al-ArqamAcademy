@@ -44,7 +44,7 @@ export const AboutUs = () => {
             <div className='cell'>
               <FaCircleCheck/>
               <div className='p-container'>
-                <p>Tijan Curriculum incorporates 7 domains of Shariah</p>
+                <p>Al-Arqam Curriculum incorporates 7 domains of Shariah</p>
                 <ul>
                   <li>1-Arabic Language</li>
                   <li>2-Aqeedah</li>
