@@ -20,6 +20,15 @@ export const Objectives = () => {
         </header>
         <div class="mx-auto max-w-7xl px-6 lg:px-14">
           <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            <div className='objective' data-aos="fade-up"data-aos-offset="200"data-aos-delay="100" data-aos-duration="1000">
+              <span className='icon-cont'>
+                <img src={lighterImage} alt="icon" />
+              </span>
+              <h1>Teaching the Language of the Quran </h1>
+              <span className='description'> 
+                Knows the language of the Holy Quran (Arabic) in terms of its letters, words, structures, meanings, and interpretation; is equipped with the tools required to obtain religious information from primary sources in Arabic and is keen on passing down this sacred knowledge to future generations.
+              </span>
+            </div>
             <div className='objective 'data-aos="fade-up"data-aos-delay="30" data-aos-duration="300">
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
@@ -39,15 +48,6 @@ export const Objectives = () => {
                 Understands the Quran and is mindful of its miraculousness; accomplishes
                 the higher goal outlined in the Quran of “So that they may ponder over its
                 verses”- Quran 38:29.
-              </span>
-            </div>
-            <div className='objective' data-aos="fade-up"data-aos-offset="200"data-aos-delay="100" data-aos-duration="1000">
-              <span className='icon-cont'>
-                <img src={lighterImage} alt="icon" />
-              </span>
-              <h1>Teaching the Language of the Quran </h1>
-              <span className='description'> 
-                Knows the language of the Holy Quran (Arabic) in terms of its letters, words, structures, meanings, and interpretation; is equipped with the tools required to obtain religious information from primary sources in Arabic and is keen on passing down this sacred knowledge to future generations.
               </span>
             </div>
             <div className='objective' data-aos="fade-up"data-aos-offset="200"data-aos-delay="150" data-aos-duration="1000">
