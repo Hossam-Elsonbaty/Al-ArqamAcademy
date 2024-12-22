@@ -13,11 +13,7 @@ export const AboutUs = () => {
           <span></span>
         </h1>
         <p>
-          Al-Arqam Academy aims to make Shariah studies accessible for the participants in its programs.
-          The main objective of the program is to equip young Muslims with the necessary,
-          proper knowledge grounded on the Book of Allah and Sunnah of the Prophet (PBUH) to understand their religion 
-          and to promote and reinforce sound Shariah studies with an understanding of the righteous predecessors through a modern,
-          easily fathomable approach that is in touch with the reality of time and place.
+          Al-Arqam Academy seeks to teach non-Arabic speaking youth the Arabic language through an immersive, rigorous academic course and the company of their Arabic speaking peers. We aim to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah, utilizing a modern, practical approach that incorporates the reality of time and place while staying true to the understanding of the righteous predecessors.
         </p>
         <a href='/program-application'>Register Now</a>
       </header>
