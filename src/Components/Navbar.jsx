@@ -14,7 +14,7 @@ const Navbar = () => {
   ]
   const aboutUs = [
     { name: 'Objectives', href: '/about-us#Objectives'},
-    { name: 'Accomplish', href: '/about-us#Accomplish'},
+    { name: 'Tools We Use', href: '/about-us#Accomplish'},
     { name: 'Graduates', href: '/about-us#Graduates'},
     { name: 'Our team', href: '/about-us#OurTeam'}
   ]
