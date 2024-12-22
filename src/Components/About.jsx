@@ -19,8 +19,7 @@ export default function About() {
               <span></span>
             </h2>
             <p>
-              Al-Arqam Academy aims to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah. The program emphasizes a modern, practical approach while staying true to the understanding of the righteous predecessors.
-            </p>
+            Al-Arqam Academy seeks to teach non-Arabic speaking youth the Arabic language through an immersive, rigorous academic course and the company of their Arabic speaking peers. We aim to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah, utilizing a modern, practical approach that incorporates the reality of time and place while staying true to the understanding of the righteous predecessors            </p>
             <div class="list">
               <div class="list-item">
                 <div className='link-cont'>
