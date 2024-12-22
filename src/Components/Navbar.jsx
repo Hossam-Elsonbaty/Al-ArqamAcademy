@@ -48,7 +48,7 @@ const Navbar = () => {
             </HashLink>
             <div className="nav-menu">
               <HashLinkComponent name="Objectives" link="/about-us#Objectives"></HashLinkComponent>
-              <HashLinkComponent name="Accomplish" link="/about-us#Accomplish"></HashLinkComponent>
+              <HashLinkComponent name="Tools We Use" link="/about-us#Accomplish"></HashLinkComponent>
               <HashLinkComponent name="Graduates" link="/about-us#Graduates"></HashLinkComponent>
               <HashLinkComponent name="Our team" link="/about-us#OurTeam"></HashLinkComponent>
             </div>
