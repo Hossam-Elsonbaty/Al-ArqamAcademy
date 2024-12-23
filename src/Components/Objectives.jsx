@@ -24,15 +24,9 @@ export const Objectives = () => {
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />
               </span>
-<<<<<<< Updated upstream
-              <h1>Teaching the Language of the Quran </h1>
-              <span className='description'> 
-                Knows the language of the Holy Quran (Arabic) in terms of its letters, words, structures, meanings, and interpretation; is equipped with the tools required to obtain religious information from primary sources in Arabic and is keen on passing down this sacred knowledge to future generations.
-=======
               <h1>Teaching the Language of the Quran</h1>
               <span className='description'> 
                 Knows the language of the Holy Quran (Arabic) in terms of its letters, words, structures, meanings, and interpretation; is equipped with the tools required to obtain religious information from primary sources in Arabic and is keen on passing down this sacred knowledge to future generations
->>>>>>> Stashed changes
               </span>
             </div>
             <div className='objective 'data-aos="fade-up"data-aos-delay="30" data-aos-duration="300">

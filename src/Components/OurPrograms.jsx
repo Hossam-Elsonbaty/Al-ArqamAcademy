@@ -25,11 +25,7 @@ export default function OurPrograms() {
                 <TbSquareNumber1 />
                 <div className='col'>
                   <h3>Program   1</h3>
-<<<<<<< Updated upstream
-                  <p> My First Step in the Quran Language (Arabic)</p>
-=======
                   <p>My First Step in the Quran Language (Arabic)</p>
->>>>>>> Stashed changes
                 </div>
               </HashLinkComponent>
             </div>

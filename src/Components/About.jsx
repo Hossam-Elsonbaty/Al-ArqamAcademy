@@ -19,12 +19,8 @@ export default function About() {
               <span></span>
             </h2>
             <p>
-<<<<<<< Updated upstream
-            Al-Arqam Academy seeks to teach non-Arabic speaking youth the Arabic language through an immersive, rigorous academic course and the company of their Arabic speaking peers. We aim to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah, utilizing a modern, practical approach that incorporates the reality of time and place while staying true to the understanding of the righteous predecessors            </p>
-=======
               Al-Arqam Academy seeks to teach non-Arabic speaking youth the Arabic language through an immersive, rigorous academic course and the company of their Arabic speaking peers. We aim to make Shariah studies accessible by providing young Muslims with knowledge based on the Quran and Sunnah, utilizing a modern, practical approach that incorporates the reality of time and place while staying true to the understanding of the righteous predecessors.
             </p>
->>>>>>> Stashed changes
             <div class="list">
               <div class="list-item">
                 <div className='link-cont'>
@@ -36,11 +32,7 @@ export default function About() {
               <div class="list-item">
                 <div className='link-cont'>
                   <FaCheckCircle/> 
-<<<<<<< Updated upstream
-                  <HashLinkComponent name="How Al-Arqam accomplishes goals?" link="/about-us#Accomplish"></HashLinkComponent>
-=======
                   <HashLinkComponent name="How Al-Arqam Accomplishes Goals?" link="/about-us#Accomplish"></HashLinkComponent>
->>>>>>> Stashed changes
                 </div>
                 <span></span>
               </div>
