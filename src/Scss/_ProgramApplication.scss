@@ -6,6 +6,9 @@
   @include breakpoint (mobile) {
     padding: 4.5rem 2rem 4.5rem 2rem;
   }
+  @include breakpoint (medium) {
+    padding: 4.5rem 2rem 4.5rem 2rem;
+  }
   header {
     display: flex;
     flex-direction: column;
@@ -96,6 +99,10 @@
       flex-wrap: nowrap;
       gap: 30px;
     }    
+    @include breakpoint(medium) {
+      padding: 0rem;
+      gap: 30px;
+    }    
     .input-cont{
       display: flex;
       gap: 40px;
@@ -117,6 +124,9 @@
         @include breakpoint(mobile) {
           width: 100%;
         }    
+        @include breakpoint(medium) {
+          width: 330px;
+        }    
         width: 360px;
         background-color: #ECF9FE;
         border-radius: 15px;
@@ -129,6 +139,9 @@
     .address,.program-type{
       width:760px;
       @include breakpoint(mobile) {
+        width: 100%;
+      }    
+      @include breakpoint(medium) {
         width: 100%;
       }    
       input,select{
@@ -165,6 +178,9 @@
       background: #fff;
       gap: 3rem;
     }    
+    @include breakpoint(medium) {
+      padding: 2rem;
+    }    
     .content{
       display: flex;
       flex-direction: column;
@@ -176,9 +192,15 @@
         width: 100%;
         background: linear-gradient(95.04deg, rgba(40, 105, 130, 0.9) 4.18%, rgba(40, 105, 130, 0.4) 76.26%);
       }    
+      @include breakpoint(medium) {
+        gap: 15px;
+      }    
       h1 {
         @include breakpoint(mobile) {
           font-size: 22px;
+        }      
+        @include breakpoint(medium) {
+          font-size: 25px;
         }      
         font-weight: 500;
         font-size: 36px;
@@ -188,6 +210,10 @@
         @include breakpoint(mobile) {
           font-size: 12px;
           width:100%;
+        }      
+        @include breakpoint(medium) {
+          font-size: 14px;
+          width:385px;
         }      
         font-size: 16px;
         width: 525px;
@@ -222,6 +248,11 @@
             font-size: 14px;
             width: 120px;
           }        
+          @include breakpoint(medium) {
+            padding: 13px;
+            font-size: 14px;
+            width: 120px;
+          }        
           width: 150px;
           text-align: center;
           font-weight:600 ;
@@ -247,6 +278,9 @@
         z-index: 2;
         @include breakpoint(mobile) {
           width: 290px;
+        }      
+        @include breakpoint(medium) {
+          width: 285px;
         }      
         .before{
           border-top-left-radius: 256.02px;

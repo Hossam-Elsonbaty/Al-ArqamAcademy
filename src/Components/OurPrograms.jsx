@@ -25,13 +25,17 @@ export default function OurPrograms() {
                 <TbSquareNumber1 />
                 <div className='col'>
                   <h3>Program   1</h3>
+<<<<<<< Updated upstream
                   <p> My First Step in the Quran Language (Arabic)</p>
+=======
+                  <p>My First Step in the Quran Language (Arabic)</p>
+>>>>>>> Stashed changes
                 </div>
               </HashLinkComponent>
             </div>
             <div class="item">
               <HashLinkComponent link="/our-programs#program2">
-                <TbSquareNumber1 />
+                <TbSquareNumber2 />
                 <div className='col'>
                   <h3>Program   2</h3>
                   <p>Hoffaz Dar Al-Arqam “Memorization”</p>
@@ -40,10 +44,10 @@ export default function OurPrograms() {
             </div>
             <div class="item">
               <HashLinkComponent link="/our-programs#program3">
-                <TbSquareNumber1 />
+                <TbSquareNumber3 />
                 <div className='col'>
                   <h3>Program   3</h3>
-                  <p>Inheritors of the Prophet’s program</p>
+                  <p>Inheritors of the Prophets</p>
                 </div>
               </HashLinkComponent>
             </div>

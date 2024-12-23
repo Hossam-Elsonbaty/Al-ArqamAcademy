@@ -284,11 +284,18 @@
           font-size: 16px;
           padding: 2rem
         }
+        @include breakpoint(medium) {
+          padding: 2rem;
+          gap: 2rem;
+        }
         header {
           h1{
             @include header();
             @include breakpoint(mobile) {
               font-size: 16px;
+            }
+            @include breakpoint(medium) {
+              font-size: 22px;
             }
             span{
               @include breakpoint(mobile) {
@@ -309,6 +316,9 @@
         p{
           color: #404040;
           font-size:16px ;
+          @include breakpoint(medium){
+            font-size: 13px;
+          }
         }
         a{
           @include button()

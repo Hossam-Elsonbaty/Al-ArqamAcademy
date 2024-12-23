@@ -3,6 +3,9 @@ main.payment {
   @include breakpoint(mobile) {
     padding: 5rem 2rem;
   }
+  @include breakpoint(medium) {
+    padding: 5rem 2rem;
+  }
   .content {
     margin: auto;
     display: flex;
@@ -10,6 +13,9 @@ main.payment {
     gap: 30px;
     width: min-content;
     @include breakpoint(mobile) {
+      width: 100%;
+    }      
+    @include breakpoint(medium) {
       width: 100%;
     }      
     h1{

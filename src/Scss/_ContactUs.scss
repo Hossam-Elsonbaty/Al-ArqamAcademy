@@ -41,6 +41,10 @@ main.contact-us {
       padding: 4rem 0rem 6rem 0rem;
       gap: 10px;
     }    
+    @include breakpoint(medium) {
+      padding: 2rem;
+      gap: 40px;
+    }    
     position: relative;
     background-color: #FFFFFF;
     margin: auto;
@@ -64,6 +68,9 @@ main.contact-us {
       @include breakpoint(mobile) {
         flex-direction: column;
         align-items: normal;
+      }      
+      @include breakpoint(medium) {
+        gap: 1rem;
       }      
       display: flex;
       align-items: center;
@@ -91,6 +98,9 @@ main.contact-us {
           input {
             @include breakpoint(mobile) {
               width: 100%;
+            }            
+            @include breakpoint(medium) {
+              width: 330px;
             }            
             width:422px;
             border: #eeee;
@@ -148,6 +158,9 @@ main.contact-us {
               width: 100%;
               border-radius: 10px;
               padding: 12px 2rem;
+            }            
+            @include breakpoint(medium) {
+              width: 300px;
             }            
           }
         }

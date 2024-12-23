@@ -35,7 +35,6 @@ export const Footer = () => {
           <div class="contact-section">
             <h3>Contact us</h3>
             <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
-            <p>+908 89097 890</p>
           </div>
           <div class="btn-section">
             <img src={lines1} alt="lines" />
@@ -61,7 +60,6 @@ export const Footer = () => {
             <div class="contact-section">
               <h3>Contact us</h3>
               <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
-              <p>+908 89097 890</p>
             </div>
           </div>
           <div class="btn-section">

@@ -7,6 +7,9 @@
   @include breakpoint(mobile) {
     padding: 2rem;
   }
+  @include breakpoint(medium) {
+    padding: 2rem;
+  }
   .content-wrapper {
     @include breakpoint(mobile) {
       flex-direction: column;
@@ -20,6 +23,9 @@
       @include breakpoint(mobile) {
         padding-right: 0px;
         align-items: center;
+      }
+      @include breakpoint(medium) {
+        padding-right: 0px;
       }
       display: flex;
       flex-direction: column;
@@ -131,6 +137,10 @@
       @include breakpoint(mobile) {
         width: 288px;
         height: 365px;  
+      }
+      @include breakpoint(medium) {
+        width: 270px;
+        height: 400px;  
       }
       width: 470px;
       height: 610px;

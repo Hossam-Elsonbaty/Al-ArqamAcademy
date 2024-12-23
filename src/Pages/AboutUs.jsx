@@ -21,7 +21,7 @@ export const AboutUs = () => {
       <section className="accomplish" id='Accomplish'>
         <header>
           <h1>
-            How Al-Arqam Accomplish Goals ?
+            How Al-Arqam Accomplishes Goals ?
             <span></span>
             <span></span>
           </h1>

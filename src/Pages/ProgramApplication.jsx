@@ -142,6 +142,8 @@ export const ProgramApplication = () => {
       zipCode,
       selectedProgram
     }
+    console.log(applicationData);
+    
     try {
       const response = await axios.post(
         'https://al-arqam-banckend.vercel.app/api/student-application',
@@ -295,14 +297,14 @@ export const ProgramApplication = () => {
                     <option value="" hidden>
                       Select A Program For Your Application
                     </option>
-                    <option value="Step One in the Quran Journey">
-                      Step One in the Quran Journey
+                    <option value="My First Step in the Quran Language (Arabic)">
+                      My First Step in the Quran Language (Arabic)
                     </option>
                     <option value="Hoffaz Dar Al-Arqam (Memorization)">
                       Hoffaz Dar Al-Arqam (Memorization)
                     </option>
-                    <option value="Inheritors of the Prophets’ program">
-                      Inheritors of the Prophets’ program
+                    <option value="Inheritors of the Prophets">
+                      Inheritors of the Prophets 
                     </option>
                   </select>
                 </div>
@@ -373,9 +375,9 @@ export const ProgramApplication = () => {
           <div className='input-cont program-type' >
             <select required onChange={(e)=>{setSelectedProgram(e.target.value)}} name="programType" id="programType"  className='text-zinc-400'>
               <option value="Select A Program For Your Application" hidden selected> Select A Program For Your Application</option>
-              <option value="Step One in the Quran Journey">Step One in the Quran Journey</option>
+              <option value="My First Step in the Quran Language (Arabic)">My First Step in the Quran Language (Arabic)</option>
               <option value="Hoffaz Dar Al-Arqam (Memorization)">Hoffaz Dar Al-Arqam (Memorization)</option>
-              <option value="Inheritors of the Prophets’ program"> Inheritors of the Prophets’ program</option>
+              <option value="Inheritors of the Prophets"> Inheritors of the Prophets </option>
             </select>
           </div>
           <button

@@ -79,6 +79,9 @@ main.gift-main{
       padding: 0 2rem;
       margin: unset;
     }
+    @include breakpoint(medium) {
+      padding: 2rem;
+    }
     header{
       display: flex;
       align-items: center;
@@ -100,6 +103,10 @@ main.gift-main{
             font-size: 12px;
             border-radius: 8px;
             width: 100%;
+          }  
+          @include breakpoint(medium) {
+            padding: 10px;
+            width: 320px;
           }  
           cursor: pointer;
           width: 358px;
