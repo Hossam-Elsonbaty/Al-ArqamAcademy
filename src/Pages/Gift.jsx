@@ -12,9 +12,6 @@ export const Gift = () => {
   const handleCheckboxChange = (id) => {
     setSelected(id === selected ? null : id);
   };
-  const handleSelectedPrice = (id) => {
-    setSelectedPrice(id === selectedPrice ? null : id);
-  };
   const text1 = `"وَمَا تُنفِقُواْ مِنْ خَيْرٍ فَلأنفُسِكُمْ، وَمَا تُنفِقُونَ إِلاَّ ابْتِغَاء وَجْهِ اللّهِ وَمَا تُنفِقُواْ مِنْ خَيْرٍ يُوَفَّ إِلَيْكُمْ وَأَنتُمْ لاَ تُظْلَمُونَ" `
   const text2 = "سورة البقرة (272)"
   const text3 = "“And whatever good you [believers] spend is for yourselves, and you do not spend except seeking the countenance of Allah. And whatever you spend of good - it will be fully repaid to you, and you will not be wronged”"
@@ -67,7 +64,6 @@ export const Gift = () => {
             <span className={`${selectedPrice==='1500price' ? "price selected-price" : "price"}`} id='1500price' onClick={()=>setSelectedPrice('1500price')}>$1500</span>
             <span className={`${selectedPrice==='2000price' ? "price selected-price" : "price"}`} id='2000price' onClick={()=>setSelectedPrice('2000price')}>$2000</span>
             <InputNumber inputId="currency-us" className='enter-anumber' value={value1} onValueChange={(e) => setValue1(e.value)} mode="currency" currency="USD" locale="en-US" />
-            {/* <input type="number" className='enter-anumber' placeholder='$000'/> */}
           </div>
           <h1>Count as:</h1>
           <div class="checkbox-container">

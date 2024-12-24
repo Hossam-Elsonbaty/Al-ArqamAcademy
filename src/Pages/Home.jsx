@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../Components/Hero';
-import { Footer } from '../Components/Footer';
 import About from '../Components/About';
 import OurPrograms from '../Components/OurPrograms';
 import { GiftComponent } from '../Components/GiftComponent';

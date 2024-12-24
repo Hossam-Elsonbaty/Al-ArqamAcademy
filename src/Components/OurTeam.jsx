@@ -45,20 +45,6 @@ export const OurTeam = () => {
                 <a href="#"><CiLinkedin className='text-blue-600'/></a>
               </div>
             </div>
-            {/* <div className='teammate p-10 flex flex-col gap-6 items-center'data-aos="fade-right"data-aos-delay="1500" data-aos-duration="1000">
-              <div className="imgContainer">
-                <img src={image1} alt="image" className='teammateImage' />
-              </div>
-              <h1 className='font-LibreBaskerville text-xl'>Moaz Raof</h1>
-              <p className='description text-gray-500'> 
-                FOUNDER/CEO
-              </p>
-              <div className='social-media'>
-                <a href="#"><CiFacebook className='text-blue-600'/></a>
-                <a href="#"><CiInstagram className='text-violet-600'/></a>
-                <a href="#"><CiLinkedin className='text-blue-600'/></a>
-              </div>
-            </div> */}
           </dl>
         </div>
       </div>

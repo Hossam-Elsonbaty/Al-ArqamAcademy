@@ -71,12 +71,8 @@ export const ContactUs = () => {
               <a href='mailto:info@AlarqamAcademy.org'>info@AlarqamAcademy.org</a>
             </div>
             <div className='icons'>
-              <HiOutlinePhone/>
-              <span> [Insert mailing address]</span>
-            </div>
-            <div className='icons'>
               <SlLocationPin/>
-              <span> [Insert mailing address]</span>
+              <span> [Insert Location]</span>
             </div>
             <div className='social'>
               <div className='social-logo'>

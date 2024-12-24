@@ -1,10 +1,4 @@
 import React from 'react';
-import { FaLeanpub } from "react-icons/fa";
-import { FaBookQuran } from "react-icons/fa6";
-import { GiBookshelf } from "react-icons/gi";
-import { GiTeacher } from "react-icons/gi";
-import { BsTranslate } from "react-icons/bs";
-import { SiKnowledgebase } from "react-icons/si";
 import lighterImage from '../Images/lighter.webp'
 export const Objectives = () => {
   return (

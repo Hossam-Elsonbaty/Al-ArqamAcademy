@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
 import image from '../Images/item2.webp';
 import { TbSquareNumber1, TbSquareNumber2, TbSquareNumber3 } from "react-icons/tb";
-import IsDesktop from '../Context/IsDesktop';
 import { HashLinkComponent } from './HashLinkComponent';
-// import Poster from 'https://s3-alpha-sig.figma.com/img/a2a5/39bd/d8cf38fab44d70581688c226544c2bec?Expires=1731283200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jqQ9i2vaRCKW~YbCzyufHsDpIRhHz9Fuzo7BGpzTq6LuoYUa1zH5hVEUl2R9SQo4TFanFZlHJz6N6P2BTuCaJ8MIQd99TBZrPIXGvBTBCbyRo4TbaGKjZcDhvTbuDQPmLBc0DBsDl7c4MG4qfyi99o4VuGeCoW0AyZGak24CVhq7iLrOH0hcPaYAotZbh9M9EKF~CckaU6vfBI1dhJtiWXKeMTxTsNJDetLtxQb54WVnkKSBJVT26FWC0yHXtlCnkxiN4EJifAeI4Z84BnMAbx~gytnyGdm2gqAAOCgNVnU79PfT~B1V-2OkqEaoYFGeAPDjsruTF5UtEFGBfC3MHg__';
 export default function OurPrograms() {
-  const {isDesktop} = useContext(IsDesktop)
   return (
     <section id='programs-section' class="programs-section">
       <div class="content-wrapper">

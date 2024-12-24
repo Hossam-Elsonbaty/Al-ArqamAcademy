@@ -186,15 +186,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-// return (
-//   <header>
-//     <img src={Logo} alt="logo" />
-//     <nav>
-//       <NavLink>Home</NavLink>
-//       <NavLink>About</NavLink>
-//       <NavLink>Programs</NavLink>
-//       <NavLink>Contact Us</NavLink>
-//     </nav>
-//   </header>
-  
-// )
