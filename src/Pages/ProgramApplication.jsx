@@ -174,7 +174,7 @@ export const ProgramApplication = () => {
             <input
               type="text"
               required
-              placeholder="zip Code"
+              placeholder="Zip Code"
               onChange={(e)=>{setZipCode(e.target.value)}}
             />
           </div>
@@ -225,6 +225,7 @@ export const ProgramApplication = () => {
                     onChange={(date) => onDateChange(index, date)}
                     className="antd"
                     required
+                    placeholder='Date of Birth'
                   />
                   <select
                     id={`child-${index}-gender`}
@@ -302,7 +303,7 @@ export const ProgramApplication = () => {
             />
           </div>
           <div className='input-cont'>
-            <DatePicker onChange={(date) => onDateChange(date)} className='antd'/>
+            <DatePicker onChange={(date) => onDateChange(date)} className='antd' placeholder='Date of Birth'/>
             <select required id="programType" onChange={(e)=>{setGender(e.target.value)}} className="text-zinc-400">
               <option value="Male" hidden selected>Gender</option>
               <option value="Male">Male</option>
@@ -320,7 +321,7 @@ export const ProgramApplication = () => {
             <input
               type="text"
               required
-              placeholder="zip Code"
+              placeholder="Zip Code"
               onChange={(e)=>{setZipCode(Number(e.target.value))}}
             />
           </div>

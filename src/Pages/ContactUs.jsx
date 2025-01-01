@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
-import { SlLocationPin } from "react-icons/sl";
+import { HiOutlineMail } from "react-icons/hi";
 import line from '../Images/Vector (1).webp';
 import dotted from '../Images/Group 71.webp';
 import faceLogo from '../Images/facebook.webp';
 import instagramLogo from '../Images/instagram.webp';
-import axios from 'axios';
+import tiktokLogo from '../Images/TikTok-Logo.wine.webp';
 import { notification } from 'antd';
 export const ContactUs = () => {
   const [name, setName] = useState("");
@@ -70,14 +69,15 @@ export const ContactUs = () => {
               <HiOutlineMail/>
               <a href='mailto:info@AlarqamAcademy.org'>info@AlarqamAcademy.org</a>
             </div>
-            <div className='icons'>
+            {/* <div className='icons'>
               <SlLocationPin/>
               <span> [Insert Location]</span>
-            </div>
+            </div> */}
             <div className='social'>
               <div className='social-logo'>
-                <img src={instagramLogo} alt='image' />
-                <img src={faceLogo} alt='image' />
+                <a href="https://www.instagram.com/alarqamacademy_?igsh=ZjcydjY4cHV0ZmVp&utm_source=qr"><img src={instagramLogo} alt='image' /></a>
+                <a href="#"><img src={faceLogo} alt='image' /></a>
+                <a href="https://www.tiktok.com/@alarqam.academy1?_t=8sgWVAjo8oZ&_r=1"><img src={tiktokLogo} alt='image' /></a>
               </div>
               <span>AlarqamAcademy</span>
             </div>

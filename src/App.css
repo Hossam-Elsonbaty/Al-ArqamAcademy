@@ -2158,8 +2158,11 @@ main.contact-us .card .elements aside.contact-info .social .social-logo {
   gap: 10px;
   justify-content: center;
 }
-main.contact-us .card .elements aside.contact-info .social .social-logo img {
-  width: 25px;
+main.contact-us .card .elements aside.contact-info .social .social-logo a {
+  width: 30px;
+}
+main.contact-us .card .elements aside.contact-info .social .social-logo a img {
+  width: 100%;
 }
 main.contact-us .card .elements aside.contact-info .icons {
   display: flex;

@@ -16,7 +16,7 @@ const Navbar = () => {
     { name: 'Objectives', href: '/about-us#Objectives'},
     { name: 'Tools We Use', href: '/about-us#Accomplish'},
     { name: 'Graduates', href: '/about-us#Graduates'},
-    { name: 'Our team', href: '/about-us#OurTeam'}
+    { name: 'Our Team', href: '/about-us#OurTeam'}
   ]
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
@@ -50,7 +50,7 @@ const Navbar = () => {
               <HashLinkComponent name="Objectives" link="/about-us#Objectives"></HashLinkComponent>
               <HashLinkComponent name="Tools We Use" link="/about-us#Accomplish"></HashLinkComponent>
               <HashLinkComponent name="Graduates" link="/about-us#Graduates"></HashLinkComponent>
-              <HashLinkComponent name="Our team" link="/about-us#OurTeam"></HashLinkComponent>
+              <HashLinkComponent name="Our Team" link="/about-us#OurTeam"></HashLinkComponent>
             </div>
           </div>
           <div className="links-nav cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">

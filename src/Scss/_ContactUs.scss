@@ -181,8 +181,11 @@ main.contact-us {
             display: flex;
             gap: 10px;
             justify-content: center;
-            img{
-              width: 25px;
+            a{
+              width: 30px;
+              img{
+                width: 100%;
+              }
             }
           }
         }
