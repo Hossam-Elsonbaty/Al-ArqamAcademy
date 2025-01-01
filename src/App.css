@@ -1536,6 +1536,7 @@ main.programs-page a {
 .application-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
   padding: 4.5rem 6rem 4.5rem 6rem;
 }
@@ -1722,17 +1723,7 @@ main.programs-page a {
   }
 }
 .application-container form .address, .application-container form .program-type, .application-container .form-div .address, .application-container .form-div .program-type {
-  width: 760px;
-}
-@media (max-width: 760px) {
-  .application-container form .address, .application-container form .program-type, .application-container .form-div .address, .application-container .form-div .program-type {
-    width: 100%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1440px) {
-  .application-container form .address, .application-container form .program-type, .application-container .form-div .address, .application-container .form-div .program-type {
-    width: 100%;
-  }
+  width: 100%;
 }
 .application-container form .address input, .application-container form .address select, .application-container form .program-type input, .application-container form .program-type select, .application-container .form-div .address input, .application-container .form-div .address select, .application-container .form-div .program-type input, .application-container .form-div .program-type select {
   width: 100%;
