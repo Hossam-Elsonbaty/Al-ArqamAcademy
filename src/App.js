@@ -35,7 +35,7 @@ const App = ()=> {
         <Route path="/payment-page" element={<PaymentPage/>} />
         <Route path="/proceed-to-payment" exact element={<Payment />} />
       </Routes>
-      {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Footer />}
+      {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/payment-page' && <Footer />}
     </>
   )
 }
