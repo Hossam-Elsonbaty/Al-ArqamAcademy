@@ -56,9 +56,9 @@ export const ContactUs = () => {
               <input type="text" placeholder='Your Name' required onChange={(e)=>{setName(e.target.value)}}/>
               <input type="email" placeholder='Your Email' required onChange={(e)=>{setEmail(e.target.value)}}/>
               <input type="text" placeholder='Your Message' required onChange={(e)=>{setMessage(e.target.value)}}/>
-              <div class="checkbox-container">
+              <div className="checkbox-container">
                 <input type="checkbox" id="consentCheckbox" onChange={(e)=>{setCheckbox(!checkbox)}}/>
-                <label for="consentCheckbox" class="custom-checkbox"></label>
+                <label for="consentCheckbox" className="custom-checkbox"></label>
                 <label for="consentCheckbox" className='label'>I consent to Alarqm Academy collecting my details through this form</label>
               </div>
               <button type='submit'>Send</button>

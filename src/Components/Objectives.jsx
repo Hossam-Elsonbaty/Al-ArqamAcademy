@@ -3,7 +3,7 @@ import lighterImage from '../Images/lighter.webp'
 export const Objectives = () => {
   return (
     <>
-      <div id='objectiveSection' class=" py-14 sm:py-14 objectives items-center flex flex-col gap-28">
+      <div id='objectiveSection' className=" py-14 sm:py-14 objectives items-center flex flex-col gap-28">
         <header className='header'>
           <h1 className='font-poppins mt-2 text-xl font-bold tracking-tight sm:text-2xl'>
             Objectives of Al-Arqam Academy
@@ -12,8 +12,8 @@ export const Objectives = () => {
           </h1>
           <p className='font-poppins'> Establish a generation that, </p>
         </header>
-        <div class="mx-auto max-w-7xl px-6 lg:px-14">
-          <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-6 lg:px-14">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
             <div className='objective' data-aos="fade-up"data-aos-offset="200"data-aos-delay="100" data-aos-duration="1000">
               <span className='icon-cont'>
                 <img src={lighterImage} alt="icon" />

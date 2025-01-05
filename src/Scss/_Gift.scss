@@ -169,7 +169,11 @@ main.gift-main{
           padding: 17px;
           input{
             outline: none;
-            color: #878787ad;;
+            color: #878787ad;
+            &:focus{
+              box-shadow: none;
+              color: rgb(135 135 135);
+            }
           }
         }
       }

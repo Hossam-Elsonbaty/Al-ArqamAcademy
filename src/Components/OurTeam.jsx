@@ -7,7 +7,7 @@ import { CiLinkedin } from "react-icons/ci";
 export const OurTeam = () => {
   return (
     <>
-      <div id='OurTeam' class="bg-white pt-12 py-24 sm:py-16 objectives items-center flex flex-col gap-10">
+      <div id='OurTeam' className="bg-white pt-12 py-24 sm:py-16 objectives items-center flex flex-col gap-10">
         <header className='header'>
           <h1 className='font-poppins'>
             Our Team
@@ -15,8 +15,8 @@ export const OurTeam = () => {
             <span></span>
           </h1>
         </header>
-        <div  class="mx-auto max-w-7xl px-6 lg:px-8 ourTeam">
-          <dl class="grid grid-cols-1 gap-x-16 gap-y-16 text-center lg:grid-cols-2">
+        <div  className="mx-auto max-w-7xl px-6 lg:px-8 ourTeam">
+          <dl className="grid grid-cols-1 gap-x-16 gap-y-16 text-center lg:grid-cols-2">
             <div className='teammate p-4 sm:p-10 flex flex-col gap-6 items-start'data-aos="fade-right"data-aos-delay="500" data-aos-duration="1000">
               <div className="imgContainer">
                 <img src={image2} alt="image" className='teammateImage' />

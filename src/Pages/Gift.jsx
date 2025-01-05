@@ -1,14 +1,39 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import lines from'../Images/Vector (2).webp';
-import { InputNumber } from 'primereact/inputnumber';
+// import { InputNumber } from 'primereact/inputnumber';
 import IsDesktop from '../Context/IsDesktop';
-import item9 from '../Images/item9.webp'
+import PaymentContext from '../Context/Payment';
+import item9 from '../Images/item9.webp';
+import PriceSelector from '../Components/PriceSelector';
+import {loadStripe} from '@stripe/stripe-js';
 export const Gift = () => {
   const {isDesktop} = useContext(IsDesktop)
+  const { amount } = useContext(PaymentContext);
   const [oneTime, setOneTime] = useState(true);
-  const [value1, setValue1] = useState(0);
+  // const [value1, setValue1] = useState(0);
   const [selected, setSelected] = useState(null);
-  const [selectedPrice, setSelectedPrice] = useState(null);
+  const [someOneHonor, setSomeOneHonor] = useState(null);
+  const handlePayment = async () => {
+    const stripePromise  = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+    const body = {
+      monthly:oneTime,
+      amount,
+      generalDonation:selected==='SomeoneHonor'?false:someOneHonor,
+      someoneHonor:selected==='GeneralDonation'?false:someOneHonor
+    }
+    const headers = {
+      'Content-Type': 'application/json',
+    }
+    const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+    const session = await response.json();
+    const result = await stripePromise.redirectToCheckout({
+      sessionId: session.id,
+    });
+  }
   const handleCheckboxChange = (id) => {
     setSelected(id === selected ? null : id);
   };
@@ -53,42 +78,42 @@ export const Gift = () => {
           </div>
         </header>
         <div className='amount'>
-          <h1>Select Amount </h1>
+          <PriceSelector />
+          {/* <h1>Select Amount </h1>
           <div className='amount-cont'>
-            <span className={`${selectedPrice==='50price' ? "price selected-price" : "price"}`} id='50price' onClick={()=>setSelectedPrice('50price')}>$50</span>
-            <span className={`${selectedPrice==='100prce' ? "price selected-price" : "price"}`} id='100prce' onClick={()=>setSelectedPrice('100prce')}>$100</span>
-            <span className={`${selectedPrice==='500price' ? "price selected-price" : "price"}`} id='500price' onClick={()=>setSelectedPrice('500price')}>$500</span>
-            <span className={`${selectedPrice==='1000price' ? "price selected-price" : "price"}`} id='1000price' onClick={()=>setSelectedPrice('1000price')}>$1000</span>
+            <span className={`${selectedPrice===50 ? "price selected-price" : "price"}`} id='50price' onClick={()=>setSelectedPrice(50)}>$50</span>
+            <span className={`${selectedPrice===100 ? "price selected-price" : "price"}`} id='100price' onClick={()=>setSelectedPrice(100)}>$100</span>
+            <span className={`${selectedPrice===500 ? "price selected-price" : "price"}`} id='500price' onClick={()=>setSelectedPrice(500)}>$500</span>
+            <span className={`${selectedPrice===1000 ? "price selected-price" : "price"}`} id='1000price' onClick={()=>setSelectedPrice(1000)}>$1000</span>
           </div>
           <div className='amount-cont'>
-            <span className={`${selectedPrice==='1500price' ? "price selected-price" : "price"}`} id='1500price' onClick={()=>setSelectedPrice('1500price')}>$1500</span>
-            <span className={`${selectedPrice==='2000price' ? "price selected-price" : "price"}`} id='2000price' onClick={()=>setSelectedPrice('2000price')}>$2000</span>
-            <InputNumber inputId="currency-us" className='enter-anumber' value={value1} onValueChange={(e) => setValue1(e.value)} mode="currency" currency="USD" locale="en-US" />
-          </div>
+            <span className={`${selectedPrice===1500 ? "price selected-price" : "price"}`} id='1500price' onClick={()=>setSelectedPrice(1500)}>$1500</span>
+            <span className={`${selectedPrice===2000 ? "price selected-price" : "price"}`} id='2000price' onClick={()=>setSelectedPrice(2000)}>$2000</span>
+            <InputNumber inputId="currency-us" className='enter-anumber' value={value1} onValueChange={(e) => setSelectedPrice(e.value)} mode="currency" currency="USD" locale="en-US" />
+          </div> */}
           <h1>Count as:</h1>
-          <div class="checkbox-container">
+          <div className="checkbox-container">
             <input 
               type="checkbox" 
-              id="option1"
-              checked={selected === 'option1'}
-              onChange={() => handleCheckboxChange('option1')}
+              id="GeneralDonation"
+              checked={selected === 'GeneralDonation'}
+              onChange={() => handleCheckboxChange('GeneralDonation')}
               />
-            <label for="option1" class="custom-checkbox"></label>
-            <label for="option1" className='label'>General Donation</label>
+            <label htmlFor="GeneralDonation" className="custom-checkbox"></label>
+            <label htmlFor="GeneralDonation" className='label'>General Donation</label>
           </div>
-          <div class="checkbox-container">
+          <div className="checkbox-container">
             <input 
               type="checkbox" 
-              id="option2"
-              checked={selected === 'option2'}
-              onChange={() => handleCheckboxChange('option2')}
+              id="SomeoneHonor"
+              checked={selected === 'SomeoneHonor'}
+              onChange={() => handleCheckboxChange('SomeoneHonor')}
               />
-            <label for="option2" class="custom-checkbox"></label>
-            <label for="option2" className='label'>Dedicate my donation in someone’s honor</label>
+            <label htmlFor="SomeoneHonor" className="custom-checkbox"></label>
+            <label htmlFor="SomeoneHonor" className='label'>Dedicate my donation in someone’s honor</label>
           </div>
-          {selected === 'option2' && <input type="text" placeholder='In honor of'  className='in-honor'/>}
-          
-          <a href='/proceed-to-payment' className='proceed'>Proceed to Payment Method</a>
+          {selected === 'option2' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
+          <a href='/payment-page' className='proceed'>Proceed to Payment Method</a>
         </div>
       </section>
     </main>

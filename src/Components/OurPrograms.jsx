@@ -4,20 +4,20 @@ import { TbSquareNumber1, TbSquareNumber2, TbSquareNumber3 } from "react-icons/t
 import { HashLinkComponent } from './HashLinkComponent';
 export default function OurPrograms() {
   return (
-    <section id='programs-section' class="programs-section">
-      <div class="content-wrapper">
-        <div class="image-section">
+    <section id='programs-section' className="programs-section">
+      <div className="content-wrapper">
+        <div className="image-section">
           <div className='before'></div>
           <img src={image}/>
         </div>
-        <div class="text-section">
+        <div className="text-section">
           <h2>
             Our Programs
             <span></span>
             <span></span>
           </h2>
-          <div class="items">
-            <div class="item">
+          <div className="items">
+            <div className="item">
               <HashLinkComponent link="/our-programs#program1">
                 <TbSquareNumber1 />
                 <div className='col'>
@@ -26,7 +26,7 @@ export default function OurPrograms() {
                 </div>
               </HashLinkComponent>
             </div>
-            <div class="item">
+            <div className="item">
               <HashLinkComponent link="/our-programs#program2">
                 <TbSquareNumber2 />
                 <div className='col'>
@@ -35,7 +35,7 @@ export default function OurPrograms() {
                 </div>
               </HashLinkComponent>
             </div>
-            <div class="item">
+            <div className="item">
               <HashLinkComponent link="/our-programs#program3">
                 <TbSquareNumber3 />
                 <div className='col'>
@@ -45,7 +45,7 @@ export default function OurPrograms() {
               </HashLinkComponent>
             </div>
           </div>
-          <a href='/our-programs' class="learn-more-btn">Learn More</a>
+          <a href='/our-programs' className="learn-more-btn">Learn More</a>
         </div>
       </div>
     </section>

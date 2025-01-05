@@ -14,7 +14,9 @@ import { Footer } from './Components/Footer';
 import { OurPrograms } from './Pages/OurPrograms';
 import { Gift } from './Pages/Gift';
 import { Payment } from './Pages/Payment';
+import  PaymentPage  from './Pages/PaymentPage.jsx';
 import { DesktopProvider } from './Context/IsDesktop.jsx';
+import { PaymentProvider } from './Context/Payment.jsx';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -30,6 +32,7 @@ const App = ()=> {
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
         <Route path="/support-our-journey" exact element={<Gift />} />
+        <Route path="/payment-page" element={<PaymentPage/>} />
         <Route path="/proceed-to-payment" exact element={<Payment />} />
       </Routes>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Footer />}
@@ -40,7 +43,9 @@ const MainApp = () => (
   <Router>
     <ScrollToTop/>
     <DesktopProvider>
-      <App />
+      <PaymentProvider>
+        <App />
+      </PaymentProvider>
     </DesktopProvider>
   </Router>
 );

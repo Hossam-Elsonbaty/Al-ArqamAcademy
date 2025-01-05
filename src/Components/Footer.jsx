@@ -10,20 +10,20 @@ import lines2 from '../Images/Group 39.webp'
 export const Footer = () => {
   const {isDesktop} = useContext(IsDesktop) ;
   return(
-    <footer class="footer">
+    <footer className="footer">
         {isDesktop
         ? 
-        <div class="footer-content">
-          <div class="logo-section">
-            <img src={Logo} alt="Alarqam Academy Logo" class="logo"/>
-            <div class="social-icons">
+        <div className="footer-content">
+          <div className="logo-section">
+            <img src={Logo} alt="Alarqam Academy Logo" className="logo"/>
+            <div className="social-icons">
               <a href="#"><CiFacebook/></a>
               <a href="#"><CiInstagram/></a>
               <a href="#"><CiTwitter/></a>
               <a href="#"><CiLinkedin/></a>
             </div>
           </div>
-          <div class="links-section">
+          <div className="links-section">
             <h3>Links</h3>
             <ul>
               <li><a href="/about-us">About Us</a></li>
@@ -32,22 +32,22 @@ export const Footer = () => {
               <li><a href="/contact-us">Contact Us</a></li>
             </ul>
           </div>
-          <div class="contact-section">
+          <div className="contact-section">
             <h3>Contact us</h3>
             <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
           </div>
-          <div class="btn-section">
+          <div className="btn-section">
             <img src={lines1} alt="lines" />
             <a className="btn" href='/program-application'>Register Now</a>
             <img src={lines2} alt="lines" />
           </div>
         </div>
         :
-        <div class="footer-content">
-          <div class="logo-section">
-            <img src={Logo} alt="Alarqam Academy Logo" class="logo"/>
+        <div className="footer-content">
+          <div className="logo-section">
+            <img src={Logo} alt="Alarqam Academy Logo" className="logo"/>
           </div>
-          <div class="links-section">
+          <div className="links-section">
             <aside>
               <h3>Links</h3>
               <ul>
@@ -57,13 +57,13 @@ export const Footer = () => {
                 <li><a href="/contact-us">Contact Us</a></li>
               </ul>
             </aside>
-            <div class="contact-section">
+            <div className="contact-section">
               <h3>Contact us</h3>
               <p>Be the first to hear about upcoming classes, exclusive events, and the latest resources.</p>
             </div>
           </div>
-          <div class="btn-section">
-            <div class="social-icons">
+          <div className="btn-section">
+            <div className="social-icons">
               <a href="#"><CiFacebook/></a>
               <a href="#"><CiInstagram/></a>
               <a href="#"><CiTwitter/></a>
@@ -77,7 +77,7 @@ export const Footer = () => {
           </div>
         </div>
         }
-      <div class="footer-bottom">
+      <div className="footer-bottom">
         <p>AlArqam Academy &copy; 2024. All rights reserved.</p>
       </div>
     </footer>
