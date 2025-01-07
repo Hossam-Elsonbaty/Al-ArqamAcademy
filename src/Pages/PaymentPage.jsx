@@ -7,8 +7,7 @@ import PaymentContext from '../Context/Payment';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-const CheckoutForm = () => {
-  const {amount } = useContext(PaymentContext);
+const CheckoutForm = ({amount}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState('');
@@ -37,7 +36,6 @@ const CheckoutForm = () => {
       // Here you can handle the post-payment actions such as storing the payment information
     }
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <CardElement />
