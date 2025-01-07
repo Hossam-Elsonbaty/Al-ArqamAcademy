@@ -32,7 +32,7 @@ const App = ()=> {
         <Route path="/program-application" exact element={<ProgramApplication />} />
         <Route path="/contact-us" exact element={<ContactUs />} />
         <Route path="/support-our-journey" exact element={<Gift />} />
-        <Route path="/payment-page" element={<PaymentPage/>} />
+        <Route path="/payment-page" exact element={<PaymentPage/>} />
         <Route path="/proceed-to-payment" exact element={<Payment />} />
       </Routes>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/payment-page' && <Footer />}
