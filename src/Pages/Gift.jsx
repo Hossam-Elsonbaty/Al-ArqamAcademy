@@ -113,7 +113,7 @@ export const Gift = () => {
             <label htmlFor="SomeoneHonor" className='label'>Dedicate my donation in someone’s honor</label>
           </div>
           {selected === 'option2' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
-          <a href='/payment-page' className='proceed'>Proceed to Payment Method</a>
+          <a href='https://donate.stripe.com/test_6oEg1Q66jebub7ydQR' className='proceed'>Proceed to Payment Method</a>
         </div>
       </section>
     </main>
