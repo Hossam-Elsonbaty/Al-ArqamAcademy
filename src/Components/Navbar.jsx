@@ -1,6 +1,7 @@
 import React,{ useState } from 'react';
 import Logo from '../Images/PNG Blue Horizontal.webp';
-import { HashLink } from "react-router-hash-link"; // Import HashLink
+import { HashLink } from "react-router-hash-link"; 
+import { Link } from "react-router-dom"; 
 import { BsGift } from "react-icons/bs";
 import {Dialog,DialogPanel,PopoverGroup,Disclosure,DisclosureButton,DisclosurePanel,} from '@headlessui/react';
 import { ChevronDownIcon} from '@heroicons/react/20/solid';
@@ -63,18 +64,18 @@ const Navbar = () => {
               <HashLinkComponent name="Program 3" link="/our-programs#program3"></HashLinkComponent>
             </div>
           </div>
-          <a href= "/program-application" className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          <Link to= "/program-application" className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Register Now
-          </a>
-          <a href='/contact-us' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
+          </Link>
+          <Link to='/contact-us' className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
             Contact Us
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/support-our-journey" className="py-3 px-6 flex gap-2 items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+          <Link to="/support-our-journey" className="py-3 px-6 flex gap-2 items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
             <BsGift className='text-base'/> 
             <p className='text-base'>Gift</p>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -156,26 +157,26 @@ const Navbar = () => {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href='/program-application'
+                <Link
+                  to='/program-application'
                   onClick={() => setMobileMenuOpen(false)}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Register Now
-                </a>
-                <a
-                  href='/contact-us'
+                </Link>
+                <Link
+                  to='/contact-us'
                   onClick={() => setMobileMenuOpen(false)}
                   className="cursor-pointer -mx-3 tracking-wider block font-poppins rounded-lg px-3 py-2 text-base font-semibold leading-7 text-navbar-blue hover:bg-gray-50"
                 >
                   Contact Us
-                </a>
+                </Link>
               </div>
               <div className="py-6">
-              <a href="/support-our-journey" className="py-3 px-6 flex gap-2 w-fit items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+              <Link to="/support-our-journey" className="py-3 px-6 flex gap-2 w-fit items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
                 <BsGift className='text-base'/> 
                 <p className='text-base'>Gift</p>
-              </a>
+              </Link>
               </div>
             </div>
           </div>

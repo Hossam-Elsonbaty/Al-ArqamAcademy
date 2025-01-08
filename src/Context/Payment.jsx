@@ -6,7 +6,6 @@ export const PaymentProvider = ({ children }) => {
   const [generalDonation, setGeneralDonation] = useState(true);
   const [someoneHonor, setSomeoneHonor] = useState();
   console.log(amount);
-  
   return (
     <PaymentContext.Provider 
     value={{ amount, setAmount, monthly,

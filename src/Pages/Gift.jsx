@@ -5,6 +5,7 @@ import IsDesktop from '../Context/IsDesktop';
 import PaymentContext from '../Context/Payment';
 import item9 from '../Images/item9.webp';
 import PriceSelector from '../Components/PriceSelector';
+import {Link} from "react-router-dom"
 import {loadStripe} from '@stripe/stripe-js';
 import axios from 'axios';
 export const Gift = () => {
@@ -138,8 +139,7 @@ export const Gift = () => {
             <label htmlFor="SomeoneHonor" className='label'>Dedicate my donation in someone’s honor</label>
           </div>
           {selected === 'SomeoneHonor' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
-          {/* <button onClick={handlePayment} className='proceed'>Proceed to Payment Method</button> */}
-          <a href='http://localhost:3000/payment-page' className='proceed'>Proceed to Payment Method</a>
+          <Link to='/payment-page' className='proceed'>Proceed to Payment Method</Link>
         </div>
       </section>
     </main>
