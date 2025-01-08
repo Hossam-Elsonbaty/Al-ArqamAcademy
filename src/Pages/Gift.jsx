@@ -36,6 +36,9 @@ export const Gift = () => {
       const result = await stripePromise.redirectToCheckout({
         sessionId: session.id,
       });  
+      if (result.error) {
+        console.error(result.error.message);
+      }
       console.log('Response:', response.data);
     } 
     catch (error) {
