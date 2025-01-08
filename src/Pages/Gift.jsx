@@ -6,6 +6,7 @@ import PaymentContext from '../Context/Payment';
 import item9 from '../Images/item9.webp';
 import PriceSelector from '../Components/PriceSelector';
 import {loadStripe} from '@stripe/stripe-js';
+import axios from 'axios';
 export const Gift = () => {
   const {isDesktop} = useContext(IsDesktop)
   const { amount } = useContext(PaymentContext);
@@ -15,24 +16,44 @@ export const Gift = () => {
   const [someOneHonor, setSomeOneHonor] = useState(null);
   const handlePayment = async () => {
     const stripePromise  = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-    const body = {
-      amount,
+    // const body = {
+    //   amount,
+    // }
+    // const headers = {
+    //   'Content-Type': 'application/json',
+    // }
+    try {
+      const response = await axios.post(
+        'https://al-arqam-banckend.vercel.app/api/create-new-payment',
+        JSON.stringify(amount) ,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      const session = await response.json();
+      const result = await stripePromise.redirectToCheckout({
+        sessionId: session.id,
+      });  
+      console.log('Response:', response.data);
+    } 
+    catch (error) {
+      console.error('Error:', error.response?.data || error.message);
     }
-    const headers = {
-      'Content-Type': 'application/json',
-    }
-    const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(body),
-    });
-    const session = await response.json();
-    const result = await stripePromise.redirectToCheckout({
-      sessionId: session.id,
-    });
-    if (result.error) {
-      console.error(result.error.message);
-    }
+    
+    // const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
+    //   method: 'POST',
+    //   headers: headers,
+    //   body: JSON.stringify(body),
+    // });
+    // const session = await response.json();
+    // const result = await stripePromise.redirectToCheckout({
+    //   sessionId: session.id,
+    // });
+    // if (result.error) {
+    //   console.error(result.error.message);
+    // }
   }
   const handleCheckboxChange = (id) => {
     setSelected(id === selected ? null : id);
