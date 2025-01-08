@@ -16,10 +16,7 @@ export const Gift = () => {
   const handlePayment = async () => {
     const stripePromise  = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
     const body = {
-      monthly:oneTime,
       amount,
-      generalDonation:selected==='SomeoneHonor'?false:someOneHonor,
-      someoneHonor:selected==='GeneralDonation'?false:someOneHonor
     }
     const headers = {
       'Content-Type': 'application/json',
@@ -33,6 +30,9 @@ export const Gift = () => {
     const result = await stripePromise.redirectToCheckout({
       sessionId: session.id,
     });
+    if (result.error) {
+      console.error(result.error.message);
+    }
   }
   const handleCheckboxChange = (id) => {
     setSelected(id === selected ? null : id);
@@ -112,8 +112,9 @@ export const Gift = () => {
             <label htmlFor="SomeoneHonor" className="custom-checkbox"></label>
             <label htmlFor="SomeoneHonor" className='label'>Dedicate my donation in someone’s honor</label>
           </div>
-          {selected === 'option2' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
-          <a href='https://donate.stripe.com/test_6oEg1Q66jebub7ydQR' className='proceed'>Proceed to Payment Method</a>
+          {selected === 'SomeoneHonor' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
+          <button onClick={handlePayment} className='proceed'>Proceed to Payment Method</button>
+          {/* <a href='https://donate.stripe.com/test_6oEg1Q66jebub7ydQR' className='proceed'>Proceed to Payment Method</a> */}
         </div>
       </section>
     </main>
