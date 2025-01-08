@@ -2710,6 +2710,77 @@ main.gift-main .content .amount .checkbox-container .custom-checkbox::after {
   }
 }
 
+#payment-form {
+  margin-top: 6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#payment-form button {
+  background-color: #0A253C;
+}
+#payment-form button {
+  background: #0A253C;
+  border-radius: 12px;
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+#payment-form button:hover {
+  filter: contrast(115%);
+}
+#payment-form button:active {
+  transform: translateY(0px) scale(0.98);
+  filter: brightness(0.9);
+}
+#payment-form button:disabled {
+  opacity: 0.5;
+  cursor: none;
+}
+#payment-form input, #payment-form select {
+  display: block;
+  font-size: 1.1em;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#payment-form label {
+  display: block;
+}
+#payment-form a {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+#payment-form small {
+  font-size: 0.6em;
+}
+#payment-form fieldset, #payment-form input, #payment-form select {
+  border: 1px solid #efefef;
+}
+#payment-form #payment-form {
+  border: #F6F9FC solid 1px;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 30px 50px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+}
+#payment-form #messages {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+  display: none; /* hide initially, then show once the first message arrives */
+  background-color: #0A253C;
+  color: #00D924;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  font-size: 0.7em;
+}
+
 @font-face {
   font-family: "A Thuluth";
   src: url("./Fonts/A.Thuluth_p30download.com_.ttf") format("truetype"); /* Adjust path and format if needed */

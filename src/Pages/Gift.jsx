@@ -14,50 +14,51 @@ export const Gift = () => {
   // const [value1, setValue1] = useState(0);
   const [selected, setSelected] = useState(null);
   const [someOneHonor, setSomeOneHonor] = useState(null);
-  const handlePayment = async () => {
-    const stripePromise  = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-    // const body = {
-    //   amount,
-    // }
-    // const headers = {
-    //   'Content-Type': 'application/json',
-    // }
-    try {
-      const response = await axios.post(
-        'https://al-arqam-banckend.vercel.app/api/create-new-payment',
-        JSON.stringify(amount) ,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      const session = await response.json();
-      const result = await stripePromise.redirectToCheckout({
-        sessionId: session.id,
-      });  
-      if (result.error) {
-        console.error(result.error.message);
-      }
-      console.log('Response:', response.data);
-    } 
-    catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-    }
+  // const handlePayment = async () => {
+  //   const stripePromise  = await loadStripe('pk_test_51QeoqrIEitvFGT7I8wMF2u4Fi5DZfQRyHl4G5DJD0oPaKQRQtb0BcTpTAuCiH9BYEaEBhWkFWvRHIYbe6pFZUr3N00Edvt0g5m');
+  //   // const body = {
+  //   //   amount,
+  //   // }
+  //   // const headers = {
+  //   //   'Content-Type': 'application/json',
+  //   // }
+  //   console.log(amount)
+  //   try {
+  //     const response = await axios.post(
+  //       'http://localhost:5555/api/create-new-payment',
+  //       JSON.stringify(amount) ,
+  //       {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //       }
+  //     );
+  //     const session = await response.json();
+  //     const result = await stripePromise.redirectToCheckout({
+  //       sessionId: session.id,
+  //     });  
+  //     if (result.error) {
+  //       console.error(result.error.message);
+  //     }
+  //     console.log('Response:', response.data);
+  //   } 
+  //   catch (error) {
+  //     console.error('Error:', error.response?.data || error.message);
+  //   }
     
-    // const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
-    //   method: 'POST',
-    //   headers: headers,
-    //   body: JSON.stringify(body),
-    // });
-    // const session = await response.json();
-    // const result = await stripePromise.redirectToCheckout({
-    //   sessionId: session.id,
-    // });
-    // if (result.error) {
-    //   console.error(result.error.message);
-    // }
-  }
+  //   // const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
+  //   //   method: 'POST',
+  //   //   headers: headers,
+  //   //   body: JSON.stringify(body),
+  //   // });
+  //   // const session = await response.json();
+  //   // const result = await stripePromise.redirectToCheckout({
+  //   //   sessionId: session.id,
+  //   // });
+  //   // if (result.error) {
+  //   //   console.error(result.error.message);
+  //   // }
+  // }
   const handleCheckboxChange = (id) => {
     setSelected(id === selected ? null : id);
   };
@@ -137,8 +138,8 @@ export const Gift = () => {
             <label htmlFor="SomeoneHonor" className='label'>Dedicate my donation in someone’s honor</label>
           </div>
           {selected === 'SomeoneHonor' && <input type="text" onChange={(e)=>setSomeOneHonor(e.target.value)} placeholder='In honor of'  className='in-honor'/>}
-          <button onClick={handlePayment} className='proceed'>Proceed to Payment Method</button>
-          {/* <a href='https://donate.stripe.com/test_6oEg1Q66jebub7ydQR' className='proceed'>Proceed to Payment Method</a> */}
+          {/* <button onClick={handlePayment} className='proceed'>Proceed to Payment Method</button> */}
+          <a href='http://localhost:3000/payment-page' className='proceed'>Proceed to Payment Method</a>
         </div>
       </section>
     </main>
