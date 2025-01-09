@@ -14,7 +14,7 @@ const PaymentPage = ()=> {
   useEffect(()=>{
     const createPayment = async () => {
       try {
-        const response = await fetch('http://localhost:5555/api/create-new-payment', {
+        const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
