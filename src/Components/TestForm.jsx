@@ -1,47 +1,47 @@
 import { useState, useContext } from "react";
-import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
+import { useStripe, useElements, PaymentElement, LinkAuthenticationElement } from "@stripe/react-stripe-js";
 import PaymentContext from '../Context/Payment';
 
-export default function CheckoutForm() {
+export default function TestForm() {
   const stripe = useStripe();
   const elements = useElements();
 	const {email, setEmail, name, setName, phoneNumber, setPhoneNumber} = useContext(PaymentContext)
   const [message, setMessage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!stripe || !elements) {
-      return;
-    }
-    setIsProcessing(true);
-    const { error, paymentIntent } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        return_url: `${window.location.origin}/support-our-journey`,
-        payment_method_data: {
-          billing_details: {
-            name,
-            email,
-            phone: phoneNumber,
-          },
-        },
-      },
-      redirect: "if_required"
-    });
-    if (error) {
-      setMessage(error.message);
-    } else if(paymentIntent&& paymentIntent.status==="succeeded"){
-      setMessage(`Payment status: ${paymentIntent.status}`)
-      setEmail('')
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		if (!stripe || !elements) {
+			return;
+		}
+		setIsProcessing(true);
+		const { error, paymentIntent } = await stripe.confirmPayment({
+			elements,
+			confirmParams: {
+				return_url: `${window.location.origin}/subscription-success`,
+				payment_method_data: {
+					billing_details: {
+						name,
+						email,
+						phone: phoneNumber,
+					},
+				},
+			},
+			redirect: 'if_required',
+		});
+		if (error) {
+			setMessage(error.message);
+		} else if (paymentIntent && paymentIntent.status === 'succeeded') {
+			setMessage('Subscription setup successful! Thanks For Your Support');
+			setEmail('')
 			setPhoneNumber('')
 			setName('')
-    }
-    else {
-      setMessage("An unexpected error occured.");
-    }
-    setIsProcessing(false);
-  };
-  const paymentElementOptions = {
+		} else {
+			setMessage('An unexpected error occurred.');
+		}
+	
+		setIsProcessing(false);
+	};
+		const paymentElementOptions = {
     layout: "accordion",
   }
   return (

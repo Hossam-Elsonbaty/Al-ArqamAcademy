@@ -127,14 +127,51 @@ main.gift-main{
     .amount {
       display: flex;
       flex-direction: column;
+      gap: 30px;
       @include breakpoint(mobile) {
         align-items: center;
       }
-      gap: 30px;
       h1 {
         font-size: 22px;
         font-weight:700 ;
         color:#757980;
+      }
+      .donator-info {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-direction: row;
+        @include breakpoint(mobile) {
+          flex-direction: column;
+        }
+        @include breakpoint(medium) {
+          flex-direction: column;
+        }
+        .PhoneInput{
+          @include breakpoint(mobile) {
+            width: 100%;
+          }
+          @include breakpoint(medium) {
+            width: 100%;
+          }
+        }
+        input{
+          width: fit-content;
+          padding: 17px;
+          font-size: 20px;
+          border-radius: 15px;
+          border: 1px solid #B4BEC8;
+          color: rgba(135, 135, 135, 0.6784313725);
+          flex-grow: 1;
+          outline: none;
+          @include breakpoint(mobile) {
+            width: 100%;
+          }
+          @include breakpoint(medium) {
+            width: 100%;
+          }
+        }
       }
       .amount-cont {
         display: flex; 

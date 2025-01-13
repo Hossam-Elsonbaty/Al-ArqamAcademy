@@ -17,6 +17,9 @@ import { Payment } from './Pages/Payment';
 import  PaymentPage  from './Pages/PaymentPage.jsx';
 import { DesktopProvider } from './Context/IsDesktop.jsx';
 import { PaymentProvider } from './Context/Payment.jsx';
+import CompletePage from './Components/CompletePage.jsx';
+import SubscriptionPage from './Pages/SubscriptionPage.jsx';
+import ErrorPage from './Pages/ErrorPage.jsx';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -34,8 +37,11 @@ const App = ()=> {
         <Route path="/support-our-journey" exact element={<Gift />} />
         <Route path="/payment-page" exact element={<PaymentPage/>} />
         <Route path="/proceed-to-payment" exact element={<Payment />} />
+        <Route path="/complete" exact element={<CompletePage />} />
+        <Route path="/subscription-page" exact element={<SubscriptionPage />} />
+        <Route path="/error" exact element={<ErrorPage />} />
       </Routes>
-      {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/payment-page' && <Footer />}
+      {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/error' && location.pathname !== '/subscription-page' && location.pathname !== '/payment-page' && <Footer />}
     </>
   )
 }
