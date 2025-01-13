@@ -17,7 +17,7 @@ export default function TestForm() {
 		const { error, paymentIntent } = await stripe.confirmPayment({
 			elements,
 			confirmParams: {
-				return_url: `${window.location.origin}/subscription-success`,
+				return_url: `${window.location.origin}/success-payment`,
 				payment_method_data: {
 					billing_details: {
 						name,
@@ -26,7 +26,7 @@ export default function TestForm() {
 					},
 				},
 			},
-			redirect: 'if_required',
+			// redirect: 'if_required',
 		});
 		if (error) {
 			setMessage(error.message);

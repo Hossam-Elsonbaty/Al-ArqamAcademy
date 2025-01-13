@@ -2849,7 +2849,7 @@ main.gift-main .content .amount .checkbox-container .custom-checkbox::after {
 
 main.error {
   width: 100%;
-  margin-top: 5rem;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2885,6 +2885,17 @@ main.error .container .return-home {
   font-size: 12px;
   border-radius: 12px;
   margin-top: 12px;
+}
+
+.opacity-div {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6784313725);
 }
 
 @font-face {

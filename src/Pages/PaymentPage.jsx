@@ -4,9 +4,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from '../Components/CheckoutForm'
 import PaymentContext from '../Context/Payment';
+import Loader from '../Components/Loader';
 const PaymentPage = ()=> {
-  const [stripePromise, setStripePromise] = useState(null)
-  const [clientSecret, setClientSecret] = useState("")
+  const [stripePromise, setStripePromise] = useState(null);
+  const [clientSecret, setClientSecret] = useState("");
+  const [loading, setLoading] = useState(true);
   const {amount, email, name, phoneNumber} = useContext(PaymentContext)
   useEffect(()=>{
     setStripePromise(loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY))
@@ -28,18 +30,38 @@ const PaymentPage = ()=> {
       } catch (error) {
         console.error('Error creating payment:', error);
         window.location.href = `${window.location.origin}/error`
+      }finally {
+        setLoading(false); // Ensure loading is set to false after fetch
       }
     };
     createPayment();
   },[email, name, phoneNumber]);
-  console.log(clientSecret, stripePromise);
+  if (loading) {
+    return <Loader/>; 
+  }
+  if (!stripePromise || !clientSecret) {
+    return window.location.href = `${window.location.origin}/error`; 
+  }
   return(
     <>
-    {stripePromise && clientSecret && (
+      {/* {(stripePromise && clientSecret)
+      ?
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
+          <CheckoutForm />
+        </Elements>
+      :
+        <ErrorPage/>
+        // window.location.href = `${window.location.origin}/error`
+      } */}
+    
       <Elements stripe={stripePromise} options={{ clientSecret }}>
         <CheckoutForm />
       </Elements>
-    )}
+    {/* {stripePromise && clientSecret && (
+      <Elements stripe={stripePromise} options={{ clientSecret }}>
+        <CheckoutForm />
+      </Elements>
+    )} */}
   </>
   )
 }

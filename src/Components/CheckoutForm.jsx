@@ -17,7 +17,7 @@ export default function CheckoutForm() {
     const { error, paymentIntent } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/support-our-journey`,
+        return_url: `${window.location.origin}/success-payment`,
         payment_method_data: {
           billing_details: {
             name,
@@ -26,12 +26,12 @@ export default function CheckoutForm() {
           },
         },
       },
-      redirect: "if_required"
+      // redirect: "if_required"
     });
     if (error) {
       setMessage(error.message);
     } else if(paymentIntent&& paymentIntent.status==="succeeded"){
-      setMessage(`Payment status: ${paymentIntent.status}`)
+      setMessage(`Payment setup successful! Thanks For Your Support`)
       setEmail('')
 			setPhoneNumber('')
 			setName('')

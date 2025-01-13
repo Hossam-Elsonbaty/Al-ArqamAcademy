@@ -4,12 +4,14 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements} from '@stripe/react-stripe-js';
 import TestForm from '../Components/TestForm'
 import PaymentContext from '../Context/Payment';
+import Loader from '../Components/Loader';
 const SubscriptionPage = ()=> {
   const [stripePromise, setStripePromise] = useState(null)
   const [clientSecret, setClientSecret] = useState("")
+	const [loading, setLoading] = useState(true);
   const {amount, email, name, phoneNumber} = useContext(PaymentContext)
   useEffect(()=>{
-    setStripePromise(loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY))
+		setStripePromise(loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY))
   },[])
   //https://al-arqam-banckend.vercel.app
 	useEffect(() => {
@@ -29,11 +31,18 @@ const SubscriptionPage = ()=> {
 			} catch (error) {
 				console.error('Error creating subscription:', error);
 				window.location.href = `${window.location.origin}/error`
-			}
+			}finally {
+        setLoading(false); 
+      }
 		};
 		createSubscription();
 	}, [email, name, phoneNumber]);
-	console.log(clientSecret, stripePromise);
+	if (loading) {
+    return <Loader/>; 
+  }
+  if (!stripePromise || !clientSecret) {
+    return window.location.href = `${window.location.origin}/error`; 
+  }
   return(
     <>
     {stripePromise && clientSecret && (

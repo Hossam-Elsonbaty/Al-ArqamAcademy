@@ -20,6 +20,7 @@ import { PaymentProvider } from './Context/Payment.jsx';
 import CompletePage from './Components/CompletePage.jsx';
 import SubscriptionPage from './Pages/SubscriptionPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
+import SuccessPayment from './Pages/SuccessPayment.jsx';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -40,8 +41,9 @@ const App = ()=> {
         <Route path="/complete" exact element={<CompletePage />} />
         <Route path="/subscription-page" exact element={<SubscriptionPage />} />
         <Route path="/error" exact element={<ErrorPage />} />
+        <Route path="/success-payment" exact element={<SuccessPayment />} />
       </Routes>
-      {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/error' && location.pathname !== '/subscription-page' && location.pathname !== '/payment-page' && <Footer />}
+      {location.pathname !== '/sign-up' && location.pathname !== '/login' && location.pathname !== '/success-payment' && location.pathname !== '/error' && location.pathname !== '/subscription-page' && location.pathname !== '/payment-page' && <Footer />}
     </>
   )
 }
