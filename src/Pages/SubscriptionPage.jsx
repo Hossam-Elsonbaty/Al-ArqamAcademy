@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements} from '@stripe/react-stripe-js';
-import TestForm from '../Components/TestForm'
+import SubscriptionForm from '../Components/SubscriptionForm'
 import PaymentContext from '../Context/Payment';
 import Loader from '../Components/Loader';
 const SubscriptionPage = ()=> {
@@ -47,7 +47,7 @@ const SubscriptionPage = ()=> {
     <>
     {stripePromise && clientSecret && (
       <Elements stripe={stripePromise} options={{ clientSecret }}>
-        <TestForm />
+        <SubscriptionForm />
       </Elements>
     )}
   </>

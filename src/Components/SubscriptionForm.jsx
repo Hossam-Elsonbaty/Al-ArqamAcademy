@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useStripe, useElements, PaymentElement, LinkAuthenticationElement } from "@stripe/react-stripe-js";
 import PaymentContext from '../Context/Payment';
 
-export default function TestForm() {
+export default function SubscriptionForm() {
   const stripe = useStripe();
   const elements = useElements();
 	const {email, setEmail, name, setName, phoneNumber, setPhoneNumber} = useContext(PaymentContext)
