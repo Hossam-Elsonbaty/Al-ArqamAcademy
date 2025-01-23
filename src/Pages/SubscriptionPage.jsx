@@ -18,7 +18,7 @@ const SubscriptionPage = ()=> {
 		console.log(phoneNumber, name);
 		const createSubscription = async () => {
 			try {
-				const response = await fetch('http://localhost:5555/api/create-subscription', {
+				const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-subscription', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
