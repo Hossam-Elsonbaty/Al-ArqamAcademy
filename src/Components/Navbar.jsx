@@ -173,7 +173,7 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="py-6">
-              <Link to="/support-our-journey" className="py-3 px-6 flex gap-2 w-fit items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
+              <Link to="/support-our-journey" onClick={() => setMobileMenuOpen(false)} className="py-3 px-6 flex gap-2 w-fit items-center text-sm leading-6 font-poppins border bg-navbar-blue text-white rounded-2xl">
                 <BsGift className='text-base'/> 
                 <p className='text-base'>Gift</p>
               </Link>
