@@ -6,6 +6,7 @@ import faceLogo from '../Images/facebook.webp';
 import instagramLogo from '../Images/instagram.webp';
 import tiktokLogo from '../Images/TikTok-Logo.wine.webp';
 import { notification } from 'antd';
+import { Helmet } from 'react-helmet';
 export const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -41,50 +42,59 @@ export const ContactUs = () => {
     }
   };
   return (
-    <main className='contact-us'>
-      {contextHolder}
-      <div className="card">
-        <img src={dotted} alt="" className='dotted'/>
-        <h1>
-          Contact Us
-          <img src={line} alt='image' />
-        </h1>
-        <div className="elements">
-          <aside className='message'>
-            <p>Send Us a Message </p>
-            <form onSubmit={handleContactSubmit}>
-              <input type="text" placeholder='Your Name' required onChange={(e)=>{setName(e.target.value)}}/>
-              <input type="email" placeholder='Your Email' required onChange={(e)=>{setEmail(e.target.value)}}/>
-              <input type="text" placeholder='Your Message' required onChange={(e)=>{setMessage(e.target.value)}}/>
-              <div className="checkbox-container">
-                <input type="checkbox" id="consentCheckbox" onChange={(e)=>{setCheckbox(!checkbox)}}/>
-                <label for="consentCheckbox" className="custom-checkbox"></label>
-                <label for="consentCheckbox" className='label'>I consent to Alarqm Academy collecting my details through this form</label>
+    <>
+      <Helmet>
+        <link rel="preload" href={line} as="image" />
+        <link rel="preload" href={dotted} as="image" />
+        <link rel="preload" href={faceLogo} as="image" />
+        <link rel="preload" href={instagramLogo} as="image" />
+        <link rel="preload" href={tiktokLogo} as="image" />
+      </Helmet>
+      <main className='contact-us'>
+        {contextHolder}
+        <div className="card">
+          <img src={dotted} alt="dotted" className='dotted'/>
+          <h1>
+            Contact Us
+            <img src={line} alt='line image' />
+          </h1>
+          <div className="elements">
+            <aside className='message'>
+              <p>Send Us a Message </p>
+              <form onSubmit={handleContactSubmit}>
+                <input type="text" placeholder='Your Name' required onChange={(e)=>{setName(e.target.value)}}/>
+                <input type="email" placeholder='Your Email' required onChange={(e)=>{setEmail(e.target.value)}}/>
+                <input type="text" placeholder='Your Message' required onChange={(e)=>{setMessage(e.target.value)}}/>
+                <div className="checkbox-container">
+                  <input type="checkbox" id="consentCheckbox" onChange={(e)=>{setCheckbox(!checkbox)}}/>
+                  <label for="consentCheckbox" className="custom-checkbox"></label>
+                  <label for="consentCheckbox" className='label'>I consent to Alarqm Academy collecting my details through this form</label>
+                </div>
+                <button type='submit'>Send</button>
+              </form>
+            </aside>
+            <aside className='contact-info'>
+              <div className='icons'>
+                <HiOutlineMail/>
+                <a href='mailto:info@AlarqamAcademy.org'>info@AlarqamAcademy.org</a>
               </div>
-              <button type='submit'>Send</button>
-            </form>
-          </aside>
-          <aside className='contact-info'>
-            <div className='icons'>
-              <HiOutlineMail/>
-              <a href='mailto:info@AlarqamAcademy.org'>info@AlarqamAcademy.org</a>
-            </div>
-            {/* <div className='icons'>
-              <SlLocationPin/>
-              <span> [Insert Location]</span>
-            </div> */}
-            <div className='social'>
-              <div className='social-logo'>
-                <a href="https://www.instagram.com/alarqamacademy_?igsh=ZjcydjY4cHV0ZmVp&utm_source=qr"><img src={instagramLogo} alt='image' /></a>
-                <a href="#"><img src={faceLogo} alt='image' /></a>
-                <a href="https://www.tiktok.com/@alarqam.academy1?_t=8sgWVAjo8oZ&_r=1"><img src={tiktokLogo} alt='image' /></a>
+              {/* <div className='icons'>
+                <SlLocationPin/>
+                <span> [Insert Location]</span>
+              </div> */}
+              <div className='social'>
+                <div className='social-logo'>
+                  <a href="https://www.instagram.com/alarqamacademy_?igsh=ZjcydjY4cHV0ZmVp&utm_source=qr"><img src={instagramLogo} alt='instagramLogo' /></a>
+                  <a href="#"><img src={faceLogo} alt='faceLogo' /></a>
+                  <a href="https://www.tiktok.com/@alarqam.academy1?_t=8sgWVAjo8oZ&_r=1"><img src={tiktokLogo} alt='image' /></a>
+                </div>
+                <span>AlarqamAcademy</span>
               </div>
-              <span>AlarqamAcademy</span>
-            </div>
-          </aside>
+            </aside>
+          </div>
+          <img src={dotted} alt='dotted' className='dot'/>
         </div>
-        <img src={dotted} alt='image' className='dot'/>
-      </div>
-    </main>
+      </main>
+    </>
   );
 };

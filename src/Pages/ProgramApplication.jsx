@@ -353,7 +353,7 @@ export const ProgramApplication = () => {
             <div className="image-section">
               <div className="image-container">
                 <div className='before'></div>
-                <img src={stayIn} alt='image'/>
+                <img src={stayIn} alt='stayIn image'/>
               </div>
             </div>
           </div>
@@ -362,7 +362,7 @@ export const ProgramApplication = () => {
             <div className="image-section">
               <div className="image-container">
                 <div className='before'></div>
-                <img src={stayIn} alt='image'/>
+                <img src={stayIn} alt='stayIn image'/>
               </div>
             </div>
             <div className="content">

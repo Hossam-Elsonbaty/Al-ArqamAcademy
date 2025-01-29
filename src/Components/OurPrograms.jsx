@@ -1,14 +1,38 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import image from '../Images/item2.webp';
 import { TbSquareNumber1, TbSquareNumber2, TbSquareNumber3 } from "react-icons/tb";
 import { HashLinkComponent } from './HashLinkComponent';
+
 export default function OurPrograms() {
+  const programs = [
+    {
+      id: 1,
+      link: "/our-programs#program1",
+      icon: <TbSquareNumber1 />,
+      title: "Program 1",
+      description: "My First Step in the Quran Language (Arabic)",
+    },
+    {
+      id: 2,
+      link: "/our-programs#program2",
+      icon: <TbSquareNumber2 />,
+      title: "Program 2",
+      description: "Hoffaz Dar Al-Arqam “Memorization”",
+    },
+    {
+      id: 3,
+      link: "/our-programs#program3",
+      icon: <TbSquareNumber3 />,
+      title: "Program 3",
+      description: "Inheritors of the Prophets",
+    },
+  ];
   return (
     <section id='programs-section' className="programs-section">
       <div className="content-wrapper">
         <div className="image-section">
           <div className='before'></div>
-          <img src={image}/>
+          <img src={image} alt="Programs Image" />
         </div>
         <div className="text-section">
           <h2>
@@ -17,37 +41,21 @@ export default function OurPrograms() {
             <span></span>
           </h2>
           <div className="items">
-            <div className="item">
-              <HashLinkComponent link="/our-programs#program1">
-                <TbSquareNumber1 />
-                <div className='col'>
-                  <h3>Program   1</h3>
-                  <p>My First Step in the Quran Language (Arabic)</p>
-                </div>
-              </HashLinkComponent>
-            </div>
-            <div className="item">
-              <HashLinkComponent link="/our-programs#program2">
-                <TbSquareNumber2 />
-                <div className='col'>
-                  <h3>Program   2</h3>
-                  <p>Hoffaz Dar Al-Arqam “Memorization”</p>
-                </div>
-              </HashLinkComponent>
-            </div>
-            <div className="item">
-              <HashLinkComponent link="/our-programs#program3">
-                <TbSquareNumber3 />
-                <div className='col'>
-                  <h3>Program   3</h3>
-                  <p>Inheritors of the Prophets</p>
-                </div>
-              </HashLinkComponent>
-            </div>
+            {programs.map(program => (
+              <div className="item" key={program.id}>
+                <HashLinkComponent link={program.link}>
+                  {program.icon}
+                  <div className='col'>
+                    <h3>{program.title}</h3>
+                    <p>{program.description}</p>
+                  </div>
+                </HashLinkComponent>
+              </div>
+            ))}
           </div>
           <a href='/our-programs' className="learn-more-btn">Learn More</a>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import img from '../Images/love_15118349.webp'
+import img from '../Images/love_15118349.webp';
+import { Helmet } from 'react-helmet';
+
 const SuccessPayment = () => {
   return (
     <main className='error'>

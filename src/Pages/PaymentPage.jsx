@@ -44,24 +44,9 @@ const PaymentPage = ()=> {
   }
   return(
     <>
-      {/* {(stripePromise && clientSecret)
-      ?
-        <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <CheckoutForm />
-        </Elements>
-      :
-        <ErrorPage/>
-        // window.location.href = `${window.location.origin}/error`
-      } */}
-    
       <Elements stripe={stripePromise} options={{ clientSecret }}>
         <CheckoutForm />
       </Elements>
-    {/* {stripePromise && clientSecret && (
-      <Elements stripe={stripePromise} options={{ clientSecret }}>
-        <CheckoutForm />
-      </Elements>
-    )} */}
   </>
   )
 }

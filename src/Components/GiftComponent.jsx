@@ -51,5 +51,4 @@ export const GiftComponent = () => {
     </section>
   )
 }
-// background: #286982D9;
 

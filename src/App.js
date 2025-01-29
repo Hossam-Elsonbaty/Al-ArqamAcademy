@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react'; 
-import {BrowserRouter as Router , Routes, Route, useLocation, Link } from 'react-router-dom';
+import {BrowserRouter as Router , Routes, Route, useLocation} from 'react-router-dom';
 import Home from '../src/Pages/Home'
 import {AboutUs} from '../src/Pages/AboutUs'
-import {Login} from '../src/Pages/Login'
 import Navbar from '../src/Components/Navbar'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ScrollToTop from './Components/ScrollToTop';
-import { SignUp } from './Pages/SignUp';
 import { ProgramApplication } from './Pages/ProgramApplication';
 import { ContactUs } from './Pages/ContactUs';
 import { Footer } from './Components/Footer';
@@ -21,6 +19,11 @@ import CompletePage from './Components/CompletePage.jsx';
 import SubscriptionPage from './Pages/SubscriptionPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import SuccessPayment from './Pages/SuccessPayment.jsx';
+import Logo1 from './Images/PNG Blue Horizontal.webp';
+import Logo2 from './Images/PNG Blue.webp';
+import lines1 from './Images/Group 38.webp'
+import lines2 from './Images/Group 39.webp'
+import { Helmet } from 'react-helmet';
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
@@ -29,6 +32,12 @@ const App = ()=> {
   return (
     <>
       {location.pathname !== '/sign-up' && location.pathname !== '/login' && <Navbar />}
+      <Helmet>
+        <link rel="preload" href={Logo1} as="image" />
+        <link rel="preload" href={Logo2} as="image" />
+        <link rel="preload" href={lines1} as="image" />
+        <link rel="preload" href={lines2} as="image" />
+      </Helmet>
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/about-us" exact element={<AboutUs />} />
@@ -58,15 +67,3 @@ const MainApp = () => (
   </Router>
 );
 export default MainApp;
-// "@emotion/react": "^11.13.3",
-// "@emotion/styled": "^11.13.0",
-// "@fortawesome/fontawesome-svg-core": "^6.6.0",
-// "@fortawesome/free-brands-svg-icons": "^6.6.0",
-// "@fortawesome/free-regular-svg-icons": "^6.6.0",
-// "@fortawesome/free-solid-svg-icons": "^6.6.0",
-// "@fortawesome/react-fontawesome": "^0.2.2",
-// "@headlessui/react": "^2.1.8",
-// "@heroicons/react": "^2.1.5",
-// "@mui/icons-material": "^6.1.1",
-// "@mui/material": "^6.1.1",
-

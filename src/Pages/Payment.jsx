@@ -37,7 +37,7 @@ export const Payment = () => {
           </h2>
         </div>
         <div className='credit-logo'>
-          <img src={image} alt="image"></img>
+          <img src={image} alt="Credit/Debit Card image"></img>
           <span>Credit/Debit Card</span>
         </div>
         <h2>Your Details</h2>

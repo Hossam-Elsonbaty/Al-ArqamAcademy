@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex lg:flex-1">
           <a href='/' className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt='image' src={Logo} className="h-16 w-auto" />
+            <img alt='logo image' src={Logo} className="h-16 w-auto" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -85,7 +85,7 @@ const Navbar = () => {
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                alt='image'
+                alt='Logo image'
                 src={Logo}
                 className="h-16 w-auto"
               />
@@ -185,5 +185,4 @@ const Navbar = () => {
     </header>
   )
 }
-
 export default Navbar;
