@@ -15,7 +15,6 @@ import { Payment } from './Pages/Payment';
 import  PaymentPage  from './Pages/PaymentPage.jsx';
 import { DesktopProvider } from './Context/IsDesktop.jsx';
 import { PaymentProvider } from './Context/Payment.jsx';
-import CompletePage from './Components/CompletePage.jsx';
 import SubscriptionPage from './Pages/SubscriptionPage.jsx';
 import ErrorPage from './Pages/ErrorPage.jsx';
 import SuccessPayment from './Pages/SuccessPayment.jsx';
@@ -47,7 +46,6 @@ const App = ()=> {
         <Route path="/support-our-journey" exact element={<Gift />} />
         <Route path="/payment-page" exact element={<PaymentPage/>} />
         <Route path="/proceed-to-payment" exact element={<Payment />} />
-        <Route path="/complete" exact element={<CompletePage />} />
         <Route path="/subscription-page" exact element={<SubscriptionPage />} />
         <Route path="/error" exact element={<ErrorPage />} />
         <Route path="/success-payment" exact element={<SuccessPayment />} />
