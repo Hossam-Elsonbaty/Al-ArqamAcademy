@@ -8,8 +8,6 @@ export const PaymentProvider = ({ children }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  console.log(amount);
-  console.log(oneTime);
   return (
     <PaymentContext.Provider 
     value={{ amount, setAmount, oneTime,

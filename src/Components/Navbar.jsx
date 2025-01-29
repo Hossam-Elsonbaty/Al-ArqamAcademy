@@ -48,10 +48,10 @@ const Navbar = () => {
               About Us
             </HashLink>
             <div className="nav-menu">
-              <HashLinkComponent name="Objectives" link="/about-us#Objectives"></HashLinkComponent>
-              <HashLinkComponent name="Tools We Use" link="/about-us#Accomplish"></HashLinkComponent>
-              <HashLinkComponent name="Graduates" link="/about-us#Graduates"></HashLinkComponent>
-              <HashLinkComponent name="Our Team" link="/about-us#OurTeam"></HashLinkComponent>
+              <HashLinkComponent name="Objectives" link="/about-us#Objectives"/>
+              <HashLinkComponent name="Tools We Use" link="/about-us#Accomplish"/>
+              <HashLinkComponent name="Graduates" link="/about-us#Graduates"/>
+              <HashLinkComponent name="Our Team" link="/about-us#OurTeam"/>
             </div>
           </div>
           <div className="links-nav cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">
@@ -59,9 +59,9 @@ const Navbar = () => {
               Our Programs
             </HashLink>
             <div className="nav-menu nav-menu2"> 
-              <HashLinkComponent name="Program 1" link="/our-programs#program1"></HashLinkComponent>
-              <HashLinkComponent name="Program 2" link="/our-programs#program2"></HashLinkComponent>
-              <HashLinkComponent name="Program 3" link="/our-programs#program3"></HashLinkComponent>
+              <HashLinkComponent name="Program 1" link="/our-programs#program1"/>
+              <HashLinkComponent name="Program 2" link="/our-programs#program2"/>
+              <HashLinkComponent name="Program 3" link="/our-programs#program3"/>
             </div>
           </div>
           <Link to= "/program-application" className="cursor-pointer tracking-wider text-sm font-poppins font-semibold leading-6 text-navbar-blue">

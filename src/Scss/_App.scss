@@ -24,17 +24,20 @@
   src: url('./Fonts/A.Thuluth_p30download.com_.ttf') format('truetype'); /* Adjust path and format if needed */
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Kawkab Mono Bold';
   src: url('./Fonts/kawkab-bold.ttf') format('truetype'); /* Adjust path and format if needed */
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
   margin: 0;
   font-family: "Poppins", serif;
+  font-display: swap;
   box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth; 

@@ -73,7 +73,6 @@ export const ProgramApplication = () => {
           },
         }
       );
-      console.log('Response:', response.data);
       openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
     } catch (error) {
       openNotificationWithIcon('error','failed operation','Please fill your data correctly')
@@ -94,8 +93,6 @@ export const ProgramApplication = () => {
       zipCode,
       selectedProgram
     }
-    console.log(applicationData);
-    
     try {
       const response = await axios.post(
         'https://al-arqam-banckend.vercel.app/api/student-application',
@@ -106,7 +103,6 @@ export const ProgramApplication = () => {
           },
         }
       );
-      console.log('Response:', response.data);
       openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
     } catch (error) {
       openNotificationWithIcon('error','failed operation','Please fill your data correctly')

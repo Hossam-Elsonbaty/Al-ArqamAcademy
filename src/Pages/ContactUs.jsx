@@ -26,7 +26,6 @@ export const ContactUs = () => {
       return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
     }
     try {
-      console.log("Attempting request with data:", contactData);
       const response = await fetch('https://al-arqam-banckend.vercel.app/api/contact-us', {
         method: 'POST',
         headers: {
@@ -34,7 +33,6 @@ export const ContactUs = () => {
         },
         body: JSON.stringify(contactData),
       });
-      console.log("Request succeeded:", response); 
       openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
     } catch (error) {
       console.error("Request failed:", error.response?.data || error.message);

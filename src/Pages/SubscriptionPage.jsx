@@ -15,7 +15,6 @@ const SubscriptionPage = ()=> {
   },[])
   //https://al-arqam-banckend.vercel.app
 	useEffect(() => {
-		console.log(phoneNumber, name);
 		const createSubscription = async () => {
 			try {
 				const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-subscription', {
