@@ -74,7 +74,7 @@ export const ContactUs = () => {
             <aside className='contact-info'>
               <div className='icons'>
                 <HiOutlineMail/>
-                <a href='mailto:info@AlarqamAcademy.org'>info@AlarqamAcademy.org</a>
+                <a href='mailto:info@alarqamacademy.org'>info@alarqamacademy.org</a>
               </div>
               {/* <div className='icons'>
                 <SlLocationPin/>
@@ -82,9 +82,9 @@ export const ContactUs = () => {
               </div> */}
               <div className='social'>
                 <div className='social-logo'>
-                  <a href="https://www.instagram.com/alarqamacademy_?igsh=ZjcydjY4cHV0ZmVp&utm_source=qr"><img src={instagramLogo} alt='instagramLogo' /></a>
+                  <a href="https://www.instagram.com/alarqamacademy_"><img src={instagramLogo} alt='instagramLogo' /></a>
                   <a href="#"><img src={faceLogo} alt='faceLogo' /></a>
-                  <a href="https://www.tiktok.com/@alarqam.academy1?_t=8sgWVAjo8oZ&_r=1"><img src={tiktokLogo} alt='image' /></a>
+                  <a href="https://www.tiktok.com/@alarqam.academy1"><img src={tiktokLogo} alt='image' /></a>
                 </div>
                 <span>AlarqamAcademy</span>
               </div>
