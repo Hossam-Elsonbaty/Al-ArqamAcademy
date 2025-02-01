@@ -70,7 +70,7 @@ export const ContactUs = () => {
                 </div>
                 <button type='submit'>Send</button>
               </form>
-            </aside>
+            </aside> 
             <aside className='contact-info'>
               <div className='icons'>
                 <HiOutlineMail/>
