@@ -13,6 +13,7 @@ export const ContactUs = () => {
   const [message, setMessage] = useState("");
   const [checkbox, setCheckbox] = useState(false);
   const [api, contextHolder] = notification.useNotification();
+  
   const openNotificationWithIcon = (type, message, description) => {
     api[type]({
       message,
@@ -25,19 +26,16 @@ export const ContactUs = () => {
     if (!checkbox) {
       return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
     }
-    try {
-      const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/contact-us`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(contactData),
-      });
+    const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/contact-us`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactData),
+    })
+    .then((res)=>{
       openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
-    } catch (error) {
-      console.error("Request failed:", error.response?.data || error.message);
-      openNotificationWithIcon('error', 'Failed Operation', 'Please fill your data correctly');
-    }
+    }).catch(err=>openNotificationWithIcon('error', 'Failed Operation', 'Please fill your data correctly'))
   };
   return (
     <>
