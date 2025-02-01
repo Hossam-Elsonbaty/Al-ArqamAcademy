@@ -26,7 +26,7 @@ export const ContactUs = () => {
       return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
     }
     try {
-      const response = await fetch('https://al-arqam-banckend.vercel.app/api/contact-us', {
+      const response = await fetch(`${process.env.BACKEND_SERVER}/api/contact-us`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

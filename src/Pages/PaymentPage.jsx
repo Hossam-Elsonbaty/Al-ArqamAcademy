@@ -10,19 +10,21 @@ const PaymentPage = ()=> {
   const [clientSecret, setClientSecret] = useState("");
   const [loading, setLoading] = useState(true);
   const {amount, email, name, phoneNumber} = useContext(PaymentContext)
+  const subject = 'Thank You for Your Generous Donation'
+  const footer = 'Many people say they want to help; fewer actually step up to do it. Thank you and may God reward you for supporting our journey to make a difference for future generations! Your generous contributions sustain our programs!'
+  const msg = `Sincerely, ${<br/>} AlArqam Academy Team`
   useEffect(()=>{
     setStripePromise(loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY))
   },[])
-  //https://al-arqam-banckend.vercel.app
   useEffect(()=>{
     const createPayment = async () => {
       try {
-        const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-new-payment', {
+        const response = await fetch(`${process.env.BACKEND_SERVER}/api/create-new-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ amount, email, name, phoneNumber }),
+          body: JSON.stringify({ amount, email, name, phoneNumber, }),
         });
         const data = await response.json();
         const { clientSecret } = data;

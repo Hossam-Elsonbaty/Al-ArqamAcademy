@@ -13,11 +13,10 @@ const SubscriptionPage = ()=> {
   useEffect(()=>{
 		setStripePromise(loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY))
   },[])
-  //https://al-arqam-banckend.vercel.app
 	useEffect(() => {
 		const createSubscription = async () => {
 			try {
-				const response = await fetch('https://al-arqam-banckend.vercel.app/api/create-subscription', {
+				const response = await fetch(`${process.env.BACKEND_SERVER}/api/create-subscription`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',

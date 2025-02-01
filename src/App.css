@@ -68,7 +68,7 @@
 .ourTeam .social-media {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 15px;
 }
 .ourTeam .social-media svg {
   font-size: 28px;
@@ -870,6 +870,8 @@
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
 }
 @media (max-width: 760px) {
   .aboutUs-container .about-header a {
@@ -1117,6 +1119,8 @@
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
 }
 @media (max-width: 760px) {
   .aboutUs-container .accomplish a {
@@ -1190,6 +1194,8 @@
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
 }
 @media (max-width: 760px) {
   .aboutUs-container .graduates-container .graduates-mobile a {
@@ -1280,6 +1286,8 @@
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
 }
 .aboutUs-container .graduates-container aside:last-child img {
   height: 100%;
@@ -1527,6 +1535,8 @@ main.programs-page a {
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
   padding: 10px 6rem;
   margin-top: 4rem;
 }
@@ -1739,6 +1749,8 @@ main.programs-page a {
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
   width: 260px;
 }
 @media (max-width: 760px) {
@@ -2128,6 +2140,8 @@ main.contact-us .card .elements aside.message form button {
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
   width: 422px;
 }
 @media (max-width: 760px) {
@@ -2181,138 +2195,6 @@ main.contact-us .card .elements aside.contact-info .icons span {
 main.contact-us .card .elements aside.contact-info .icons svg {
   color: #286982;
   font-size: 20px;
-}
-
-main.payment {
-  padding: 5rem;
-}
-@media (max-width: 760px) {
-  main.payment {
-    padding: 5rem 2rem;
-  }
-}
-@media (min-width: 761px) and (max-width: 1440px) {
-  main.payment {
-    padding: 5rem 2rem;
-  }
-}
-main.payment .content {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  max-width: 750px;
-  width: -moz-min-content;
-  width: min-content;
-}
-@media (max-width: 760px) {
-  main.payment .content {
-    width: 100%;
-  }
-}
-@media (min-width: 761px) and (max-width: 1440px) {
-  main.payment .content {
-    width: 100%;
-  }
-}
-main.payment .content .labels {
-  align-self: flex-start;
-}
-main.payment .content h1 {
-  font-size: 22px;
-  color: #0F001A;
-  font-weight: 500;
-  text-align: center;
-  padding-top: 4rem;
-}
-main.payment .content h2 {
-  font-size: 22px;
-  align-self: flex-start;
-  font-weight: 700;
-  color: #757980;
-}
-@media (max-width: 760px) {
-  main.payment .content h2 {
-    font-size: 14px;
-  }
-}
-main.payment .content h2 span {
-  font-size: 22px;
-  font-weight: 400;
-}
-@media (max-width: 760px) {
-  main.payment .content h2 span {
-    font-size: 14px;
-  }
-}
-main.payment .content .credit-logo {
-  border: 1.2px solid #B4BEC8;
-  border-radius: 15px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-@media (max-width: 760px) {
-  main.payment .content .credit-logo {
-    border-radius: 8px;
-    padding: 10px;
-  }
-}
-main.payment .content .credit-logo img {
-  width: 48px;
-}
-@media (max-width: 760px) {
-  main.payment .content .credit-logo img {
-    width: 28px;
-  }
-}
-main.payment .content .credit-logo span {
-  font-size: 20px;
-  color: #878787;
-}
-@media (max-width: 760px) {
-  main.payment .content .credit-logo span {
-    font-size: 12px;
-  }
-}
-main.payment .content .input-cont {
-  display: flex;
-  gap: 20px;
-}
-@media (max-width: 760px) {
-  main.payment .content .input-cont {
-    flex-direction: column;
-    width: 100%;
-  }
-}
-main.payment .content .input-cont input {
-  width: 358px;
-  border-radius: 15px;
-  font-size: 15px;
-  color: #878787;
-  border: 1px solid #B4BEC8;
-  padding: 17px;
-  outline: none;
-}
-@media (max-width: 760px) {
-  main.payment .content .input-cont input {
-    width: 100%;
-  }
-}
-main.payment .content .input-cont .cvv-input {
-  text-align: center;
-}
-main.payment .content button {
-  background-color: #286982;
-  border-radius: 15px;
-  padding: 7px 2rem;
-  color: #fff;
-  font-size: 18px;
-  width: 100%;
-  padding: 17px;
 }
 
 main.gift-main {
@@ -2603,6 +2485,8 @@ main.gift-main .content .amount .proceed {
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
   width: 100%;
   padding: 17px;
   text-align: center;

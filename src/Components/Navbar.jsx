@@ -9,9 +9,9 @@ import {Bars3Icon,XMarkIcon,} from '@heroicons/react/24/outline';
 import { HashLinkComponent } from './HashLinkComponent';
 const Navbar = () => {
   const ourPrograms = [
-    { name: 'Program 1', href: '/our-programs#program1'},
-    { name: 'Program 2', href: '/our-programs#program2'},
-    { name: 'Program 3', href: '/our-programs#program3'}
+    { name: 'My First Step in the Quran Language (Arabic)', href: '/our-programs#program1'},
+    { name: 'Hoffaz Dar Al-Arqam “Memorization”', href: '/our-programs#program2'},
+    { name: 'Inheritors of the Prophets', href: '/our-programs#program3'}
   ]
   const aboutUs = [
     { name: 'Objectives', href: '/about-us#Objectives'},

@@ -1,7 +1,8 @@
 import React from 'react';
 import image1 from '../Images/Moaz.webp';
 import image2 from '../Images/drHala.webp';
-import { CiFacebook, CiInstagram, CiLinkedin } from "react-icons/ci";
+import { CiFacebook, CiInstagram, CiLinkedin, CiTwitter  } from "react-icons/ci";
+import { PiTiktokLogoThin } from "react-icons/pi";
 export const OurTeam = () => {
   const teamMembers = [
     {
@@ -12,7 +13,7 @@ export const OurTeam = () => {
       delay: 500,
       social: [
         { platform: "Facebook", link: "#", icon: <CiFacebook className='text-blue-600' /> },
-        { platform: "Instagram", link: "#", icon: <CiInstagram className='text-violet-600' /> },
+        { platform: "Instagram", link: "https://www.instagram.com/h1ashraafhotmailcom", icon: <CiInstagram className='text-violet-600' /> },
         { platform: "LinkedIn", link: "#", icon: <CiLinkedin className='text-blue-600' /> },
       ],
     },
@@ -23,9 +24,11 @@ export const OurTeam = () => {
       image: image1,
       delay: 1000,
       social: [
-        { platform: "Facebook", link: "#", icon: <CiFacebook className='text-blue-600' /> },
-        { platform: "Instagram", link: "#", icon: <CiInstagram className='text-violet-600' /> },
-        { platform: "LinkedIn", link: "#", icon: <CiLinkedin className='text-blue-600' /> },
+        { platform: "Facebook", link: "https://www.facebook.com/Moazraof101", icon: <CiFacebook className='text-blue-600' /> },
+        { platform: "Instagram", link: "https://www.instagram.com/moazraof", icon: <CiInstagram className='text-violet-600' /> },
+        { platform: "LinkedIn", link: "https://www.linkedin.com/in/moaz-raof-6742041b2", icon: <CiLinkedin className='text-blue-600' /> },
+        { platform: "X", link: "https://x.com/moaz_abdelraof", icon: <CiTwitter className='text-blue-600' /> },
+        { platform: "TikTok", link: "https://www.tiktok.com/@moazraof101", icon: <PiTiktokLogoThin className='text-red-600' /> },
       ],
     },
   ];
@@ -53,7 +56,7 @@ export const OurTeam = () => {
               </div>
               <h1 className='font-poppins text-2xl font-bold'>{member.name}</h1>
               <p className='description text-zinc-500'>{member.title}</p>
-              <div className='social-media flex gap-2'>
+              <div className='social-media '>
                 {member.social.map((social, index) => (
                   <a key={index} href={social.link} aria-label={social.platform}>
                     {social.icon}

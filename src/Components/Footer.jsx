@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import { CiFacebook } from "react-icons/ci";
-import { CiInstagram } from "react-icons/ci";
-import { CiTwitter } from "react-icons/ci";
-import { CiLinkedin } from "react-icons/ci";
+import { CiFacebook, CiInstagram, CiLinkedin, CiTwitter  } from "react-icons/ci";
+import { PiTiktokLogoThin } from "react-icons/pi";
 import Logo from '../Images/PNG Blue.webp';
 import IsDesktop from '../Context/IsDesktop';
 import lines1 from '../Images/Group 38.webp'
@@ -18,7 +16,8 @@ export const Footer = () => {
             <img src={Logo} alt="Alarqam Academy Logo" className="logo"/>
             <div className="social-icons">
               <a href="#"><CiFacebook/></a>
-              <a href="#"><CiInstagram/></a>
+              <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
+              <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
               <a href="#"><CiTwitter/></a>
               <a href="#"><CiLinkedin/></a>
             </div>
@@ -65,7 +64,8 @@ export const Footer = () => {
           <div className="btn-section">
             <div className="social-icons">
               <a href="#"><CiFacebook/></a>
-              <a href="#"><CiInstagram/></a>
+              <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
+              <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
               <a href="#"><CiTwitter/></a>
               <a href="#"><CiLinkedin/></a>
             </div>

@@ -65,7 +65,7 @@ export const ProgramApplication = () => {
     try {
       
       const response = await axios.post(
-        'https://al-arqam-banckend.vercel.app/api/parent-application',
+        `${process.env.BACKEND_SERVER}/api/parent-application`,
         JSON.stringify(applicationData) ,
         {
           headers: {
@@ -95,7 +95,7 @@ export const ProgramApplication = () => {
     }
     try {
       const response = await axios.post(
-        'https://al-arqam-banckend.vercel.app/api/student-application',
+        `${process.env.BACKEND_SERVER}/api/student-application`,
         JSON.stringify(applicationData) ,
         {
           headers: {

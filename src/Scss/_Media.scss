@@ -63,5 +63,7 @@
   padding: 7px 2rem;
   color: #fff;
   font-size: 18px;
+  border: none;
+  outline: none;
   @content
 }
