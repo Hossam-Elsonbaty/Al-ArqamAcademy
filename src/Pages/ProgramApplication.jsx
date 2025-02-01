@@ -65,7 +65,7 @@ export const ProgramApplication = () => {
     try {
       
       const response = await axios.post(
-        `${process.env.BACKEND_SERVER}/api/parent-application`,
+        `${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/parent-application`,
         JSON.stringify(applicationData) ,
         {
           headers: {
@@ -95,7 +95,7 @@ export const ProgramApplication = () => {
     }
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_SERVER}/api/student-application`,
+        `${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/student-application`,
         JSON.stringify(applicationData) ,
         {
           headers: {

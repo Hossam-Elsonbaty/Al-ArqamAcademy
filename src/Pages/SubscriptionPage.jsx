@@ -16,7 +16,7 @@ const SubscriptionPage = ()=> {
 	useEffect(() => {
 		const createSubscription = async () => {
 			try {
-				const response = await fetch(`${process.env.BACKEND_SERVER}/api/create-subscription`, {
+				const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/create-subscription`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',

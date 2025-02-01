@@ -19,7 +19,7 @@ const PaymentPage = ()=> {
   useEffect(()=>{
     const createPayment = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_SERVER}/api/create-new-payment`, {
+        const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/create-new-payment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

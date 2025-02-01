@@ -26,7 +26,7 @@ export const ContactUs = () => {
       return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
     }
     try {
-      const response = await fetch(`${process.env.BACKEND_SERVER}/api/contact-us`, {
+      const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/contact-us`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
