@@ -29,7 +29,7 @@ export const ContactUs = () => {
     const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/contact-us`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', 
       },
       body: JSON.stringify(contactData),
     })
