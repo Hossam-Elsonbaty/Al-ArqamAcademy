@@ -20,7 +20,7 @@ export const ContactUs = () => {
       description
     });
   };
-  const handleContactSubmit = async (e) => {
+  const handleContactSubmit = async (e) => { 
     e.preventDefault();
     let contactData = { name, email, message };
     if (!checkbox) {
