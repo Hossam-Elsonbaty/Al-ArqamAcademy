@@ -15,11 +15,11 @@ export const Footer = () => {
           <div className="logo-section">
             <img src={Logo} alt="Alarqam Academy Logo" className="logo"/>
             <div className="social-icons">
-              <a href="#"><CiFacebook/></a>
+              {/* <a href="#"><CiFacebook/></a> */}
               <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
               <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
-              <a href="#"><CiTwitter/></a>
-              <a href="#"><CiLinkedin/></a>
+              <a href="https://x.com/alarqamacademy_?s=11&t=cx4itltsC47Rg9ztmUcK9g"><CiTwitter/></a>
+              {/* <a href="#"><CiLinkedin/></a> */}
             </div>
           </div>
           <div className="links-section">
@@ -66,7 +66,7 @@ export const Footer = () => {
               <a href="#"><CiFacebook/></a>
               <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
               <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
-              <a href="#"><CiTwitter/></a>
+              <a href="https://x.com/alarqamacademy_?s=11&t=cx4itltsC47Rg9ztmUcK9g"><CiTwitter/></a>
               <a href="#"><CiLinkedin/></a>
             </div>
             <aside>

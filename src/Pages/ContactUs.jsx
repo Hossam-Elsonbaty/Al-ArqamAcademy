@@ -81,7 +81,6 @@ export const ContactUs = () => {
               <div className='social'>
                 <div className='social-logo'>
                   <a href="https://www.instagram.com/alarqamacademy_"><img src={instagramLogo} alt='instagramLogo' /></a>
-                  <a href="#"><img src={faceLogo} alt='faceLogo' /></a>
                   <a href="https://www.tiktok.com/@alarqam.academy1"><img src={tiktokLogo} alt='image' /></a>
                 </div>
                 <span>AlarqamAcademy</span>

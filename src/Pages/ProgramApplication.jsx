@@ -30,6 +30,9 @@ export const ProgramApplication = () => {
     setKidsCount(Number(e.target.value))
   }
   const onDateChange = (date) => {
+    if (!date || !date.$d) {
+      return;
+    }
     const dateString = new Date(date.$d);
     const formattedDate = dateString.toLocaleDateString()
     setDob(formattedDate)
