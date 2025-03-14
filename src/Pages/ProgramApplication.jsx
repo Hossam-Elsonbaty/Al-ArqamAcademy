@@ -45,6 +45,10 @@ export const ProgramApplication = () => {
   };
   const handleParentApplication = async (e) => {
     e.preventDefault();
+    const apiUrl = process.env.REACT_APP_STRIPE_PUBLIC_KEY2;
+    if (!apiUrl) {
+      return openNotificationWithIcon('error', 'Configuration Error', 'Server URL is missing.');
+    }
     const childrenData = Array.from({ length: kidsCount }).map((_, index) => {
       const childForm = document.querySelector(`#child-form-${index}`);
       return {
@@ -66,25 +70,23 @@ export const ProgramApplication = () => {
     }
     applicationData.children = childrenData
     try {
-      
-      const response = await axios.post(
-        `${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/parent-application`,
-        JSON.stringify(applicationData) ,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      const response = await axios.post(`${apiUrl}/api/parent-application`, applicationData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
     } catch (error) {
       openNotificationWithIcon('error','failed operation','Please fill your data correctly')
-      console.error('Error:', error.response?.data || error.message);
     }
   };
   const handleStudentApplication = async (e) => {
     e.preventDefault();
-    let applicationData ={
+    const apiUrl = process.env.REACT_APP_STRIPE_PUBLIC_KEY2;
+    if (!apiUrl) {
+      return openNotificationWithIcon('error', 'Configuration Error', 'Server URL is missing.');
+    }
+    const applicationData = {
       firstName,
       lastName,
       email,
@@ -94,25 +96,21 @@ export const ProgramApplication = () => {
       dob,
       city,
       zipCode,
-      selectedProgram
-    }
+      selectedProgram,
+    };
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/student-application`,
-        JSON.stringify(applicationData) ,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      openNotificationWithIcon('success','success operation','Thank you for your time. Your application has been submitted')
+      const response = await axios.post(`${apiUrl}/api/student-application`, applicationData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      openNotificationWithIcon("success", "Success Operation", "Thank you for your time. Your application has been submitted");
     } catch (error) {
-      openNotificationWithIcon('error','failed operation','Please fill your data correctly')
-      console.error('Error:', error.response?.data || error.message);
+      const errorMessage = error.response?.data?.message || "Please fill your data correctly";
+      openNotificationWithIcon("error", "Failed Operation", errorMessage);
     }
   };
-  return (
+    return (
     <>
       {contextHolder}
       <div className="application-container">

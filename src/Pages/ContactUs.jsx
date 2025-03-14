@@ -22,22 +22,32 @@ export const ContactUs = () => {
   };
   const handleContactSubmit = async (e) => { 
     e.preventDefault();
-    let contactData = { name, email, message };
     if (!checkbox) {
       return openNotificationWithIcon('error', 'Failed Operation', 'Please check the consent');
     }
-    const response = await fetch(`${process.env.REACT_APP_STRIPE_PUBLIC_KEY2}/api/contact-us`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', 
-      },
-      body: JSON.stringify(contactData),
-    })
-    .then((res)=>{
+    const contactData = { name, email, message };
+    const apiUrl = process.env.REACT_APP_STRIPE_PUBLIC_KEY2; 
+    if (!apiUrl) {
+      return openNotificationWithIcon('error', 'Configuration Error', 'Server URL is missing.');
+    }
+    try {
+      const response = await fetch(`${apiUrl}/api/contact-us`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contactData),
+      });
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
       openNotificationWithIcon('success', 'Success Operation', 'Thank you for your time. Your application has been submitted');
-    }).catch(err=>openNotificationWithIcon('error', 'Failed Operation', 'Please fill your data correctly'))
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      openNotificationWithIcon('error', 'Failed Operation', 'Please fill your data correctly');
+    }
   };
-  return (
+    return (
     <>
       <Helmet>
         <link rel="preload" href={line} as="image" />
