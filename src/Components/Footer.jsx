@@ -63,11 +63,10 @@ export const Footer = () => {
           </div>
           <div className="btn-section">
             <div className="social-icons">
-              <a href="#"><CiFacebook/></a>
+              <a href="https://www.facebook.com/share/16HaeyKdzB/?mibextid=wwXIfr"><CiFacebook/></a>
               <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
               <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
               <a href="https://x.com/alarqamacademy_?s=11&t=cx4itltsC47Rg9ztmUcK9g"><CiTwitter/></a>
-              <a href="#"><CiLinkedin/></a>
             </div>
             <aside>
               <img src={lines1} alt="lines" />
