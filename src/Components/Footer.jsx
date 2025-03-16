@@ -15,7 +15,7 @@ export const Footer = () => {
           <div className="logo-section">
             <img src={Logo} alt="Alarqam Academy Logo" className="logo"/>
             <div className="social-icons">
-              {/* <a href="#"><CiFacebook/></a> */}
+              <a href="https://www.facebook.com/share/16HaeyKdzB/?mibextid=wwXIfr"><CiFacebook/></a>
               <a href="https://www.instagram.com/alarqamacademy_ Instagram"><CiInstagram/></a>
               <a href="https://www.tiktok.com/@alarqam.academy1"><PiTiktokLogoThin/></a>
               <a href="https://x.com/alarqamacademy_?s=11&t=cx4itltsC47Rg9ztmUcK9g"><CiTwitter/></a>
