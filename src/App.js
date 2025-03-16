@@ -21,7 +21,7 @@ import Logo1 from './Images/PNG Blue Horizontal.webp';
 import Logo2 from './Images/PNG Blue.webp';
 import lines1 from './Images/Group 38.webp';
 import lines2 from './Images/Group 39.webp';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'; 
 const App = ()=> {
   const location = useLocation();
   useEffect(()=>{
