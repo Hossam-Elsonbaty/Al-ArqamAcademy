@@ -53,6 +53,7 @@ const PaymentPage = ()=> {
     console.error('Client secret is not available');
     // return window.location.href = `${window.location.origin}/error`
   }
+  
     return(
     <>
       <Elements stripe={stripePromise} options={{ clientSecret }}>
