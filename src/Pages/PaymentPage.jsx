@@ -28,10 +28,14 @@ const PaymentPage = ()=> {
         });
         const data = await response.json();
         const { clientSecret } = data;
+        console.log('Client Secret:', clientSecret);
+        if (!clientSecret) {
+          throw new Error('Client secret not found in response');
+        }
         setClientSecret(clientSecret);
-      } catch (error) {
+      }catch (error) {
         console.error('Error creating payment:', error);
-        window.location.href = `${window.location.origin}/error`
+        // window.location.href = `${window.location.origin}/error`
       }finally {
         setLoading(false); // Ensure loading is set to false after fetch
       }
@@ -39,12 +43,17 @@ const PaymentPage = ()=> {
     createPayment();
   },[email, name, phoneNumber]);
   if (loading) {
-    return <Loader/>; 
+    return <Loader />;
   }
-  if (!stripePromise || !clientSecret) {
-    return window.location.href = `${window.location.origin}/error`; 
+  if (!stripePromise) {
+    console.error('Stripe promise is not initialized');
+    // return window.location.href = `${window.location.origin}/error`
   }
-  return(
+  if (!clientSecret) {
+    console.error('Client secret is not available');
+    // return window.location.href = `${window.location.origin}/error`
+  }
+    return(
     <>
       <Elements stripe={stripePromise} options={{ clientSecret }}>
         <CheckoutForm />
